@@ -6,6 +6,7 @@ import { Marketing } from "../main/marketing/marketing";
 import { IT } from "../main/it/it";
 import { Form } from "../main/form/form";
 import { Phonebook } from "../main/phonebook/phonebook";
+
 //import { Search } from "./search/search";
 import logo from "../../assets/img/logo.png"
 import {
@@ -19,7 +20,8 @@ import {
 export const Header = () => {
    const getActive = ({isActive}) => { 
      return {
-       color: isActive ? "#d7ff23" : "#28282d" };
+       color: isActive ? "#d7ff23" : "#28282d",
+     };
    }; 
   return (
     <>
@@ -27,7 +29,7 @@ export const Header = () => {
         <HeaderNav>
         <img src={logo}  alt="logo"/>
           <HeaderList>
-                      <HeaderLink to="/" style={getActive}>
+            <HeaderLink to="/" style={getActive}>
               Main
             </HeaderLink>
             <HeaderLink to="/hr" style={getActive}>
@@ -48,7 +50,7 @@ export const Header = () => {
           </HeaderList>
         </HeaderNav>
         <HeaderSearch>
-          
+        
           <Profile />
         </HeaderSearch>
       </HeaderBlock>

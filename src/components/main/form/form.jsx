@@ -10,13 +10,13 @@ import FormRadioButtonsGroup from "./radio/radio";
 //import { useState } from 'react';
 
 export const Form = () => {
-
     return (
         <main>
             <form className={css.form}>
                 <Input/>
                 <ControlledOpenSelect/>
-                <FormRadioButtonsGroup/>
+                <FormRadioButtonsGroup />
+                
             </form>
         </main>
    

@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink} from "react-router-dom";
 import styled from "styled-components";
 
 export const HeaderBlock = styled.header`
@@ -26,10 +26,12 @@ export const HeaderList = styled.ul`
     padding-left: 15px;
   }
 `;
+
 export const HeaderLink = styled(NavLink)<{isActive: boolean}>`
   text-decoration: none;
   font-size: 22px;
   padding-left: 25px;
+
   &:hover {
     color: #d7ff23;
   }
