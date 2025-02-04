@@ -1,0 +1,12 @@
+.layout {
+  display: flex;
+  flex-flow: column;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.layout main {
+  flex-grow: 1;
+  flex-shrink: 0;
+  padding: 24px 16px;
+}/*# sourceMappingURL=layout.module.css.map */

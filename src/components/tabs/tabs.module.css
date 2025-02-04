@@ -1,0 +1,31 @@
+.tabsLayout {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 300px;
+}
+
+.tabsItem {
+  display: flex;
+  justify-content: center;
+  width: 150px;
+  padding: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #c8d2e6;
+  text-transform: uppercase;
+}
+
+.tabsItem:hover {
+  color: rgb(98, 121, 167);
+}
+
+.tabContent {
+  margin-top: 30px;
+  margin-left: 300px;
+  width: 1000px;
+}
+
+.activeTab {
+  border-bottom: 2px solid rgb(98, 121, 167);
+  color: rgb(98, 121, 167);
+}/*# sourceMappingURL=tabs.module.css.map */

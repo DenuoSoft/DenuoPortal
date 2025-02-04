@@ -1,0 +1,37 @@
+.header {
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: center;
+  color: #ffffff;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: #c8d2e6;
+  flex-shrink: 0;
+  -webkit-sticky: sticky;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.list {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
+.list li {
+  padding-left: 15px;
+}
+.list a {
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.search {
+  display: flex;
+  flex-direction: row;
+}/*# sourceMappingURL=header.module.css.map */

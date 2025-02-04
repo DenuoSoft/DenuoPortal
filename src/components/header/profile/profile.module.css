@@ -1,0 +1,29 @@
+.profile {
+  display: flex;
+  position: relative;
+  align-items: center;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+       user-select: none;
+}
+.profile .chevron.up > svg {
+  transform: scaleY(-1);
+}
+.profile .menu {
+  position: fixed;
+  top: 48px;
+  right: 16px;
+  min-width: 120px;
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 4px;
+  padding: 8px 12px;
+}
+
+.user {
+  padding: 0 15px;
+  width: 200px;
+  text-align: right;
+  color: #000000;
+}/*# sourceMappingURL=profile.module.css.map */
