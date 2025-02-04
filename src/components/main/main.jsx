@@ -4,7 +4,7 @@ import { tabs, content } from './main-data';
 
 export const Main = () => {
 
-	return 	<main><Tabs tabs={tabs} content={content} /></main>	
+	return 	<Tabs tabs={tabs} content={content} />	
 		
 	
 };
