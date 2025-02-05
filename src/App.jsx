@@ -7,7 +7,7 @@ function App() {
   return (
     <Layout>
       <Header/>
-      <main to='/'></main>
+      <main></main>
       <Footer/>     
     </Layout>
  );

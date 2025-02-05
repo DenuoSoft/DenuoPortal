@@ -11,8 +11,8 @@ export const HeaderBlock = styled.header`
   padding-left: 16px;
   padding-right: 16px;
   background-color: #c8d2e6;
-  flex-shrink: 0;
-  -webkit-sticky: sticky;
+  //position: fixed;
+  
 `;
 export const HeaderNav = styled.nav`
   display: flex;
