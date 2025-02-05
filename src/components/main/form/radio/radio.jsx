@@ -8,8 +8,8 @@ import FormLabel from '@mui/material/FormLabel';
 export default function FormRadioGroup () {
   const [value, setValue] = React.useState('usd');
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setValue((event.target as HTMLInputElement).value);
+  const handleChange = (e) => {
+    setValue(e.target.value);
   };
 
   return (
