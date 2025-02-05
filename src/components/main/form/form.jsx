@@ -16,7 +16,7 @@ export const Form = () => {
                 <Input/>
                 <ControlledOpenSelect/>
                 <FormRadioButtonsGroup />
-                
+           
             </form>
         </main>
    

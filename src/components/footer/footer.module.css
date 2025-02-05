@@ -5,8 +5,9 @@
   align-items: center;
   color: #28282d;
   background-color: #c8d2e6;
-  flex-shrink: 0;
+  margin-top: auto;
   padding-left: 12px;
+  flex-shrink: 0;
 }
 .footer span {
   padding-right: 8px;
