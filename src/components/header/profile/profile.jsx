@@ -3,14 +3,23 @@ import { IconProfile } from '../../shared/icons/icon-profile';
 import css from './profile.module.scss';
 import { useState, useEffect } from 'react';
 //import { userData } from '../../../data/userData';
-
-const userData = { name: "Losev Ivan" };
+import { Modal } from '../../modal/modal';
+const userData = { name: 'Losev Ivan' };
 
 export const Profile = () => {
-
+	const [isOpen, setIsOpen] = useState(false);
 	const [isMenuShown, setIsMenuShown] = useState(false);
-  const [userName, setUserName] = useState('Guest');
-  
+	const [userName, setUserName] = useState('Guest');
+
+	const handleOpenModal = () => {
+		setIsOpen(true);
+	};
+
+	const handleCloseModal = () => {
+		setIsOpen(false);
+		setIsMenuShown(false);
+	};
+
 	useEffect(() => {
 		const cookieUserName = document.cookie
 			.split('; ')
@@ -21,11 +30,11 @@ export const Profile = () => {
 		} else {
 			setUserName(userData.name);
 		}
-  }, []);
-  
+	}, []);
+
 	return (
-		<div className={css.profile} onClick={() => setIsMenuShown(!isMenuShown)}>
-			<div className={css.user}>
+		<div className={css.profile}>
+			<div className={css.user} onClick={() => setIsMenuShown(!isMenuShown)}>
 				<span>{userName}</span>
 			</div>
 			<IconProfile />
@@ -34,8 +43,13 @@ export const Profile = () => {
 			</div>
 			{isMenuShown && (
 				<div className={css.menu}>
-					<div>Profile</div>
-					<div>Log Out</div>
+					<div className={css.menuItems}>
+						<div role='button' className={css.item} onClick={handleOpenModal}>
+							Profile
+						</div>
+						<span className={css.item}>Log Out</span>
+						<Modal isOpen={isOpen} onClose={handleCloseModal} />
+					</div>
 				</div>
 			)}
 		</div>

@@ -13,19 +13,26 @@
 
   .menu {
     position: fixed;
-    top: 48px;
+    top: 82px;
     right: 16px;
     min-width: 120px;
-    background-color: #ffffff;
+    background-color: #c8d2e6;
     color: #000000;
     border-radius: 4px;
     padding: 8px 12px;
   }
 }
+.menuItems {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  .item:hover {
+    color: #d7ff23;
+  }
+}
 .user {
   padding: 0 15px;
   width: 200px;
-
   text-align: right;
   color: #000000;
 }

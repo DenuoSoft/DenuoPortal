@@ -50,7 +50,7 @@ export const Header = () => {
           </HeaderList>
         </HeaderNav>
         <HeaderSearch>
-        
+   
           <Profile />
         </HeaderSearch>
       </HeaderBlock>
