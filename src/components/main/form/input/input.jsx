@@ -9,7 +9,7 @@ import css from './input.module.scss';
 import { allInputs, NavButton } from './input-data';
 
 
-const MAX_VISIBLE_ITEMS = 8;
+const MAX_VISIBLE_ITEMS = 9;
 
 const generateRadioButtons = (count) => {
     return Array.from({ length: count }, (_, index) => ({
