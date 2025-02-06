@@ -1,27 +1,15 @@
-import css from './form.module.scss';
-import {Input} from "./input/input";
-//import {CheckBox} from "./checkbox/checkbox";
-//import {TextArea} from "./textarea/textarea.tsx";
-import { InputSelect } from "./select/select";
-import FormRadioButtonsGroup from "./radio/radio";
 
+import css from './form.module.scss';
+import { Input } from "./input/input";
+//import { InputSelect } from "./select/select";
+//import FormRadioButtonsGroup from "./radio/radio";
 
 export const Form = () => {
-    
     return (
         <main>
- 
             <form className={css.form}>
-              
-                        <Input />
-    
-                <InputSelect/>
-                <FormRadioButtonsGroup />
-          
-            </form>
+                <Input />
+                </form>
         </main>
-   
     )
-
 }
- 
