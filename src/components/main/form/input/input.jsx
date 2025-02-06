@@ -2,15 +2,15 @@ import { useState } from 'react';
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
-import Button from '@mui/material/Button';
+import SendIcon from '@mui/icons-material/Send';
 import Radio from '@mui/material/Radio';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import css from './input.module.scss';
-import { allInputs } from './input-data';
+import { allInputs, NavButton } from './input-data';
+
 
 const MAX_VISIBLE_ITEMS = 8;
 
-// Function to generate radio buttons
 const generateRadioButtons = (count) => {
     return Array.from({ length: count }, (_, index) => ({
         label: `Option ${index + 1}`,
@@ -21,46 +21,38 @@ const generateRadioButtons = (count) => {
 export const Input = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [showRadio, setShowRadio] = useState(false);
-    const [inputData, setInputData] = useState({}); // State to preserve input data
+    const [inputData, setInputData] = useState({}); 
 	const [formData, setFormData] = useState({});
-    // Generate radio buttons
+  
     const radioButtons = generateRadioButtons(12);
-    const allInputsWithRadio = [...allInputs, ...radioButtons]; // Merge input and radio buttons
-
-    // Determine visible elements
+    const allInputsWithRadio = [...allInputs, ...radioButtons]; 
+    
     const visibleInputs = allInputsWithRadio.slice(currentIndex, currentIndex + MAX_VISIBLE_ITEMS);
 
     const handleNext = () => {
         if (currentIndex + MAX_VISIBLE_ITEMS < allInputsWithRadio.length) {
             setCurrentIndex(prevIndex => prevIndex + MAX_VISIBLE_ITEMS);
-            setShowRadio(!showRadio); // Toggle showRadio on click
+            setShowRadio(!showRadio); 
         }
     };
 
     const handleBack = () => {
         if (currentIndex - MAX_VISIBLE_ITEMS >= 0) {
             setCurrentIndex(prevIndex => prevIndex - MAX_VISIBLE_ITEMS);
-            setShowRadio(false); // Reset showRadio when moving back
+            setShowRadio(false); 
         }
     };
 
-    /* const handleInputChange = (field, value) => {
-        setInputData(prevData => ({
-            ...prevData,
-            [field]: value,
-        }));
-    }; */
 	const handleInputChange = (inputKey) => (event, value) => {
         setFormData({
             ...formData,
-            [inputKey]: value || event.target.value, // Store input values
+            [inputKey]: value || event.target.value, 
         });
     };
     const handleSubmit = () => {
         console.log("Форма отправлена", inputData);
-		// Clear input data after submission
-		setFormData({}); // Reset the form data
-        setCurrentIndex(0); // Go back to the first step
+		setFormData({});
+		setCurrentIndex(0); 
         setInputData({});
     };
 
@@ -68,10 +60,8 @@ export const Input = () => {
         <div className={css.forminput}>
             <Stack direction='column' spacing={2} sx={{ minWidth: 350 }}>
                 {visibleInputs.map((input, index) => {
-                    const fieldName = `input-${currentIndex + index}`; // Unique field name for each input
-                    // For three states: radio buttons, Autocomplete, and TextField
+                    const fieldName = `input-${currentIndex + index}`; 
                     if (input.value) {
-                        // If it's a radio button
                         return (
                             <FormControlLabel
                                 key={index}
@@ -105,27 +95,26 @@ export const Input = () => {
                                 label={input.label}
                                 variant='filled'
                                 onChange={(e) => handleInputChange(fieldName, e.target.value)}
-                                value={inputData[fieldName] || ''} // Preserve the input data
+                                value={inputData[fieldName] || ''} 
                             />
                         );
                     }
                 })}
             </Stack>
-
-            <div>
+			<div className={ css.buttons}>
                 {currentIndex > 0 && (
-                    <Button type="button" onClick={handleBack}>
+                    <NavButton type="button" onClick={handleBack}>
                         Back
-                    </Button>
+                    </NavButton>
                 )}
                 {currentIndex + MAX_VISIBLE_ITEMS < allInputsWithRadio.length ? (
-                    <Button type="button" onClick={handleNext}>
+                    <NavButton type="button" onClick={handleNext}>
                         Next
-                    </Button>
+                    </NavButton>
                 ) : (
-                    <Button type="button" onClick={handleSubmit}>
+						<NavButton type="button" onClick={handleSubmit} endIcon={<SendIcon />}>
                         Send
-                    </Button>
+                    </NavButton>
                 )}
             </div>
         </div>

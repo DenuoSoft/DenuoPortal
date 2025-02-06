@@ -6,8 +6,9 @@ import { App } from './App';
 
 createRoot(document.getElementById('root')).render(
 	<StrictMode>
-		<BrowserRouter>
+		<BrowserRouter> 
 			<App />
 		</BrowserRouter>
 	</StrictMode>
 );
+//basename="/denuo-ip" for build
