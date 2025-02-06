@@ -1,6 +1,6 @@
 import css from './modal.module.scss'
 import { useEffect } from 'react';
-export const Modal = ({isOpen, onClose}) => {
+export const Modal = ({isOpen, onClose, children}) => {
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden'; // Блокируем прокрутку
@@ -20,12 +20,7 @@ export const Modal = ({isOpen, onClose}) => {
         <button className={css.closeButton} onClick={onClose}>
         &times; {/* Символ крестика */}
       </button>
-      <h2>Profile Information</h2>
-        <p>User name:</p>
-        <p>Job position:</p>
-        <p>Office:</p>
-        <p>Phone number:</p>
-        <p>Assistant:</p>
+      {children}
     </div>
   </div>
 );

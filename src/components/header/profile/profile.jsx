@@ -48,7 +48,14 @@ export const Profile = () => {
 							Profile
 						</div>
 						<span className={css.item}>Log Out</span>
-						<Modal isOpen={isOpen} onClose={handleCloseModal} />
+						<Modal isOpen={isOpen} onClose={handleCloseModal}>
+						<h2>Profile Information</h2>
+        					<p>User name:</p>
+        					<p>Job position:</p>
+        					<p>Office:</p>
+        					<p>Phone number:</p>
+						     <p>Assistant:</p>
+						</Modal>
 					</div>
 				</div>
 			)}

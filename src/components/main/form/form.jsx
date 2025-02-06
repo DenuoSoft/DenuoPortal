@@ -9,7 +9,7 @@ export const Form = () => {
         <main>
             <form className={css.form}>
                 <Input />
-                </form>
+            </form>
         </main>
     )
 }

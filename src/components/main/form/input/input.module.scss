@@ -3,7 +3,8 @@
     flex-direction: column;
     gap: 15px;
     overflow-x: auto;
-   white-space: nowrap;
+    white-space: nowrap;
+    z-index: -1;
 }
 .buttons {
     margin-top: 15px;
