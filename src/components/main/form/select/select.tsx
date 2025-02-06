@@ -5,7 +5,7 @@ import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 //import Button from '@mui/material/Button';
 
-export default function ControlledOpenSelect() {
+export const  InputSelect = () => {
   const [dle, setAge] = React.useState<string | number>('');
   const [open, setOpen] = React.useState(false);
 

@@ -1,11 +1,11 @@
-import { Route, Routes } from "react-router-dom";
+import { Outlet} from "react-router-dom";
 import { Profile } from "./profile/profile";
-import { Main } from "../main/main";
-import { HR } from "../main/hr/hr";
-import { Marketing } from "../main/marketing/marketing";
-import { IT } from "../main/it/it";
-import { Form } from "../main/form/form";
-import { Phonebook } from "../main/phonebook/phonebook";
+//import { Main } from "../main/main";
+//import { HR } from "../main/hr/hr";
+//import { Marketing } from "../main/marketing/marketing";
+//import { IT } from "../main/it/it";
+//import { Form } from "../main/form/form";
+//import { Phonebook } from "../main/phonebook/phonebook";
 
 //import { Search } from "./search/search";
 import logo from "../../assets/img/logo.png"
@@ -54,14 +54,7 @@ export const Header = () => {
           <Profile />
         </HeaderSearch>
       </HeaderBlock>
-      <Routes>
-        <Route path="/" element={<Main />}></Route>
-        <Route path="/hr" element={<HR />}></Route>
-        <Route path="/marketing" element={<Marketing />}></Route>
-        <Route path="/it" element={<IT />}></Route>
-        <Route path="/form" element={<Form />}></Route>
-        <Route path="/phonebook" element={<Phonebook />}></Route>
-      </Routes>
+      <Outlet />
     </>
   );
 };
