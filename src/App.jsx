@@ -8,14 +8,12 @@ import { IT } from "./components/main/it/it";
 import { Form } from "./components/main/form/form";
 import { Phonebook } from "./components/main/phonebook/phonebook";
 import { Routes, Route } from "react-router-dom"
-//import {Main} from '../main/main';
 
 export const App = () => {
   return (
     <Layout>
       <Header />
-      
-      <main>
+        
       <Routes>
             <Route path="/" element={<Main />} />
             <Route path="/hr" element={<HR />} />
@@ -24,7 +22,7 @@ export const App = () => {
             <Route path="/form" element={<Form />} />
             <Route path="/phonebook" element={<Phonebook />} />
           </Routes>
-      </main>
+      
       <Footer/>     
     </Layout>
  );
