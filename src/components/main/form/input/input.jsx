@@ -1,11 +1,8 @@
-//import css from './input.module.scss';
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import { userData } from '../../../../data/userData';
 import { clientData } from '../../../../data/clientData';
-//import {Data} from "../form-data"
-//import { Questions } from '../../../../hooks/form-provider';
 
 export const Input = () => {
 	return (
