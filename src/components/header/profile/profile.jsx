@@ -4,7 +4,7 @@ import css from './profile.module.scss';
 import { useState, useEffect } from 'react';
 //import { userData } from '../../../data/userData';
 import { Modal } from '../../modal/modal';
-const userData = { name: 'Losev Ivan' };
+const userData = { name: 'User Name' };
 
 export const Profile = () => {
 	const [isOpen, setIsOpen] = useState(false);
