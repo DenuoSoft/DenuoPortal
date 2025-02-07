@@ -7,6 +7,7 @@ import { Modal } from '../../modal/modal';
 const userData = { name: 'User Name' };
 
 export const Profile = () => {
+	
 	const [isOpen, setIsOpen] = useState(false);
 	const [isMenuShown, setIsMenuShown] = useState(false);
 	const [userName, setUserName] = useState('Guest');
