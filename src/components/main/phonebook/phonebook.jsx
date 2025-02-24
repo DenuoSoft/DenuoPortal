@@ -1,14 +1,30 @@
 import css from './phonebook.module.scss';
 import { useState } from 'react';
 import { userData } from '../../../data/userData';
-
+import { Modal } from '../..//modal/modal.jsx'
 export const Phonebook = () => {
 	const [searchTerm, setSearchTerm] = useState('');
-  const [contacts, setContacts] = useState(userData || []);
+	const [contacts, setContacts] = useState(userData || []);
+	const [modalData, setModalData] = useState(null); // Для хранения данных модального окна
+    const [isModalOpen, setIsModalOpen] = useState(false); // Для управления видимостью модального окна
   
 	const handleSearchChange = (e) => {
 		setSearchTerm(e.target.value);
 	};
+	const clearSearch = () => {
+        setSearchTerm('');
+	};
+	
+	const openModal = (contact) => {
+        setModalData(contact);
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+        setModalData(null);
+    };
+
 	const columns = [
 		'Name',
 		'Job position',
@@ -39,6 +55,11 @@ export const Phonebook = () => {
 							onChange={handleSearchChange}
 							className={css.input}
 						/>
+						 {searchTerm && (
+                            <button onClick={clearSearch} className={css.clearButton}>
+                                ✖
+                            </button>
+                        )}
 					</div>
 				</div>
 				
@@ -55,7 +76,7 @@ export const Phonebook = () => {
 				{filteredContacts.length > 0 ? (
 					filteredContacts.map((contact) => (
 						<div key={contact.id} className={css.columnElem}>
-							<div className={css.columnCell}>{contact.name}</div>
+							<div className={css.columnCell} style={{ cursor: 'pointer' }} onClick={() => openModal(contact)}>{contact.name}</div>
 							<div className={css.columnCell}>{contact.position}</div>
 							<div className={css.columnCell}>{contact.phone}</div>
 							<div className={css.columnCell}>{contact.mobile}</div>
@@ -63,10 +84,21 @@ export const Phonebook = () => {
 						</div>
 					))
 				) : (
-            <div className={css.textCenter }>Нет совпадений</div>
+            <div className={css.textCenter }>There is no such user!!!</div>
         )}
         
 			</div>
+			<Modal isOpen={isModalOpen} onClose={closeModal}>
+                {modalData && (
+                    <div>
+                        <h2>{modalData.name}</h2>
+                        <p>Job Position: {modalData.position}</p>
+                        <p>Extension: {modalData.phone}</p>
+                        <p>Mobile Phone: {modalData.mobile}</p>
+                        <p>Office: {modalData.location}</p>
+                    </div>
+                )}
+            </Modal>
 		</main>
 	);
 };

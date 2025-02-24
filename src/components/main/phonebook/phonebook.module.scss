@@ -7,28 +7,43 @@
     display: flex;
     justify-content: flex-end;
 }
-.input {
-    display: flex;
-    flex-grow: 1;
-    padding: 10px;
-    //border: none;
-    outline: none;
-    min-width: 0;
-    background-color: #f0f0f0;
-    border-left: #f0f0f0;
-    border-top: #f0f0f0;
-    border-right: #f0f0f0;
-    border-bottom: 1px solid #aaa8a8;
-    
-  }
+
 .searchbox {
+    position: relative;
     display: flex;
-    align-items: center;
-    height: 30px;
+    height: 40px;
     width: 400px;
     
-}
+    .input {
+        display: flex;
+        flex-grow: 1;
+        padding: 10px;
+        border: none;
+        outline: none;
+        min-width: 0;
+        background-color: #f0f0f0;
+        border-left: #f0f0f0;
+        border-top: #f0f0f0;
+        border-right: #f0f0f0;
+        border-bottom: 1px solid #aaa8a8;
+        
+      }
 
+    .clearButton {
+    position: absolute; 
+    background: none;
+    border: none;
+    right: 10px; 
+        top: 50%; 
+        transform: translateY(-50%); 
+    cursor: pointer;
+    font-size: 16px; 
+    color: #999; 
+    &:hover {
+        color: black; 
+    }
+}
+}
 .columns {
     margin-top: 20px;
     display: flex;
@@ -55,12 +70,13 @@
 .columnCell {
     flex: 1;
     padding: 10px;
-    color: #4e4949
-
+    color: #4e4949;
+    
 }
 .textCenter {
     padding-top: 20px;
     text-align: center;
+    color: red;
 }
 
 

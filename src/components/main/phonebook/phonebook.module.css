@@ -8,10 +8,17 @@
   justify-content: flex-end;
 }
 
-.input {
+.searchbox {
+  position: relative;
+  display: flex;
+  height: 40px;
+  width: 400px;
+}
+.searchbox .input {
   display: flex;
   flex-grow: 1;
   padding: 10px;
+  border: none;
   outline: none;
   min-width: 0;
   background-color: #f0f0f0;
@@ -20,12 +27,19 @@
   border-right: #f0f0f0;
   border-bottom: 1px solid #aaa8a8;
 }
-
-.searchbox {
-  display: flex;
-  align-items: center;
-  height: 30px;
-  width: 400px;
+.searchbox .clearButton {
+  position: absolute;
+  background: none;
+  border: none;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 16px;
+  color: #999;
+}
+.searchbox .clearButton:hover {
+  color: black;
 }
 
 .columns {
@@ -63,4 +77,5 @@
 .textCenter {
   padding-top: 20px;
   text-align: center;
+  color: red;
 }/*# sourceMappingURL=phonebook.module.css.map */
