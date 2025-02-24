@@ -3,12 +3,12 @@ import { useEffect } from 'react';
 export const Modal = ({isOpen, onClose, children}) => {
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = 'hidden'; // Блокируем прокрутку
+      document.body.style.overflow = 'hidden'; 
     } else {
-      document.body.style.overflow = 'unset'; // Восстанавливаем прокрутку
+      document.body.style.overflow = 'unset'; 
     }
     return () => {
-      document.body.style.overflow = 'unset'; // Восстанавливаем прокрутку при размонтировании
+      document.body.style.overflow = 'unset'; 
     };
   }, [isOpen]);
 
@@ -18,7 +18,7 @@ export const Modal = ({isOpen, onClose, children}) => {
     <div className={css.modalOverlay}>
       <div className={css.modalContent}>
         <button className={css.closeButton} onClick={onClose}>
-        &times; {/* Символ крестика */}
+        &times; 
       </button>
       {children}
     </div>
