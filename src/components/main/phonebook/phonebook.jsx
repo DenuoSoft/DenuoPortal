@@ -101,6 +101,8 @@ export const Phonebook = () => {
 						<p>Extension: {modalData.phone}</p>
 						<p>Mobile Phone: {modalData.mobile}</p>
 						<p>Office: {modalData.location}</p>
+						<p>Assistant: {modalData.assistant}</p>
+						<p>Assistant extension: {modalData.assistantExt}</p>
 					</div>
 				)}
 			</Modal>

@@ -3,16 +3,16 @@ import { IconProfile } from '../../shared/icons/icon-profile';
 import css from './profile.module.scss';
 import { useState, useEffect } from 'react';
 //import { userData } from '../../../data/userData';
-import { Modal } from '../../modal/modal';
+//import { Modal } from '../../modal/modal';
 const userData = { name: 'User Name' };
 
 export const Profile = () => {
 	
-	const [isOpen, setIsOpen] = useState(false);
+	//const [isOpen, setIsOpen] = useState(false);
 	const [isMenuShown, setIsMenuShown] = useState(false);
 	const [userName, setUserName] = useState('Guest');
 
-	const handleOpenModal = () => {
+	/* const handleOpenModal = () => {
 		setIsOpen(true);
 	};
 
@@ -20,7 +20,7 @@ export const Profile = () => {
 		setIsOpen(false);
 		setIsMenuShown(false);
 	};
-
+ */
 	useEffect(() => {
 		const cookieUserName = document.cookie
 			.split('; ')
@@ -39,7 +39,7 @@ export const Profile = () => {
 				<span>{userName}</span>
 			</div>
 			<IconProfile />
-			<div className={`${css.chevron} ${isMenuShown ? css.up : ''}`}>
+		{/* 	<div className={`${css.chevron} ${isMenuShown ? css.up : ''}`}>
 				<IconChevron />
 			</div>
 			{isMenuShown && (
@@ -59,7 +59,7 @@ export const Profile = () => {
 						</Modal>
 					</div>
 				</div>
-			)}
+			)} */}
 		</div>
 	);
 };

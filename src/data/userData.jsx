@@ -6,6 +6,8 @@ export const userData = [
 		phone: '7203',
 		mobile: '+79211234567',
 		location: 'St. Petersburg',
+		assistant: 'Anna Bulash',
+		assistantExt: 7268
 	},
 	{
 		id: 2,
@@ -14,6 +16,8 @@ export const userData = [
 		phone: '7204',
 		mobile: '+79211234567',
 		location: 'St. Petersburg',
+		assistant: 'Anna Bulash',
+		assistantExt: 7268
 	},
 	{
 		id: 3,
@@ -22,6 +26,8 @@ export const userData = [
 		phone: '4444',
 		mobile: '+79211234567',
 		location: 'Moscow',
+		assistant: 'Anna Bulash',
+		assistantExt: 7268
 	},
 	{
 		id: 4,
@@ -30,6 +36,8 @@ export const userData = [
 		phone: '4418',
 		mobile: '+79211234567',
 		location: 'Moscow',
+		assistant: 'Anna Bulash',
+		assistantExt: 7268
 	},
 	{
 		id: 5,
@@ -38,6 +46,8 @@ export const userData = [
 		phone: '7219',
 		mobile: '+79211234567',
 		location: 'St. Petersburg',
+		assistant: 'Anna Bulash',
+		assistantExt: 7268
 	},
 	{
 		id: 6,
@@ -46,6 +56,8 @@ export const userData = [
 		phone: '4400',
 		mobile: '+79211234567',
 		location: 'Moscow',
+		assistant: 'Anna Bulash',
+		assistantExt: 7268
 	},
 	{
 		id: 7,
@@ -54,6 +66,8 @@ export const userData = [
 		phone: '4400',
 		mobile: '4567',
 		location: 'Moscow',
+		assistant: 'Anna Bulash',
+		assistantExt: 7268
 	},
 	{
 		id: 8,
@@ -62,6 +76,8 @@ export const userData = [
 		phone: '4400',
 		mobile: '+79211234567',
 		location: 'Moscow',
+		assistant: 'Anna Bulash',
+		assistantExt: 7268
 	},
 	{
 		id: 9,
@@ -70,6 +86,8 @@ export const userData = [
 		phone: '4400',
 		mobile: '+79211234567',
 		location: 'Moscow',
+		assistant: 'Anna Bulash',
+		assistantExt: 7268
 	},
 	{
 		id: 10,
@@ -78,6 +96,8 @@ export const userData = [
 		phone: '4400',
 		mobile: '+7164324567',
 		location: 'Moscow',
+		assistant: 'Anna Bulash',
+		assistantExt: 7268
 	},
 	{
 		id: 11,
@@ -86,6 +106,8 @@ export const userData = [
 		phone: '4400',
 		mobile: '+79211234567',
 		location: 'Moscow',
+		assistant: 'Anna Bulash',
+		assistantExt: 7268
 	},
 	{
 		id: 12,
@@ -94,6 +116,8 @@ export const userData = [
 		phone: '4400',
 		mobile: '+79211234567',
 		location: 'Moscow',
+		assistant: 'Anna Bulash',
+		assistantExt: 7268
 	},
 	{
 		id: 13,
@@ -110,6 +134,8 @@ export const userData = [
 		phone: '4400',
 		mobile: '+79211234567',
 		location: 'Moscow',
+		assistant: 'Anna Bulash',
+		assistantExt: 7268
 	},
 	{
 		id: 15,
@@ -118,6 +144,8 @@ export const userData = [
 		phone: '4400',
 		mobile: '+79211234567',
 		location: 'Moscow',
+		assistant: 'Anna Bulash',
+		assistantExt: 7268
 	}
 ];
 
