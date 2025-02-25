@@ -1,4 +1,4 @@
-import { IconChevron } from '../../shared/icons/icon-chevron';
+//import { IconChevron } from '../../shared/icons/icon-chevron';
 import { IconProfile } from '../../shared/icons/icon-profile';
 import css from './profile.module.scss';
 import { useState, useEffect } from 'react';

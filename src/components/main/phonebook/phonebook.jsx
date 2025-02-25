@@ -1,17 +1,22 @@
 /* eslint-disable no-unused-vars */
+
 import css from './phonebook.module.scss';
 import { useState } from 'react';
 import { userData } from '../../../data/userData';
 import { Modal } from '../..//modal/modal.jsx';
+
 export const Phonebook = () => {
 	const [searchTerm, setSearchTerm] = useState('');
 	const [contacts, setContacts] = useState(userData || []);
 	const [modalData, setModalData] = useState(null);
 	const [isModalOpen, setIsModalOpen] = useState(false);
+	const [currentPage, setCurrentPage] = useState(1);
+	const contactsPerPage = 12; // Show 12 contacts per page
 
 	const handleSearchChange = (e) => {
 		setSearchTerm(e.target.value);
 	};
+
 	const clearSearch = () => {
 		setSearchTerm('');
 	};
@@ -33,6 +38,7 @@ export const Phonebook = () => {
 		'Mobile phone',
 		'Office',
 	];
+
 	const filteredContacts = contacts.filter(
 		(contact) =>
 			(contact.name &&
@@ -43,6 +49,26 @@ export const Phonebook = () => {
 			(contact.location &&
 				contact.location.toLowerCase().includes(searchTerm.toLowerCase()))
 	);
+
+	// Calculate total pages
+	const totalPages = Math.ceil(filteredContacts.length / contactsPerPage);
+
+	// Get current contacts for the page
+	const indexOfLastContact = currentPage * contactsPerPage;
+	const indexOfFirstContact = indexOfLastContact - contactsPerPage;
+	const currentContacts = filteredContacts.slice(
+		indexOfFirstContact,
+		indexOfLastContact
+	);
+
+	const handlePageChange = (direction) => {
+		if (direction === 'next' && currentPage < totalPages) {
+			setCurrentPage(currentPage + 1);
+		}
+		if (direction === 'prev' && currentPage > 1) {
+			setCurrentPage(currentPage - 1);
+		}
+	};
 
 	return (
 		<main>
@@ -73,8 +99,8 @@ export const Phonebook = () => {
 					))}
 				</div>
 
-				{filteredContacts.length > 0 ? (
-					filteredContacts.map((contact) => (
+				{currentContacts.length > 0 ? (
+					currentContacts.map((contact) => (
 						<div key={contact.id} className={css.columnElem}>
 							<div
 								className={css.columnCell}
@@ -92,6 +118,26 @@ export const Phonebook = () => {
 				) : (
 					<div className={css.textCenter}>There is no such user!!!</div>
 				)}
+			</div>
+			{/* Pagination Controls */}
+			<div className={css.pagination}>
+				<button
+					className={css.pageButton}
+					onClick={() => handlePageChange('prev')}
+					disabled={currentPage === 1}
+				>
+					Previous
+				</button>
+				<span>
+					Page {currentPage} of {totalPages}
+				</span>
+				<button
+					className={css.pageButton}
+					onClick={() => handlePageChange('next')}
+					disabled={currentPage === totalPages}
+				>
+					Next
+				</button>
 			</div>
 			<Modal isOpen={isModalOpen} onClose={closeModal}>
 				{modalData && (

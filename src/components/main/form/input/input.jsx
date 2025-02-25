@@ -8,7 +8,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import css from './input.module.scss';
 import { allInputs, NavButton } from './input-data';
 
-const MAX_VISIBLE_ITEMS = 9;
+const MAX_VISIBLE_ITEMS = 8;
 
 const generateRadioButtons = () => {
     return [
