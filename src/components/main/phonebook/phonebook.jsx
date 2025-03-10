@@ -11,7 +11,7 @@ export const Phonebook = () => {
 	const [modalData, setModalData] = useState(null);
 	const [isModalOpen, setIsModalOpen] = useState(false);
 	const [currentPage, setCurrentPage] = useState(1);
-	const contactsPerPage = 12; // Show 12 contacts per page
+	const contactsPerPage = 12;
 
 	const handleSearchChange = (e) => {
 		setSearchTerm(e.target.value);
@@ -50,10 +50,8 @@ export const Phonebook = () => {
 				contact.location.toLowerCase().includes(searchTerm.toLowerCase()))
 	);
 
-	// Calculate total pages
 	const totalPages = Math.ceil(filteredContacts.length / contactsPerPage);
 
-	// Get current contacts for the page
 	const indexOfLastContact = currentPage * contactsPerPage;
 	const indexOfFirstContact = indexOfLastContact - contactsPerPage;
 	const currentContacts = filteredContacts.slice(
