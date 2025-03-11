@@ -101,7 +101,7 @@ export const Phonebook = () => {
 					currentContacts.map((contact) => (
 						<div key={contact.id} className={css.columnElem}>
 							<div
-								className={css.columnCell}
+								className={css.columnCellNM}
 								style={{ cursor: 'pointer' }}
 								onClick={() => openModal(contact)}
 							>
