@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import css from './tabs.module.scss'
+import PropTypes from 'prop-types';
 
 export const Tabs = ({ tabs, content}) => {
   
@@ -27,4 +28,7 @@ export const Tabs = ({ tabs, content}) => {
     </main>
   );
 }
-
+Tabs.propTypes = {
+  tabs: PropTypes.array,
+  content: PropTypes.array, 
+};

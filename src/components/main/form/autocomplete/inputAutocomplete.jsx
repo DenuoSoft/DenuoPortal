@@ -1,13 +1,10 @@
 import { useState } from 'react';
-import { userData } from '../../../../data/userData';
-import css from './inputAutocomplete.module.scss'
-// Пример данных пользователей
-/* const users = [
-  { id: 0, name: 'vasya', phone: 3456 },
-  { id: 1, name: 'kolya', phone: 7891 }
-]; */
 
-const AutocompleteInput = () => {
+import PropTypes from 'prop-types';
+import css from './inputAutocomplete.module.scss'
+//import { userData } from '../../../../data/userData';
+
+const AutocompleteInput = ({ placeholder, data}) => {
   const [inputValue, setInputValue] = useState('');
   const [filteredSuggestions, setFilteredSuggestions] = useState([]);
   const [activeSuggestionIndex, setActiveSuggestionIndex] = useState(-1);
@@ -18,8 +15,8 @@ const AutocompleteInput = () => {
     setInputValue(value);
     
     if (value) {
-      const filtered = userData.filter(user =>
-        user.name.toLowerCase().includes(value.toLowerCase())
+      const filtered = data.filter(data =>
+        data.name.toLowerCase().includes(value.toLowerCase())
       );
       setFilteredSuggestions(filtered);
       setShowSuggestions(true);
@@ -45,8 +42,8 @@ const AutocompleteInput = () => {
     }
   };
   
-  const handleSuggestionClick = (user) => {
-    setInputValue(user.name);
+  const handleSuggestionClick = (data) => {
+    setInputValue(data.name);
     setShowSuggestions(false);
   };
   const clearInput = () => {
@@ -58,13 +55,13 @@ const AutocompleteInput = () => {
   return (
     <div className="relative w-full">
       <div className={css.searchbox}>
-      <input
-        type="text"
-        value={inputValue}
-        onChange={handleInputChange}
-        onKeyDown={handleKeyDown}
-        className={css.input}
-        placeholder="Partner"
+        <input
+          type="text"
+          value={inputValue}
+          onChange={handleInputChange}
+          onKeyDown={handleKeyDown}
+          className={css.input}
+          placeholder={placeholder}
         />
         {inputValue && (
           <button 
@@ -81,14 +78,14 @@ const AutocompleteInput = () => {
       {showSuggestions && inputValue && (
         <div className={css.listbox}>
             <ul>
-          {filteredSuggestions.map((user, index) => (
+          {filteredSuggestions.map((data, index) => (
             <li
               className={ css.list}
-              key={user.id}
-              onClick={() => handleSuggestionClick(user)}
+              key={data.id}
+              onClick={() => handleSuggestionClick(data)}
               onMouseEnter={() => setActiveSuggestionIndex(index)}
             >
-              {user.name} 
+              {data.name} 
             </li>
           ))}
         </ul>
@@ -97,6 +94,10 @@ const AutocompleteInput = () => {
       )}
     </div>
   );
+};
+AutocompleteInput.propTypes = {
+placeholder: PropTypes.string.isRequired,
+ data: PropTypes.array, 
 };
 
 export default AutocompleteInput;
