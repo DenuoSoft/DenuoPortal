@@ -1,0 +1,57 @@
+.searchbox {
+    position: relative;
+    display: flex;
+    height: 50px;
+    width: 350px;
+    
+    .input {
+        display: flex;
+        flex-grow: 1;
+        padding: 10px;
+        border: none;
+        outline: none;
+        min-width: 0;
+        background-color: #f0f0f0;
+        border-left: #f0f0f0;
+        border-top: #f0f0f0;
+        border-right: #f0f0f0;
+        border-bottom: 1px solid #aaa8a8;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+        font-size: 16px;
+        color: #999;
+      }
+    .input:focus {
+        border-bottom: 1px solid blue;
+    }
+    .clearButton {
+    position: absolute; 
+    background: none;
+    border: none;
+    right: 10px; 
+        top: 50%; 
+        transform: translateY(-50%); 
+    cursor: pointer;
+    font-size: 16px; 
+    color: #999; 
+    &:hover {
+        color: black; 
+    }
+}
+}
+ul {
+    padding-left: 10px;
+}
+.list {
+    list-style: none;
+    
+    color: #999;
+    overflow: hidden;
+    cursor: pointer;
+}
+.list:hover {
+    color: blue;
+}
+.listbox {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+    padding: 1px;
+}
