@@ -8,6 +8,8 @@ import { clientData} from '../../../data/clientData';
 //import FormRadioGroup from "./radio/radio";
 import RadioButtons from './radiobuttons/radiobuttons'
 import { allInputs } from './input/input-data'
+import { textData } from './form-data'
+
 export const Form = () => {
 	return (
 		<main>
@@ -19,7 +21,20 @@ export const Form = () => {
 				{allInputs.map(({ id, label }) => (
 					<AutocompleteInput key={id} placeholder={label} />
 ))}
-				
+				{/* <span>Client intake criteria</span>
+				<span>Non-financial client intake criteria</span>
+				<span>Matter intake criteria</span> */}
+				{textData.map(({id, title, questions}) => (
+					<div key={id} className={css.questions }>
+						<h2>{title}</h2>
+						<span>{ questions.one}</span>
+						<span>{questions.two}</span>
+						<span>{questions.three}</span>
+						<span>{questions.four}</span>
+						<span>{questions.five}</span>
+						<span>{ questions.six}</span>
+					</div>   
+				))}
 			</form>
 		</main>
 	);
