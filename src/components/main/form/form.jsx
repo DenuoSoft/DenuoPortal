@@ -29,13 +29,13 @@ export const Form = () => {
 				{allInputs.map(({ id, label }) => (
 					<AutocompleteInput key={id} placeholder={label} />
 				))}
-				
+
 				{textData.map(({ id, title, questions }) => (
 					<div key={id} className={css.questionsBox}>
 						<h2>{title}</h2>
 						{Object.keys(questions).map((key, index) => (
-							<div key={index} className={css.radio }>
-								<span className={ css.questions}>{questions[key]}</span>
+							<div key={index} className={css.radio}>
+								<span className={css.questions}>{questions[key]}</span>
 								<RadioButtons
 									options={yesNoOptions}
 									onChange={handleYesNoChange}
@@ -45,10 +45,8 @@ export const Form = () => {
 					</div>
 				))}
 				<div className={css.navigation}>
-					<Button label='Back'/>
-
+					<Button label='Back' />
 					<Button label='Next' />
-
 					<Button label='Submit' />
 				</div>
 			</form>
