@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import css from './modal.module.scss'
 import { useEffect } from 'react';
 export const Modal = ({isOpen, onClose, children}) => {

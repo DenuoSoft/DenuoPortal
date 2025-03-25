@@ -22,7 +22,15 @@ export const dnentity = [
 	'Tbilisi',
 	'Tashkent',
 ];
-
+export const allInputs = [
+	{ id: 0, label: 'Client UBOs:' },
+	{ id: 1, label: 'Client address:' },
+	{ id: 2, label: 'Adverse party:' },
+	{ id: 3, label: 'Adverse party UBOs:' },
+	{ id: 4, label: 'Other party:' },
+	{ id: 5, label: 'Matter name:' },
+	{ id: 6, label: 'Matter details:' },
+];
 export const Data = {
 	label: label,
 	currency: currency,

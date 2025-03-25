@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+import Input from '../input/input';
 import PropTypes from 'prop-types';
 import css from './inputAutocomplete.module.scss'
 //import { userData } from '../../../../data/userData';
@@ -41,21 +41,20 @@ const AutocompleteInput = ({ placeholder, data}) => {
       }
     }
   };
-  
   const handleSuggestionClick = (data) => {
     setInputValue(data.name);
     setShowSuggestions(false);
   };
-  const clearInput = () => {
+  /* const clearInput = () => {
     setInputValue('');
     setFilteredSuggestions([]);
     setShowSuggestions(false);
     setActiveSuggestionIndex(-1);
-  };
+  }; */
   return (
     <div className="relative w-full">
       <div className={css.searchbox}>
-        <input
+        <Input
           type="text"
           value={inputValue}
           onChange={handleInputChange}
@@ -63,17 +62,6 @@ const AutocompleteInput = ({ placeholder, data}) => {
           className={css.input}
           placeholder={placeholder}
         />
-        
-        {inputValue && (
-          <button 
-          onClick={clearInput}
-          className={css.clearButton}
-          style={{ display: inputValue ? 'block' : 'none' }} 
-        >
-          ✖
-        </button>
-        )}
-      
       </div>
       
       {showSuggestions && inputValue && (

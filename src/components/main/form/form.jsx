@@ -3,8 +3,7 @@ import AutocompleteInput from './autocomplete/inputAutocomplete';
 import { userData } from '../../../data/userData';
 import { clientData } from '../../../data/clientData';
 import RadioButtons from './radiobuttons/radiobuttons';
-import { allInputs } from './input/input-data';
-import { textData, currency, yesNoOptions } from './form-data';
+import { textData, currency, yesNoOptions, allInputs } from './form-data';
 import Button from '../../shared/buttons/button';
 import SendIcon from '@mui/icons-material/Send'
 

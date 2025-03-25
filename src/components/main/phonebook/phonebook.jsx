@@ -1,9 +1,10 @@
 /* eslint-disable no-unused-vars */
-
 import css from './phonebook.module.scss';
 import { useState } from 'react';
 import { userData } from '../../../data/userData';
 import { Modal } from '../..//modal/modal.jsx';
+import Button from '../../shared/buttons/button';
+import Input from '../form/input/input.jsx';
 
 export const Phonebook = () => {
 	const [searchTerm, setSearchTerm] = useState('');
@@ -17,9 +18,10 @@ export const Phonebook = () => {
 		setSearchTerm(e.target.value);
 	};
 
-	const clearSearch = () => {
+	/* const clearSearch = () => {
 		setSearchTerm('');
-	};
+		setCurrentPage(1);
+	}; */
 
 	const openModal = (contact) => {
 		setModalData(contact);
@@ -50,7 +52,7 @@ export const Phonebook = () => {
 				contact.location.toLowerCase().includes(searchTerm.toLowerCase()))
 	);
 
-	const totalPages = Math.ceil(filteredContacts.length / contactsPerPage);
+	const totalPages = Math.ceil(filteredContacts.length / contactsPerPage) || 1;
 
 	const indexOfLastContact = currentPage * contactsPerPage;
 	const indexOfFirstContact = indexOfLastContact - contactsPerPage;
@@ -72,20 +74,12 @@ export const Phonebook = () => {
 		<main>
 			<div className={css.layout}>
 				<div className={css.searchBlock}>
-					<div className={css.searchbox}>
-						<input
-							type='text'
-							placeholder='Search...'
-							value={searchTerm}
-							onChange={handleSearchChange}
-							className={css.input}
-						/>
-						{searchTerm && (
-							<button onClick={clearSearch} className={css.clearButton}>
-								✖
-							</button>
-						)}
-					</div>
+					<Input
+						type='text'
+						placeholder='Search...'
+						value={searchTerm}
+						onChange={handleSearchChange}
+					/>
 				</div>
 			</div>
 			<div className={css.columns}>
@@ -117,25 +111,21 @@ export const Phonebook = () => {
 					<div className={css.textCenter}>There is no such user!!!</div>
 				)}
 			</div>
-			{/* Pagination Controls */}
 			<div className={css.pagination}>
-				<button
-					className={css.pageButton}
+				<Button
+					label='Prev'
 					onClick={() => handlePageChange('prev')}
 					disabled={currentPage === 1}
-				>
-					Previous
-				</button>
+				/>
+
 				<span>
 					Page {currentPage} of {totalPages}
 				</span>
-				<button
-					className={css.pageButton}
+				<Button
+					label='Next'
 					onClick={() => handlePageChange('next')}
 					disabled={currentPage === totalPages}
-				>
-					Next
-				</button>
+				/>
 			</div>
 			<Modal isOpen={isModalOpen} onClose={closeModal}>
 				{modalData && (
