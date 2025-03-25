@@ -6,6 +6,7 @@ import RadioButtons from './radiobuttons/radiobuttons';
 import { allInputs } from './input/input-data';
 import { textData, currency, yesNoOptions } from './form-data';
 import Button from '../../shared/buttons/button';
+import SendIcon from '@mui/icons-material/Send'
 
 export const Form = () => {
 	const handleCurrencyChange = (value) => {
@@ -45,9 +46,9 @@ export const Form = () => {
 					</div>
 				))}
 				<div className={css.navigation}>
-					<Button label='Back' />
-					<Button label='Next' />
-					<Button label='Submit' />
+					<Button type="button" label='Back' />
+					<Button type="button" label='Next' />
+					<Button type="button" label='Send' sendIcon={<SendIcon fontSize="small"/>} />
 				</div>
 			</form>
 		</main>
