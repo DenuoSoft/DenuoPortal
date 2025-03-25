@@ -1,29 +1,27 @@
-import { useState } from 'react';
-import { currency } from '../form-data'
+/* eslint-disable react/prop-types */
+import RadioButton from "./radiobutton";
+import { useState } from "react";
 import css from './radiobuttons.module.scss'
 
-const RadioButtons = () => {
- 
-  const [selectedCurrency, setSelectedCurrency] = useState(currency[0]);
-  const handleCurrencyChange = (event) => {
-    setSelectedCurrency(event.target.value);
+const RadioButtons = ({ title, options, onChange }) => {
+  const [selectedValue, setSelectedValue] = useState('');
+
+  const handleRadioChange = (event) => {
+    setSelectedValue(event.target.value);
+    onChange(event.target.value);
   };
 
   return (
     <div className={css.radioBox}>
-      <span className={ css.radioLabel}>Currency</span>
-      {currency.map((curr) => (
-        <label key={curr} className="flex items-center mb-2">
-          <input
-            type="radio"
-            value={curr}
-            checked={selectedCurrency === curr}
-            onChange={handleCurrencyChange}
-            className="mr-2"
-            aria-labelledby={`${curr}-label`}
-          />
-          <span id={`${curr}-label`} className="text-lg">{curr}</span>
-        </label>
+      <span className={ css.radioLabel}>{title}</span>
+      {options.map((option) => (
+        <RadioButton
+          key={option.value}
+          label={option.label}
+          value={option.value}
+          checked={selectedValue === option.value}
+          onChange={handleRadioChange}
+        />
       ))}
     </div>
   );

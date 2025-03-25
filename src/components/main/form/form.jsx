@@ -4,38 +4,52 @@ import { userData } from '../../../data/userData';
 import { clientData } from '../../../data/clientData';
 import RadioButtons from './radiobuttons/radiobuttons';
 import { allInputs } from './input/input-data';
-import { textData } from './form-data';
+import { textData, currency, yesNoOptions } from './form-data';
+import Button from '../../shared/buttons/button';
 
 export const Form = () => {
+	const handleCurrencyChange = (value) => {
+		console.log('Selected Currency:', value);
+	};
+
+	const handleYesNoChange = (value) => {
+		console.log('Selected Option:', value);
+	};
 	return (
 		<main>
 			<form className={css.form}>
 				<AutocompleteInput placeholder='Partner' data={userData} />
 				<AutocompleteInput placeholder='Fee Earner' data={userData} />
 				<AutocompleteInput placeholder='Client' data={clientData} />
-				<RadioButtons />
+				<RadioButtons
+					title='Currency'
+					options={currency}
+					onChange={handleCurrencyChange}
+				/>
 				{allInputs.map(({ id, label }) => (
 					<AutocompleteInput key={id} placeholder={label} />
 				))}
-
+				
 				{textData.map(({ id, title, questions }) => (
-					<div key={id} className={css.questions}>
+					<div key={id} className={css.questionsBox}>
 						<h2>{title}</h2>
-						<span>{questions.one}</span>
-						<span>{questions.two}</span>
-						<span>{questions.three}</span>
-						<span>{questions.four}</span>
-						<span>{questions.five}</span>
-						<span>{questions.six}</span>
+						{Object.keys(questions).map((key, index) => (
+							<div key={index} className={css.radio }>
+								<span className={ css.questions}>{questions[key]}</span>
+								<RadioButtons
+									options={yesNoOptions}
+									onChange={handleYesNoChange}
+								/>
+							</div>
+						))}
 					</div>
 				))}
-
 				<div className={css.navigation}>
-					<button className={css.prev}>Prev</button>
+					<Button label='Back'/>
 
-					<button className={css.next}>Next</button>
+					<Button label='Next' />
 
-					<button className={css.next}>Submit</button>
+					<Button label='Submit' />
 				</div>
 			</form>
 		</main>

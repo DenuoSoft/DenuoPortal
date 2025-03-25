@@ -4,9 +4,26 @@
     align-items: center;
     gap: 15px;
 }
-.questions {
+.questionsBox{
+    width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}    
+    
+}
+.radio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.navigation {
+    margin-top: 30px;
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+    align-items: center;
+}
+

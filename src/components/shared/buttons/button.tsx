@@ -1,9 +1,7 @@
-import css from "./button.module.scss";
+import React from 'react';
+import css from './button.module.scss';
 
-export const Button = () => {
-    return (
-        <div className={css.button}>
-            Button
-        </div>
-    )
-}
+const Button = ({ label }) => {
+	return <div className={css.button}>{label}</div>;
+};
+export default Button;
