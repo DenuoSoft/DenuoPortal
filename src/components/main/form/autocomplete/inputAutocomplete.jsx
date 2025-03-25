@@ -63,6 +63,7 @@ const AutocompleteInput = ({ placeholder, data}) => {
           className={css.input}
           placeholder={placeholder}
         />
+        
         {inputValue && (
           <button 
           onClick={clearInput}

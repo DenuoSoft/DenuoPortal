@@ -6,6 +6,10 @@ export const label = [
     {id: 3, name: 'Client'}
 ]
 export const currency = ['USD', 'EUR', 'RUR', 'AED']
+export const yesNoOptions = [
+    { label: 'YES', value: 'YES' },
+    { label: 'NO', value: 'NO' }
+]
 export const dnentity = ['Moscow', 'St. Petersburg', 'Dubai', 'Tbilisi', 'Tashkent']
 
 export const Data = {

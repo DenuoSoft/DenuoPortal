@@ -1,15 +1,15 @@
 .searchbox {
   position: relative;
   display: flex;
-  height: 50px;
-  width: 350px;
 }
 .searchbox .input {
   display: flex;
   flex-grow: 1;
-  padding: 10px;
+  height: 50px;
+  width: 350px;
   border: none;
   outline: none;
+  padding: 10px;
   min-width: 0;
   background-color: #f0f0f0;
   border-left: #f0f0f0;
@@ -22,8 +22,10 @@
 }
 .searchbox .input:focus {
   border-bottom: 1px solid blue;
+  box-shadow: none;
 }
-.searchbox .clearButton {
+
+.clearButton {
   position: absolute;
   background: none;
   border: none;
@@ -34,7 +36,7 @@
   font-size: 16px;
   color: #999;
 }
-.searchbox .clearButton:hover {
+.clearButton:hover {
   color: black;
 }
 
