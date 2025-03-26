@@ -5,7 +5,7 @@ import { Main } from './components/main/main';
 import { HR } from './components/main/hr/hr';
 import { Marketing } from './components/main/marketing/marketing';
 import { IT } from './components/main/it/it';
-import { Form } from './components/main/form/form';
+import { Forms } from './components/main/forms/forms';
 import { Phonebook } from './components/main/phonebook/phonebook';
 import { Routes, Route } from 'react-router-dom';
 
@@ -18,7 +18,7 @@ export const App = () => {
 				<Route path='/hr' element={<HR />} />
 				<Route path='/marketing' element={<Marketing />} />
 				<Route path='/it' element={<IT />} />
-				<Route path='/form' element={<Form />} />
+				<Route path='/form' element={<Forms />} />
 				<Route path='/phonebook' element={<Phonebook />} />
 			</Routes>
 			<Footer />

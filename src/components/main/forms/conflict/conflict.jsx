@@ -1,19 +1,19 @@
-import css from './form.module.scss';
-import AutocompleteInput from './autocomplete/inputAutocomplete';
-import { userData } from '../../../data/userData';
-import { clientData } from '../../../data/clientData';
-import RadioButtons from './radiobuttons/radiobuttons';
+import css from './conflict.module.scss';
+import AutocompleteInput from '../components/autocomplete/inputAutocomplete';
+import { userData } from '../../../../data/userData';
+import { clientData } from '../../../../data/clientData';
+import RadioButtons from '../components/radiobuttons/radiobuttons';
 import {
 	textData,
 	currency,
 	yesNoOptions,
 	allInputs,
 	dnentity,
-} from './form-data';
-import Button from '../../shared/buttons/button';
+} from './conflict-data';
+import Button from '../../../shared/buttons/button';
 import SendIcon from '@mui/icons-material/Send';
-import Input from './input/input';
-import { TextArea } from './textarea/textarea';
+import Input from '../components/input/input';
+import { TextArea } from '../components/textarea/textarea';
 
 export const Form = () => {
 	const handleCurrencyChange = (value) => {
@@ -44,15 +44,9 @@ export const Form = () => {
 					Is this matter confidential/sensitive?
 				</span>
 				<RadioButtons options={yesNoOptions} onChange={handleYesNoChange} />
-				<Input
-					placeholder='Reason'
-					
-				/>
+				<Input placeholder='Reason' />
 				<span className={css.title}>Client intake criteria</span>
-				<Input
-					placeholder='Client sector'
-					
-				/>
+				<Input placeholder='Client sector' />
 				{textData.map(({ id, title, questions }) => (
 					<div key={id} className={css.questionsBox}>
 						<span className={css.title}>{title}</span>
@@ -67,8 +61,8 @@ export const Form = () => {
 						))}
 					</div>
 				))}
-				
-				<TextArea placeholder='Any other important information on the client or matter...'/>
+
+				<TextArea placeholder='Any other important information on the client or matter...' />
 			</form>
 			<div className={css.navigation}>
 				<Button type='button' label='Back' />

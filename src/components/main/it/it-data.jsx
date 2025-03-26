@@ -63,5 +63,5 @@ export const tabs = [
 								consequatur sequi ratione facilis cupiditate.
 							</span>
     </div>,
-    Docs: <div>Docs Content</div>,
+    Docs: <div>Docs</div>,
   };

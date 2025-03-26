@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { userData } from '../../../data/userData';
 import { Modal } from '../..//modal/modal.jsx';
 import Button from '../../shared/buttons/button';
-import Input from '../form/input/input.jsx';
+import Input from '../forms/components/input/input.jsx';
 
 export const Phonebook = () => {
 	const [searchTerm, setSearchTerm] = useState('');

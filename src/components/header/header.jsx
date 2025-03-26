@@ -42,7 +42,7 @@ export const Header = () => {
               IT
             </HeaderLink>
             <HeaderLink to="/form" style={getActive}> 
-              Form
+              Forms
             </HeaderLink>
             <HeaderLink to="/phonebook" style={getActive}>
               Phone Book
