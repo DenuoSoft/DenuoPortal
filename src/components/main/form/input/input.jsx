@@ -4,8 +4,8 @@ import css from './input.module.scss';
 //import { useState } from 'react';
 
 const Input = ({ placeholder, onChange, value, onKeyDown }) => {
-  //const [searchTerm, setSearchTerm] = useState('');
-  
+	//const [searchTerm, setSearchTerm] = useState('');
+
 	const clearInput = () => {
 		onChange({ target: { value: '' } });
 	};
@@ -17,15 +17,14 @@ const Input = ({ placeholder, onChange, value, onKeyDown }) => {
 				className={css.input}
 				value={value}
 				onChange={onChange}
-        placeholder={placeholder}
-        onKeyDown={onKeyDown}
-        
-      />
-      {value && (
-							<button onClick={clearInput} className={css.clearButton}>
-								✖
-							</button>
-						)}
+				placeholder={placeholder}
+				onKeyDown={onKeyDown}
+			/>
+			{value && (
+				<button onClick={clearInput} className={css.clearButton}>
+					✖
+				</button>
+			)}
 		</div>
 	);
 };

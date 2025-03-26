@@ -21,7 +21,7 @@
 		color: #999;
 	}
 	.input:focus {
-		border-bottom: 1px solid blue;
+		border-bottom: 2px solid rgb(98, 121, 167);
 		box-shadow: none;
 	}
 	
@@ -37,6 +37,6 @@
     font-size: 16px;
     color: #999;
     &:hover {
-        color: black;
+        color: rgb(98, 121, 167);
     }
 }

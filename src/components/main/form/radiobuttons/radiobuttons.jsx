@@ -21,6 +21,7 @@ const RadioButtons = ({ title, options, onChange }) => {
           value={option.value}
           checked={selectedValue === option.value}
           onChange={handleRadioChange}
+          
         />
       ))}
     </div>

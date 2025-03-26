@@ -11,16 +11,16 @@ export const currency = [
 	{ label: 'AED', value: 'aed' },
 	{ label: 'EUR', value: 'eur' },
 ];
- export const yesNoOptions = [
+export const yesNoOptions = [
 	{ label: 'Yes', value: 'yes' },
 	{ label: 'No', value: 'no' },
-]; 
+];
 export const dnentity = [
-	'Moscow',
-	'St. Petersburg',
-	'Dubai',
-	'Tbilisi',
-	'Tashkent',
+	{ id: 0, name: 'Moscow' },
+	{ id: 1, name: 'St. Petersburg' },
+	{ id: 2, name: 'Dubai' },
+	{ id: 3, name: 'Tbilisi' },
+	{ id: 4, name: 'Tashkent' },
 ];
 export const allInputs = [
 	{ id: 0, label: 'Client UBOs:' },
@@ -60,8 +60,8 @@ export const textData = [
 			four: 'Is the client or matter likely to generate significant adverse publicity for the firm?',
 			five: 'Is the client or matter likely to generate significant adverse publicity for the solicitors?',
 			six: 'Does this matter involve acting for a potential bidder or financing party in a competitive situation, such as an auction or tender process where there may be more than one party bidding for the same asset or objective?',
-        },
-       /*  yesNoOptions: [
+		},
+		/*  yesNoOptions: [
 			{ label: 'Yes', value: 'yes' },
 			{ label: 'No', value: 'no' },
 		], */

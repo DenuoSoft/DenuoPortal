@@ -21,7 +21,7 @@
   color: #999;
 }
 .inputbox .input:focus {
-  border-bottom: 1px solid blue;
+  border-bottom: 2px solid rgb(98, 121, 167);
   box-shadow: none;
 }
 
@@ -37,5 +37,5 @@
   color: #999;
 }
 .clearButton:hover {
-  color: black;
+  color: rgb(98, 121, 167);
 }/*# sourceMappingURL=input.module.css.map */
