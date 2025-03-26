@@ -21,8 +21,12 @@
 
 .tabContent {
   margin-top: 30px;
-  margin-left: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   width: 1000px;
+  margin-left: 300px;
 }
 
 .activeTab {

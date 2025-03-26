@@ -1,3 +1,4 @@
+import css from './main.module.scss'
 export const tabs = [
     { name: 'News' },
     { name: 'Events' },
@@ -5,7 +6,7 @@ export const tabs = [
   ];
   
   export const content = {
-    News: <div>
+	  News: <div className={ css.news}>
       <h1>News 1</h1>
 							<span>
 								Lorem ipsum dolor, sit amet consectetur adipisicing elit. In
@@ -34,7 +35,7 @@ export const tabs = [
 								consequatur sequi ratione facilis cupiditate.
 							</span>
     </div>,
-    Events: <div>
+    Events: <div className={ css.events}>
       <h1>Event 1</h1>
 							<span>
 								Lorem ipsum dolor, sit amet consectetur adipisicing elit. In
@@ -63,5 +64,5 @@ export const tabs = [
 								consequatur sequi ratione facilis cupiditate.
 							</span>
     </div>,
-    Other: <div>Docs Content</div>,
+    Other: <div className={ css.other}>Docs Content</div>,
   };
