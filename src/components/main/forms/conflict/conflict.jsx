@@ -44,9 +44,9 @@ export const Form = () => {
 					Is this matter confidential/sensitive?
 				</span>
 				<RadioButtons options={yesNoOptions} onChange={handleYesNoChange} />
-				<Input placeholder='Reason' />
+				<Input placeholder='Reason:' />
 				<span className={css.title}>Client intake criteria</span>
-				<Input placeholder='Client sector' />
+				<Input placeholder='Client sector:' />
 				{textData.map(({ id, title, questions }) => (
 					<div key={id} className={css.questionsBox}>
 						<span className={css.title}>{title}</span>
