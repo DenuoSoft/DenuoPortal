@@ -1,0 +1,23 @@
+.textarea {
+  display: flex;
+  flex-grow: 1;
+  height: 100px;
+  width: 350px;
+  border: none;
+  outline: none;
+  padding: 10px;
+  min-width: 0;
+  background-color: #f0f0f0;
+  border-left: #f0f0f0;
+  border-top: #f0f0f0;
+  border-right: #f0f0f0;
+  border-bottom: 1px solid #aaa8a8;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+  font-size: 16px;
+  color: #999;
+}
+
+.textarea:focus {
+  border-bottom: 2px solid rgb(98, 121, 167);
+  box-shadow: none;
+}/*# sourceMappingURL=textarea.module.css.map */
