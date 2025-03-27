@@ -51,8 +51,13 @@ ul {
   cursor: pointer;
 }
 
+.error {
+  list-style: none;
+  color: rgb(237, 68, 68);
+}
+
 .list:hover {
-  color: blue;
+  color: rgb(98, 121, 167);
 }
 
 .listbox {

@@ -12,6 +12,7 @@ import {
 } from './conflict-data';
 import Button from '../../../shared/buttons/button';
 import SendIcon from '@mui/icons-material/Send';
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import Input from '../components/input/input';
 import { TextArea } from '../components/textarea/textarea';
 
@@ -23,6 +24,14 @@ export const Form = () => {
 	const handleYesNoChange = (value) => {
 		console.log('Selected Option:', value);
 	};
+
+	const scrollToTop = () => {
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth',
+		});
+	};
+
 	return (
 		<main>
 			<form className={css.form}>
@@ -65,8 +74,13 @@ export const Form = () => {
 				<TextArea placeholder='Any other important information on the client or matter...' />
 			</form>
 			<div className={css.navigation}>
-				<Button type='button' label='Back' />
-				<Button type='button' label='Next' />
+				<Button
+					type='button'
+					label='Go Up'
+					arrowUpIcon={<ArrowUpwardIcon fontSize='small' />}
+					onClick={scrollToTop}
+				/>
+
 				<Button
 					type='button'
 					label='Send'

@@ -1,5 +1,3 @@
-import { title } from 'process';
-
 export const label = [
 	{ id: 1, name: 'Partner' },
 	{ id: 2, name: 'Fee earner with conduct' },
@@ -44,10 +42,7 @@ export const textData = [
 			one: 'Does this client place any restrictions on work the firm may perform for other clients (eg, restricting work, or certain type of work, for specified competitors, any other restrictions)?',
 			two: 'Is this client or its beneficiary a politically exposed person?',
 		},
-		/* yesNoOptions: [
-			{ label: 'Yes', value: 'yes' },
-			{ label: 'No', value: 'no' },
-		], */
+
 	},
 	{
 		id: 2,
@@ -61,9 +56,6 @@ export const textData = [
 			five: 'Is the client or matter likely to generate significant adverse publicity for the solicitors?',
 			six: 'Does this matter involve acting for a potential bidder or financing party in a competitive situation, such as an auction or tender process where there may be more than one party bidding for the same asset or objective?',
 		},
-		/*  yesNoOptions: [
-			{ label: 'Yes', value: 'yes' },
-			{ label: 'No', value: 'no' },
-		], */
+
 	},
 ];

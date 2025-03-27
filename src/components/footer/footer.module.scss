@@ -1,14 +1,17 @@
 .footer {
-    height: var(--footer-height);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #28282d;
-    background-color: #c8d2e6;
-    flex-shrink: 0;
-    padding-left: 12px;
-    span {
-      padding-right: 8px;
-    } 
-  }
-  
+	height: var(--footer-height);
+	display: flex;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	justify-content: center;
+	align-items: center;
+	color: #28282d;
+	background-color: #c8d2e6;
+	flex-shrink: 0;
+	padding-left: 12px;
+	span {
+		padding-right: 8px;
+	}
+}

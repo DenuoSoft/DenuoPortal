@@ -66,19 +66,23 @@ const AutocompleteInput = ({ placeholder, data}) => {
       
       {showSuggestions && inputValue && (
         <div className={css.listbox}>
-            <ul>
-          {filteredSuggestions.map((data, index) => (
-            <li
-              className={ css.list}
-              key={data.id}
-              onClick={() => handleSuggestionClick(data)}
-              onMouseEnter={() => setActiveSuggestionIndex(index)}
-            >
-              {data.name} 
-            </li>
-          ))}
+        <ul>
+          {filteredSuggestions.length > 0 ? (
+            filteredSuggestions.map((data, index) => (
+              <li
+                className={css.list}
+                key={data.id}
+                onClick={() => handleSuggestionClick(data)}
+                onMouseEnter={() => setActiveSuggestionIndex(index)}
+              >
+                {data.name}
+              </li>
+            ))
+          ) : (
+            <li className={css.error}>{inputValue} not found</li>
+          )}
         </ul>
-        </div>
+      </div>
         
       )}
     </div>
