@@ -21,13 +21,13 @@ export const dnentity = [
 	{ id: 4, name: 'Tashkent' },
 ];
 export const allInputs = [
-	{ id: 0, label: 'Client UBOs:' },
-	{ id: 1, label: 'Client address:' },
-	{ id: 2, label: 'Adverse party:' },
-	{ id: 3, label: 'Adverse party UBOs:' },
-	{ id: 4, label: 'Other party:' },
-	{ id: 5, label: 'Matter name:' },
-	{ id: 6, label: 'Matter details:' },
+	{ id: 0, label: 'Client UBOs:', name:'Client UBOs:'},
+	{ id: 1, label: 'Client address:', name:'Client address:'},
+	{ id: 2, label: 'Adverse party:', name:'Adverse party:'},
+	{ id: 3, label: 'Adverse party UBOs:', name:'Adverse party UBOs:'},
+	{ id: 4, label: 'Other party:', name: 'Other party:'},
+	{ id: 5, label: 'Matter name:', name: 'Matter name:'},
+	{ id: 6, label: 'Matter details:', name:'Matter details:'},
 ];
 export const Data = {
 	label: label,

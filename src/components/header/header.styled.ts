@@ -32,8 +32,7 @@ export const HeaderLink = styled(NavLink)<{ isActive: boolean }>`
 	text-decoration: none;
 	font-size: 22px;
 	padding-left: 25px;
-
-	&:hover {
+    &:hover, &:focus {
 		color: #d7ff23;
 	}
 `;

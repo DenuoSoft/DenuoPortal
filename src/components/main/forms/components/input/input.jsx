@@ -3,11 +3,11 @@
 import css from './input.module.scss';
 //import { useState } from 'react';
 
-const Input = ({ placeholder, onChange, value, onKeyDown }) => {
+const Input = ({ placeholder, onChange, value, onKeyDown, name }) => {
 	//const [searchTerm, setSearchTerm] = useState('');
 
 	const clearInput = () => {
-		onChange({ target: { value: '' } });
+		onChange({ target: { value: '', name: name } });
 	};
 
 	return (
@@ -19,6 +19,7 @@ const Input = ({ placeholder, onChange, value, onKeyDown }) => {
 				onChange={onChange}
 				placeholder={placeholder}
 				onKeyDown={onKeyDown}
+				name={name }
 			/>
 			{value && (
 				<button onClick={clearInput} className={css.clearButton}>
