@@ -19,7 +19,8 @@ const Input = ({ placeholder, onChange, value, onKeyDown, name }) => {
 				onChange={onChange}
 				placeholder={placeholder}
 				onKeyDown={onKeyDown}
-				name={name }
+				name={name}
+				
 			/>
 			{value && (
 				<button onClick={clearInput} className={css.clearButton}>

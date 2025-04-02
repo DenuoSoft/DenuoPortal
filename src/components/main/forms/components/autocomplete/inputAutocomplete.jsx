@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState } from 'react';
 import Input from '../input/input';
 import PropTypes from 'prop-types';
 import css from './inputAutocomplete.module.scss';
@@ -9,7 +9,7 @@ const AutocompleteInput = ({ placeholder, data, onChange, name }) => {
 	const [filteredSuggestions, setFilteredSuggestions] = useState([]);
 	const [activeSuggestionIndex, setActiveSuggestionIndex] = useState(-1);
 	const [showSuggestions, setShowSuggestions] = useState(false);
-	const inputRef = useRef(null);
+	/* const inputRef = useRef(null);
 	useEffect(() => {
 		const handleClickOutside = (event) => {
 			if (inputRef.current && !inputRef.current.contains(event.target)) {
@@ -21,7 +21,7 @@ const AutocompleteInput = ({ placeholder, data, onChange, name }) => {
 		return () => {
 			document.removeEventListener('mousedown', handleClickOutside);
 		};
-	}, []);
+	}, []); */
 	const handleInputChange = (e) => {
 		const value = e.target.value;
 		setInputValue(value);

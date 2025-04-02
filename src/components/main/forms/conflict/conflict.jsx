@@ -11,23 +11,23 @@ import {
 	dnentity,
 } from './conflict-data';
 import Button from '../../../shared/buttons/button';
-//import SendIcon from '@mui/icons-material/Send';
+import SendIcon from '@mui/icons-material/Send';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import Input from '../components/input/input';
 import { TextArea } from '../components/textarea/textarea';
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect} from 'react';
 
 const initialFormData = {
-    partner: '',
-    feeEarner: '',
-    dnentity: '',
-    client: '',
-    currency: '',
-    isContentious: '',
-    isConfidential: '',
-    reason: '',
-    clientSector: '',
-    otherInfo: '',
+	partner: '',
+	feeEarner: '',
+	dnentity: '',
+	client: '',
+	currency: '',
+	isContentious: '',
+	isConfidential: '',
+	reason: '',
+	clientSector: '',
+	otherInfo: '',
 };
 
 export const Form = () => {
@@ -36,10 +36,9 @@ export const Form = () => {
 	const [submissionResult, setSubmissionResult] = useState(null);
 	const timerRef = useRef(null);
 	const [buttonLabel, setButtonLabel] = useState('Send');
-	
-	
+
 	const resetForm = () => {
-        setFormData(initialFormData);
+            setFormData(initialFormData);
     };
 
 	const handleSubmit = async (e) => {
@@ -47,6 +46,25 @@ export const Form = () => {
 		setIsSubmitting(true);
 		setSubmissionResult(null);
 		setButtonLabel('Sending...');
+		const questionKeys = textData.reduce((acc, { questions }) => {
+			Object.keys(questions).forEach((key) => acc.add(key));
+			return acc;
+		}, new Set());
+
+		const additionalQuestions = textData.map(({ name, questions }) => {
+			const questionValues = Object.keys(questions).reduce((acc, key) => {
+				acc[key] = formData[key];
+				return acc;
+			}, {});
+
+			return { name: name, ...questionValues };
+		});
+		const filteredFormData = Object.keys(formData).reduce((acc, key) => {
+			if (!questionKeys.has(key)) {
+				acc[key] = formData[key];
+			}
+			return acc;
+		}, {});
 		timerRef.current = setTimeout(async () => {
 			try {
 				const response = await fetch('http://localhost:3000/conflict', {
@@ -54,22 +72,22 @@ export const Form = () => {
 					headers: {
 						'Content-Type': 'application/json',
 					},
-					body: JSON.stringify(formData),
+					body: JSON.stringify({ filteredFormData, additionalQuestions }),
 				});
 				const result = await response.json();
 				if (response.ok) {
 					setSubmissionResult({
 						type: 'success',
-						message: 'Form submitted successfully!',
+						message: 'Form sent successfully!',
 					});
-					
-					
+
 					resetForm();
 				} else {
 					setSubmissionResult({
 						type: 'error',
-						message: `Submission failed: ${result.message || response.statusText
-							}`,
+						message: `Submission failed: ${
+							result.message || response.statusText
+						}`,
 					});
 				}
 			} catch (error) {
@@ -82,15 +100,14 @@ export const Form = () => {
 				setButtonLabel('Send');
 			}
 		}, 3000);
-		
 	};
 	useEffect(() => {
-        return () => {
-            if (timerRef.current) {
-                clearTimeout(timerRef.current);
-            }
-        };
-    }, []);
+		return () => {
+			if (timerRef.current) {
+				clearTimeout(timerRef.current);
+			}
+		};
+	}, []);
 	const handleCurrencyChange = (value) => {
 		setFormData((prevState) => ({
 			...prevState,
@@ -106,10 +123,10 @@ export const Form = () => {
 	};
 	const handleInputChange = (event) => {
 		const { name, value } = event.target;
-		setFormData({
-			...formData,
-			[name]: value,
-		});
+		setFormData((prevFormData) => ({ 
+            ...prevFormData,
+            [name]: value,
+        }));
 	};
 	const scrollToTop = () => {
 		window.scrollTo({
@@ -117,11 +134,11 @@ export const Form = () => {
 			behavior: 'smooth',
 		});
 	};
-	
+
 	return (
 		<main>
 			<div className={css.formLayout}>
-				<form className={css.form} onSubmit={handleSubmit}>
+				<form className={css.form} noValidate autoComplete='off'>
 					<AutocompleteInput
 						placeholder='Partner'
 						data={userData}
@@ -167,6 +184,7 @@ export const Form = () => {
 							placeholder={label}
 							name={name}
 							onChange={handleInputChange}
+							value={formData[name] || ''}
 						/>
 					))}
 					<span className={css.questions}>Is this matter contentious?</span>
@@ -185,16 +203,18 @@ export const Form = () => {
 						placeholder='Reason:'
 						name='reason'
 						onChange={handleInputChange}
+						value={formData.reason || ''}
 					/>
 					<span className={css.title}>Client intake criteria</span>
 					<Input
 						placeholder='Client sector:'
 						name='clientSector'
 						onChange={handleInputChange}
+						value={formData.clientSector || ''}
 					/>
-					{textData.map(({ id, title, questions }) => (
+					{textData.map(({ id, name, questions }) => (
 						<div key={id} className={css.questionsBox}>
-							<span className={css.title}>{title}</span>
+							<span className={css.title}>{name}</span>
 							{Object.keys(questions).map((key, index) => (
 								<div key={index} className={css.radio}>
 									<span className={css.questions}>{questions[key]}</span>
@@ -211,34 +231,37 @@ export const Form = () => {
 						placeholder='Any other important information on the client or matter...'
 						name='otherInfo'
 						onChange={handleInputChange}
+						value={formData.otherInfo || ''}
 					/>
 				</form>
-				<div className={css.navigation}>
-					<Button
-						type='button'
-						label='Go Up'
-						arrowUpIcon={<ArrowUpwardIcon fontSize='small' />}
-						onClick={scrollToTop}
-					/>
+				<div className={css.bottomBox}>
+					<div className={css.navigation}>
+						<Button
+							type='button'
+							label='Go Up'
+							arrowUpIcon={<ArrowUpwardIcon fontSize='small' />}
+							onClick={scrollToTop}
+						/>
 
-					<Button
-						type='submit'
-						label={buttonLabel}
-						//label={isSubmitting ? 'Sending...' : 'Send'}
-						//sendIcon={<SendIcon fontSize='small' />}
-						disabled={isSubmitting}
-						onClick={handleSubmit}
-					/>
-				</div>
-				{submissionResult && (
-					<div
-						className={
-							submissionResult.type === 'success' ? css.success : css.error
-						}
-					>
-						{submissionResult.message}
+						<Button
+							type='button'
+							label={buttonLabel}
+							//label={isSubmitting ? 'Sending...' : 'Send'}
+							sendIcon={<SendIcon fontSize='small' />}
+							disabled={isSubmitting}
+							onClick={handleSubmit}
+						/>
 					</div>
-				)}
+					{submissionResult && (
+						<div
+							className={
+								submissionResult.type === 'success' ? css.success : css.error
+							}
+						>
+							{submissionResult.message}
+						</div>
+					)}
+				</div>
 			</div>
 		</main>
 	);

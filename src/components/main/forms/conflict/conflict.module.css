@@ -26,13 +26,21 @@
   margin-top: 20px;
 }
 
+.bottomBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
 .navigation {
   margin-top: 30px;
   display: flex;
   gap: 100px;
   justify-content: center;
   align-items: center;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 .title {
@@ -43,4 +51,12 @@
   font-size: 16px;
   color: #767676;
   line-height: 1.3;
+}
+
+.success {
+  color: green;
+}
+
+.error {
+  color: red;
 }/*# sourceMappingURL=conflict.module.css.map */
