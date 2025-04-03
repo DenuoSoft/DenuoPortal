@@ -1,5 +1,5 @@
 import css from './conflict.module.scss';
-import AutocompleteInput from '../components/autocomplete/inputAutocomplete';
+import AutocompleteInput from '../components/autocomplete/autocomplete';
 import { userData } from '../../../../data/userData';
 import { clientData } from '../../../../data/clientData';
 import RadioButtons from '../components/radiobuttons/radiobuttons';
@@ -38,7 +38,8 @@ export const Form = () => {
 	const [buttonLabel, setButtonLabel] = useState('Send');
 
 	const resetForm = () => {
-            setFormData(initialFormData);
+		setFormData(initialFormData);
+		
     };
 
 	const handleSubmit = async (e) => {
@@ -221,6 +222,8 @@ export const Form = () => {
 									<RadioButtons
 										options={yesNoOptions}
 										onChange={(value) => handleYesNoChange(key, value)}
+										name={key}
+										value={formData[key]}
 									/>
 								</div>
 							))}
@@ -246,7 +249,6 @@ export const Form = () => {
 						<Button
 							type='button'
 							label={buttonLabel}
-							//label={isSubmitting ? 'Sending...' : 'Send'}
 							sendIcon={<SendIcon fontSize='small' />}
 							disabled={isSubmitting}
 							onClick={handleSubmit}

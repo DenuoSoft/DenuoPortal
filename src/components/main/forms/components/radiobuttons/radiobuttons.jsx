@@ -3,8 +3,8 @@ import RadioButton from "./radiobutton";
 import { useState } from "react";
 import css from './radiobuttons.module.scss'
 
-const RadioButtons = ({ title, options, onChange }) => {
-  const [selectedValue, setSelectedValue] = useState('');
+const RadioButtons = ({ title, options, onChange, value, name }) => {
+  const [selectedValue, setSelectedValue] = useState(value || '');
 
   const handleRadioChange = (event) => {
     setSelectedValue(event.target.value);
@@ -21,7 +21,7 @@ const RadioButtons = ({ title, options, onChange }) => {
           value={option.value}
           checked={selectedValue === option.value}
           onChange={handleRadioChange}
-          
+          name={name}
         />
       ))}
     </div>

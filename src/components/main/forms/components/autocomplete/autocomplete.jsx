@@ -1,11 +1,11 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Input from '../input/input';
 import PropTypes from 'prop-types';
-import css from './inputAutocomplete.module.scss';
+import css from './autocomplete.module.scss';
 //import { userData } from '../../../../data/userData';
 
-const AutocompleteInput = ({ placeholder, data, onChange, name }) => {
-	const [inputValue, setInputValue] = useState('');
+const AutocompleteInput = ({ placeholder, data, onChange, name, value }) => {
+	const [inputValue, setInputValue] = useState(value || '');
 	const [filteredSuggestions, setFilteredSuggestions] = useState([]);
 	const [activeSuggestionIndex, setActiveSuggestionIndex] = useState(-1);
 	const [showSuggestions, setShowSuggestions] = useState(false);
@@ -22,6 +22,10 @@ const AutocompleteInput = ({ placeholder, data, onChange, name }) => {
 			document.removeEventListener('mousedown', handleClickOutside);
 		};
 	}, []); */
+	useEffect(() => {
+        setInputValue(value || ''); // Correctly update inputValue when value prop changes
+	}, [value]);
+	
 	const handleInputChange = (e) => {
 		const value = e.target.value;
 		setInputValue(value);
@@ -36,7 +40,7 @@ const AutocompleteInput = ({ placeholder, data, onChange, name }) => {
 			setShowSuggestions(false);
 			setFilteredSuggestions([]);
 		}
-		onChange(value);
+		onChange(name, value);
 	};
 
 	const handleKeyDown = (e) => {
@@ -109,6 +113,7 @@ AutocompleteInput.propTypes = {
 	data: PropTypes.array,
 	onChange: PropTypes.func.isRequired,
 	name: PropTypes.string.isRequired,
+	value: PropTypes.string.isRequired,
 };
 
 export default AutocompleteInput;

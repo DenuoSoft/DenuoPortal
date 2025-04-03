@@ -1,5 +1,118 @@
 {
   "conflict": [
-    
+    {
+      "id": "f5de",
+      "filteredFormData": {
+        "partner": "Sosedkin Denis",
+        "feeEarner": "Sergey Vasiliev",
+        "dnentity": "St. Petersburg",
+        "client": "JetBrains DMCC",
+        "currency": "usd",
+        "isContentious": "yes",
+        "isConfidential": "yes",
+        "reason": "needed",
+        "clientSector": "machines",
+        "otherInfo": "всяко разно",
+        "Client UBOs:": "client ubo",
+        "Client address:": "address",
+        "Adverse party:": "party",
+        "Adverse party UBOs:": "party ubos",
+        "Other party:": "other",
+        "Matter name:": "tumodo",
+        "Matter details:": "details"
+      },
+      "additionalQuestions": [
+        {
+          "name": "Non-financial client intake criteria",
+          "isRestriction": "no",
+          "isPolitically": "no"
+        },
+        {
+          "name": "Matter intake criteria",
+          "anySanctions": "no",
+          "anyConflicts": "no",
+          "anyInvolvements": "no",
+          "sapFirm": "no",
+          "sapSolicitors": "no",
+          "isInvolve": "no"
+        }
+      ]
+    },
+    {
+      "id": "1835",
+      "filteredFormData": {
+        "partner": "Vasutin Ruslan",
+        "feeEarner": "Sosedkin Denis",
+        "dnentity": "Tashkent",
+        "client": "Tumodo Asia Limited",
+        "currency": "rub",
+        "isContentious": "yes",
+        "isConfidential": "yes",
+        "reason": "sdfhsdf",
+        "clientSector": "sdfdsfh",
+        "otherInfo": "dafhdfh",
+        "Client UBOs:": "asff",
+        "Client address:": "dfghdh",
+        "Adverse party:": "sdgdfh",
+        "Adverse party UBOs:": "sdfhh",
+        "Other party:": "sdfhfhs",
+        "Matter name:": "sdfhdfh",
+        "Matter details:": "sdfhdfh"
+      },
+      "additionalQuestions": [
+        {
+          "name": "Non-financial client intake criteria",
+          "isRestriction": "yes",
+          "isPolitically": "no"
+        },
+        {
+          "name": "Matter intake criteria",
+          "anySanctions": "yes",
+          "anyConflicts": "no",
+          "anyInvolvements": "yes",
+          "sapFirm": "no",
+          "sapSolicitors": "yes",
+          "isInvolve": "no"
+        }
+      ]
+    },
+    {
+      "id": "5d3b",
+      "filteredFormData": {
+        "partner": "Sosedkin Denis",
+        "feeEarner": "Sosedkin Denis",
+        "dnentity": "Tashkent",
+        "client": "Tumodo Asia Limited",
+        "currency": "usd",
+        "isContentious": "yes",
+        "isConfidential": "no",
+        "reason": "sdfhds",
+        "clientSector": "sdfhdfh",
+        "otherInfo": "dfhdsfh",
+        "Client UBOs:": "dfhsdfh",
+        "Client address:": "sdfhdhf",
+        "Adverse party:": "sdfhsdh",
+        "Adverse party UBOs:": "sdfhdsfh",
+        "Other party:": "sdfhsdfh",
+        "Matter name:": "sdfhsd",
+        "Matter details:": "sdfhsh"
+      },
+      "additionalQuestions": [
+        {
+          "name": "Non-financial client intake criteria",
+          "isRestriction": "yes",
+          "isPolitically": "no"
+        },
+        {
+          "name": "Matter intake criteria",
+          "anySanctions": "yes",
+          "anyConflicts": "no",
+          "anyInvolvements": "yes",
+          "sapFirm": "no",
+          "sapSolicitors": "yes",
+          "isInvolve": "no"
+        }
+      ]
+    }
   ]
 }

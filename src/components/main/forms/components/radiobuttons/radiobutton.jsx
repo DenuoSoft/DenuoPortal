@@ -1,7 +1,7 @@
 import { css } from "styled-components";
 
 /* eslint-disable react/prop-types */
-const RadioButton = ({ label, value, checked, onChange }) => {
+const RadioButton = ({ label, value, checked, onChange, name }) => {
 	return (
 		<label>
 			<input
@@ -10,6 +10,7 @@ const RadioButton = ({ label, value, checked, onChange }) => {
 				checked={checked}
 				onChange={onChange}
 				className={css.radioInput}
+				name={name}
 			/>
 			{label}
 		</label>
