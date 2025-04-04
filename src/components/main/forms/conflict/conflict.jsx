@@ -3,6 +3,7 @@ import AutocompleteInput from '../components/autocomplete/autocomplete';
 import { userData } from '../../../../data/userData';
 import { clientData } from '../../../../data/clientData';
 import RadioButtons from '../components/radiobuttons/radiobuttons';
+
 import {
 	textData,
 	currency,
@@ -15,7 +16,7 @@ import SendIcon from '@mui/icons-material/Send';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import Input from '../components/input/input';
 import { TextArea } from '../components/textarea/textarea';
-import { useState, useRef, useEffect} from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 const initialFormData = {
 	partner: '',
@@ -40,7 +41,7 @@ export const Form = () => {
 	const resetForm = () => {
 		setFormData(initialFormData);
 		
-    };
+	};
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
@@ -124,10 +125,10 @@ export const Form = () => {
 	};
 	const handleInputChange = (event) => {
 		const { name, value } = event.target;
-		setFormData((prevFormData) => ({ 
-            ...prevFormData,
-            [name]: value,
-        }));
+		setFormData((prevFormData) => ({
+			...prevFormData,
+			[name]: value,
+		}));
 	};
 	const scrollToTop = () => {
 		window.scrollTo({
@@ -147,7 +148,6 @@ export const Form = () => {
 						onChange={(value) =>
 							setFormData((prevState) => ({ ...prevState, partner: value }))
 						}
-						name='partner'
 					/>
 					<AutocompleteInput
 						placeholder='Fee Earner'
@@ -156,7 +156,6 @@ export const Form = () => {
 						onChange={(value) =>
 							setFormData((prevState) => ({ ...prevState, feeEarner: value }))
 						}
-						name='feeEarner'
 					/>
 					<AutocompleteInput
 						placeholder='Denuo legal entity'
@@ -165,19 +164,19 @@ export const Form = () => {
 						onChange={(value) =>
 							setFormData((prevState) => ({ ...prevState, dnentity: value }))
 						}
-						name='dnentity'
 					/>
 					<AutocompleteInput
 						placeholder='Client'
 						data={clientData}
 						value={formData.client}
 						onChange={(value) => setFormData({ ...formData, client: value })}
-						name='client'
 					/>
 					<RadioButtons
 						title='Currency'
 						options={currency}
 						onChange={handleCurrencyChange}
+						name='currency' 
+						value={formData.currency}
 					/>
 					{allInputs.map(({ id, label, name }) => (
 						<Input
@@ -192,6 +191,8 @@ export const Form = () => {
 					<RadioButtons
 						options={yesNoOptions}
 						onChange={(value) => handleYesNoChange('isContentious', value)}
+						name='isContentious'
+						value={formData.isContentious}
 					/>
 					<span className={css.questions}>
 						Is this matter confidential/sensitive?
@@ -199,6 +200,8 @@ export const Form = () => {
 					<RadioButtons
 						options={yesNoOptions}
 						onChange={(value) => handleYesNoChange('isConfidential', value)}
+						name='isConfidential' 
+						value={formData.isConfidential} 
 					/>
 					<Input
 						placeholder='Reason:'

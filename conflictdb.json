@@ -113,6 +113,224 @@
           "isInvolve": "no"
         }
       ]
+    },
+    {
+      "id": "adfe",
+      "filteredFormData": {
+        "partner": "Sosedkin Denis",
+        "feeEarner": "",
+        "dnentity": "",
+        "client": "",
+        "currency": "",
+        "isContentious": "",
+        "isConfidential": "",
+        "reason": "",
+        "clientSector": "",
+        "otherInfo": ""
+      },
+      "additionalQuestions": [
+        {
+          "name": "Non-financial client intake criteria"
+        },
+        {
+          "name": "Matter intake criteria"
+        }
+      ]
+    },
+    {
+      "id": "52c3",
+      "filteredFormData": {
+        "partner": "Sosedkin Denis",
+        "feeEarner": "Constantine Lusignan",
+        "dnentity": "Tashkent",
+        "client": "Tumodo Asia Limited",
+        "currency": "usd",
+        "isContentious": "no",
+        "isConfidential": "yes",
+        "reason": "asdgsdg",
+        "clientSector": "sdgasg",
+        "otherInfo": "asegawegw",
+        "Client UBOs:": "fdfhdfh",
+        "Client address:": "asdgasga",
+        "Adverse party:": "asdhh",
+        "Adverse party UBOs:": "asdgsdgh",
+        "Other party:": "asdgasdg",
+        "Matter name:": "asdgasdg",
+        "Matter details:": "asdgasdg"
+      },
+      "additionalQuestions": [
+        {
+          "name": "Non-financial client intake criteria",
+          "isRestriction": "no",
+          "isPolitically": "yes"
+        },
+        {
+          "name": "Matter intake criteria",
+          "anySanctions": "no",
+          "anyConflicts": "yes",
+          "anyInvolvements": "no",
+          "sapFirm": "yes",
+          "sapSolicitors": "no",
+          "isInvolve": "yes"
+        }
+      ]
+    },
+    {
+      "id": "2ba0",
+      "filteredFormData": {
+        "partner": "Sosedkin Denis",
+        "feeEarner": "Sergey Vasiliev",
+        "dnentity": "Tbilisi",
+        "client": "",
+        "currency": "rub",
+        "isContentious": "yes",
+        "isConfidential": "no",
+        "reason": "asdgasdg",
+        "clientSector": "sdgsdg",
+        "otherInfo": "wewqesddgdb",
+        "Client UBOs:": "asdasdgasd",
+        "Client address:": "asdgasdgsdg",
+        "Adverse party:": "asdgasdgsd",
+        "Adverse party UBOs:": "asdgsdg",
+        "Other party:": "asdgsdg",
+        "Matter name:": "asdgsadg"
+      },
+      "additionalQuestions": [
+        {
+          "name": "Non-financial client intake criteria",
+          "isRestriction": "yes",
+          "isPolitically": "no"
+        },
+        {
+          "name": "Matter intake criteria",
+          "anySanctions": "yes",
+          "anyConflicts": "no",
+          "anyInvolvements": "yes",
+          "sapFirm": "no",
+          "sapSolicitors": "yes",
+          "isInvolve": "no"
+        }
+      ]
+    },
+    {
+      "id": "2769",
+      "filteredFormData": {
+        "partner": "",
+        "feeEarner": "",
+        "dnentity": "",
+        "client": "",
+        "currency": "usd",
+        "isContentious": "yes",
+        "isConfidential": "no",
+        "reason": "",
+        "clientSector": "",
+        "otherInfo": ""
+      },
+      "additionalQuestions": [
+        {
+          "name": "Non-financial client intake criteria"
+        },
+        {
+          "name": "Matter intake criteria"
+        }
+      ]
+    },
+    {
+      "id": "a3f9",
+      "filteredFormData": {
+        "partner": "",
+        "feeEarner": "",
+        "dnentity": "",
+        "client": "",
+        "currency": "rub",
+        "isContentious": "yes",
+        "isConfidential": "no",
+        "reason": "",
+        "clientSector": "",
+        "otherInfo": ""
+      },
+      "additionalQuestions": [
+        {
+          "name": "Non-financial client intake criteria"
+        },
+        {
+          "name": "Matter intake criteria"
+        }
+      ]
+    },
+    {
+      "id": "4c65",
+      "filteredFormData": {
+        "partner": "",
+        "feeEarner": "",
+        "dnentity": "",
+        "client": "",
+        "currency": "rub",
+        "isContentious": "yes",
+        "isConfidential": "no",
+        "reason": "",
+        "clientSector": "",
+        "otherInfo": ""
+      },
+      "additionalQuestions": [
+        {
+          "name": "Non-financial client intake criteria"
+        },
+        {
+          "name": "Matter intake criteria"
+        }
+      ]
+    },
+    {
+      "id": "6ff2",
+      "filteredFormData": {
+        "partner": "",
+        "feeEarner": "",
+        "dnentity": "",
+        "client": "",
+        "currency": "rub",
+        "isContentious": "yes",
+        "isConfidential": "no",
+        "reason": "",
+        "clientSector": "",
+        "otherInfo": ""
+      },
+      "additionalQuestions": [
+        {
+          "name": "Non-financial client intake criteria"
+        },
+        {
+          "name": "Matter intake criteria",
+          "anySanctions": "yes",
+          "anyConflicts": "no",
+          "anyInvolvements": "yes"
+        }
+      ]
+    },
+    {
+      "id": "7a92",
+      "filteredFormData": {
+        "partner": "",
+        "feeEarner": "",
+        "dnentity": "",
+        "client": "",
+        "currency": "rub",
+        "isContentious": "yes",
+        "isConfidential": "no",
+        "reason": "",
+        "clientSector": "",
+        "otherInfo": ""
+      },
+      "additionalQuestions": [
+        {
+          "name": "Non-financial client intake criteria",
+          "isRestriction": "yes",
+          "isPolitically": "no"
+        },
+        {
+          "name": "Matter intake criteria"
+        }
+      ]
     }
   ]
 }
