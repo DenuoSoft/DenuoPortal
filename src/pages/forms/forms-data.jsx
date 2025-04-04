@@ -1,5 +1,5 @@
 import { Form } from './conflict/conflict';
-import css from './forms.module.css'
+import css from './forms.module.css';
 export const tabs = [
 	{ name: 'Conflict' },
 	{ name: 'Form 2' },
@@ -7,7 +7,7 @@ export const tabs = [
 ];
 export const content = {
 	Conflict: (
-    <div className={css.forms}>
+		<div className={css.forms}>
 			<Form />
 		</div>
 	),

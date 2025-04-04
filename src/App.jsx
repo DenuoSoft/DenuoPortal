@@ -1,12 +1,12 @@
 import { Header } from './components/header/header';
 import { Footer } from './components/footer/footer';
 import { Layout } from './components/layout/layout';
-import { Main } from './components/main/main';
-import { HR } from './components/main/hr/hr';
-import { Marketing } from './components/main/marketing/marketing';
-import { IT } from './components/main/it/it';
-import { Forms } from './components/main/forms/forms';
-import { Phonebook } from './components/main/phonebook/phonebook';
+import { Main } from './pages/main/main';
+import { HR } from './pages/hr/hr';
+import { Marketing } from './pages/marketing/marketing';
+import { IT } from './pages/it/it';
+import { Forms } from './pages/forms/forms';
+import { Phonebook } from './pages/phonebook/phonebook';
 import { Routes, Route } from 'react-router-dom';
 
 export const App = () => {

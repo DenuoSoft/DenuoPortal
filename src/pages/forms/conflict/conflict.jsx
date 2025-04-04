@@ -1,8 +1,8 @@
 import css from './conflict.module.scss';
-import AutocompleteInput from '../components/autocomplete/autocomplete';
-import { userData } from '../../../../data/userData';
-import { clientData } from '../../../../data/clientData';
-import RadioButtons from '../components/radiobuttons/radiobuttons';
+import Autocomplete from '../../../components/form/autocomplete/autocomplete';
+import { userData } from '../../../data/userData';
+import { clientData } from '../../../data/clientData';
+import RadioButtons from '../../../components/form/radiobuttons/radiobuttons';
 
 import {
 	textData,
@@ -11,11 +11,11 @@ import {
 	allInputs,
 	dnentity,
 } from './conflict-data';
-import Button from '../../../shared/buttons/button';
+import Button from '../../../components/shared/buttons/button';
 import SendIcon from '@mui/icons-material/Send';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
-import Input from '../components/input/input';
-import { TextArea } from '../components/textarea/textarea';
+import Input from '../../../components/form/input/input';
+import { TextArea } from '../../../components/form/textarea/textarea';
 import { useState, useRef, useEffect } from 'react';
 
 const initialFormData = {
@@ -40,7 +40,6 @@ export const Form = () => {
 
 	const resetForm = () => {
 		setFormData(initialFormData);
-		
 	};
 
 	const handleSubmit = async (e) => {
@@ -141,7 +140,7 @@ export const Form = () => {
 		<main>
 			<div className={css.formLayout}>
 				<form className={css.form} noValidate autoComplete='off'>
-					<AutocompleteInput
+					<Autocomplete
 						placeholder='Partner'
 						data={userData}
 						value={formData.partner}
@@ -149,7 +148,7 @@ export const Form = () => {
 							setFormData((prevState) => ({ ...prevState, partner: value }))
 						}
 					/>
-					<AutocompleteInput
+					<Autocomplete
 						placeholder='Fee Earner'
 						data={userData}
 						value={formData.feeEarner}
@@ -157,7 +156,7 @@ export const Form = () => {
 							setFormData((prevState) => ({ ...prevState, feeEarner: value }))
 						}
 					/>
-					<AutocompleteInput
+					<Autocomplete
 						placeholder='Denuo legal entity'
 						data={dnentity}
 						value={formData.dnentity}
@@ -165,7 +164,7 @@ export const Form = () => {
 							setFormData((prevState) => ({ ...prevState, dnentity: value }))
 						}
 					/>
-					<AutocompleteInput
+					<Autocomplete
 						placeholder='Client'
 						data={clientData}
 						value={formData.client}
@@ -175,7 +174,7 @@ export const Form = () => {
 						title='Currency'
 						options={currency}
 						onChange={handleCurrencyChange}
-						name='currency' 
+						name='currency'
 						value={formData.currency}
 					/>
 					{allInputs.map(({ id, label, name }) => (
@@ -200,8 +199,8 @@ export const Form = () => {
 					<RadioButtons
 						options={yesNoOptions}
 						onChange={(value) => handleYesNoChange('isConfidential', value)}
-						name='isConfidential' 
-						value={formData.isConfidential} 
+						name='isConfidential'
+						value={formData.isConfidential}
 					/>
 					<Input
 						placeholder='Reason:'

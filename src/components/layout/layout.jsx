@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import css from './layout.module.scss';
 
 export const Layout = (props) => {

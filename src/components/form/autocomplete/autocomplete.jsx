@@ -2,28 +2,16 @@ import { useState, useEffect } from 'react';
 import Input from '../input/input';
 import PropTypes from 'prop-types';
 import css from './autocomplete.module.scss';
-//import { userData } from '../../../../data/userData';
 
-const AutocompleteInput = ({ placeholder, data, onChange, name, value }) => {
+
+const Autocomplete = ({ placeholder, data, onChange, name, value }) => {
 	const [inputValue, setInputValue] = useState(value || '');
 	const [filteredSuggestions, setFilteredSuggestions] = useState([]);
 	const [activeSuggestionIndex, setActiveSuggestionIndex] = useState(-1);
 	const [showSuggestions, setShowSuggestions] = useState(false);
-	/* const inputRef = useRef(null);
+	
 	useEffect(() => {
-		const handleClickOutside = (event) => {
-			if (inputRef.current && !inputRef.current.contains(event.target)) {
-				setShowSuggestions(false);
-			}
-		};
-
-		document.addEventListener('mousedown', handleClickOutside);
-		return () => {
-			document.removeEventListener('mousedown', handleClickOutside);
-		};
-	}, []); */
-	useEffect(() => {
-        setInputValue(value || ''); // Correctly update inputValue when value prop changes
+        setInputValue(value || ''); 
 	}, [value]);
 	
 	const handleInputChange = (e) => {
@@ -65,12 +53,7 @@ const AutocompleteInput = ({ placeholder, data, onChange, name, value }) => {
 		setShowSuggestions(false);
 		setActiveSuggestionIndex(-1);
 	};
-	/* const clearInput = () => {
-    setInputValue('');
-    setFilteredSuggestions([]);
-    setShowSuggestions(false);
-    setActiveSuggestionIndex(-1);
-  }; */
+
 	return (
 		<div className='relative w-full'>
 			<div className={css.searchbox}>
@@ -108,7 +91,7 @@ const AutocompleteInput = ({ placeholder, data, onChange, name, value }) => {
 		</div>
 	);
 };
-AutocompleteInput.propTypes = {
+Autocomplete.propTypes = {
 	placeholder: PropTypes.string.isRequired,
 	data: PropTypes.array,
 	onChange: PropTypes.func.isRequired,
@@ -116,4 +99,4 @@ AutocompleteInput.propTypes = {
 	value: PropTypes.string.isRequired,
 };
 
-export default AutocompleteInput;
+export default Autocomplete;

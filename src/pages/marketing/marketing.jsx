@@ -1,4 +1,4 @@
-import { Tabs } from "../../tabs/tabs";
+import { Tabs } from "../../components/tabs/tabs";
 import { tabs, content} from './market-data'
 
 export const Marketing = () => {
