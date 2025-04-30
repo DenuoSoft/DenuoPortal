@@ -60,7 +60,7 @@ export const Form = () => {
 
 			return { name: name, ...questionValues };
 		});
-		const filteredFormData = Object.keys(formData).reduce((acc, key) => {
+		const mainData = Object.keys(formData).reduce((acc, key) => {
 			if (!questionKeys.has(key)) {
 				acc[key] = formData[key];
 			}
@@ -73,7 +73,7 @@ export const Form = () => {
 					headers: {
 						'Content-Type': 'application/json',
 					},
-					body: JSON.stringify({ filteredFormData, additionalQuestions }),
+					body: JSON.stringify({ mainData, additionalQuestions }),
 				});
 				const result = await response.json();
 				if (response.ok) {

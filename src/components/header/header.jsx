@@ -1,5 +1,6 @@
 import { Outlet } from 'react-router-dom';
-import { Profile } from './profile/profile';
+import Profile from './profile/profile';
+import PropTypes from 'prop-types';
 //import { Main } from "../main/main";
 //import { HR } from "../main/hr/hr";
 //import { Marketing } from "../main/marketing/marketing";
@@ -17,7 +18,7 @@ import {
 	HeaderSearch,
 } from './header.styled';
 
-export const Header = () => {
+const Header = ({name}) => {
 	const getActive = ({ isActive }) => {
 		return {
       color: isActive ? '#d7ff23' : '#28282d',
@@ -51,10 +52,14 @@ export const Header = () => {
 					</HeaderList>
 				</HeaderNav>
 				<HeaderSearch>
-					<Profile />
+					<Profile name={name}/>
 				</HeaderSearch>
 			</HeaderBlock>
 			<Outlet />
 		</>
 	);
 };
+Header.propTypes = {
+	name: PropTypes.string
+}
+export default Header

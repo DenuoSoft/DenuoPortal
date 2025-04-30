@@ -1,16 +1,17 @@
 //import { IconChevron } from '../../shared/icons/icon-chevron';
 import { IconProfile } from '../../shared/icons/icon-profile';
 import css from './profile.module.scss';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import PropTypes from 'prop-types';
 //import { userData } from '../../../data/userData';
 //import { Modal } from '../../modal/modal';
-const userData = { name: 'User Name' };
+//const userData = { name: 'User Name' };
 
-export const Profile = () => {
+const Profile = ({name}) => {
 	
 	//const [isOpen, setIsOpen] = useState(false);
 	const [isMenuShown, setIsMenuShown] = useState(false);
-	const [userName, setUserName] = useState('Guest');
+	//const [userName, setUserName] = useState('Guest');
 
 	/* const handleOpenModal = () => {
 		setIsOpen(true);
@@ -21,7 +22,7 @@ export const Profile = () => {
 		setIsMenuShown(false);
 	};
  */
-	useEffect(() => {
+	/* useEffect(() => {
 		const cookieUserName = document.cookie
 			.split('; ')
 			.find((row) => row.startsWith('username='));
@@ -31,12 +32,20 @@ export const Profile = () => {
 		} else {
 			setUserName(userData.name);
 		}
-	}, []);
+	}, []); */
 
 	return (
 		<div className={css.profile}>
 			<div className={css.user} onClick={() => setIsMenuShown(!isMenuShown)}>
-				<span>{userName}</span>
+			{name ? (
+                <p>
+                    Welcome, {name}
+                </p>
+            ) : (
+                <p>
+                    Loading user info...
+                </p>
+            )}
 			</div>
 			<IconProfile />
 		{/* 	<div className={`${css.chevron} ${isMenuShown ? css.up : ''}`}>
@@ -63,3 +72,7 @@ export const Profile = () => {
 		</div>
 	);
 };
+Profile.propTypes = {
+	name: PropTypes.string
+}
+export default Profile
