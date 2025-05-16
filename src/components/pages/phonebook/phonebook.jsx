@@ -1,10 +1,10 @@
 /* eslint-disable no-unused-vars */
 import css from './phonebook.module.scss';
 import { useState } from 'react';
-import { userData } from '../../data/userData.jsx';
-import { Modal } from '../../components/modal/modal.jsx';
-import Button from '../../components/shared/buttons/button.tsx';
-import Input from '../../components/form/input/input.jsx';
+import { userData } from '../../../data/userData.jsx';
+import { Modal } from '../../modal/modal.jsx';
+import Button from '../../shared/buttons/button.tsx';
+import Input from '../../form/input/input.jsx';
 
 export const Phonebook = () => {
 	const [searchTerm, setSearchTerm] = useState('');

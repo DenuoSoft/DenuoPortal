@@ -3,7 +3,7 @@
 import css from './input.module.scss';
 //import { useState } from 'react';
 
-const Input = ({ placeholder, onChange, value, onKeyDown, name }) => {
+const Input = ({ placeholder, onChange, value, onKeyDown, name}) => {
 	//const [searchTerm, setSearchTerm] = useState('');
 
 	const clearInput = () => {

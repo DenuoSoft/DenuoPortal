@@ -1,14 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import Profile from './profile/profile';
 import PropTypes from 'prop-types';
-//import { Main } from "../main/main";
-//import { HR } from "../main/hr/hr";
-//import { Marketing } from "../main/marketing/marketing";
-//import { IT } from "../main/it/it";
-//import { Form } from "../main/form/form";
-//import { Phonebook } from "../main/phonebook/phonebook";
-
-//import { Search } from "./search/search";
 import logo from '../../assets/img/logo.png';
 import {
 	HeaderBlock,
@@ -48,6 +40,9 @@ const Header = ({name}) => {
 						</HeaderLink>
 						<HeaderLink to='/phonebook' style={getActive}>
 							Phone Book
+						</HeaderLink>
+						<HeaderLink to='/admin' style={getActive}>
+							Admin page
 						</HeaderLink>
 					</HeaderList>
 				</HeaderNav>

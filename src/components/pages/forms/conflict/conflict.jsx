@@ -1,8 +1,8 @@
 import css from './conflict.module.scss';
-import Autocomplete from '../../../components/form/autocomplete/autocomplete';
-import { userData } from '../../../data/userData';
-import { clientData } from '../../../data/clientData';
-import RadioButtons from '../../../components/form/radiobuttons/radiobuttons';
+import Autocomplete from '../../../form/autocomplete/autocomplete';
+import { userData } from '../../../../data/userData';
+import { clientData } from '../../../../data/clientData';
+import RadioButtons from '../../../form/radiobuttons/radiobuttons';
 
 import {
 	textData,
@@ -11,11 +11,11 @@ import {
 	allInputs,
 	dnentity,
 } from './conflict-data';
-import Button from '../../../components/shared/buttons/button';
+import Button from '../../../../components/shared/buttons/button';
 import SendIcon from '@mui/icons-material/Send';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
-import Input from '../../../components/form/input/input';
-import { TextArea } from '../../../components/form/textarea/textarea';
+import Input from '../../../form/input/input';
+import { TextArea } from '../../../form/textarea/textarea';
 import { useState, useRef, useEffect } from 'react';
 
 const initialFormData = {
