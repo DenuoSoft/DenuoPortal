@@ -1,6 +1,12 @@
 .layout {
+  margin-top: 15px;
   display: flex;
+  flex-flow: column;
   justify-content: center;
-  width: 1440px;
   align-items: center;
+  gap: 15px;
+}
+
+.title {
+  padding-bottom: 10px;
 }/*# sourceMappingURL=main.module.css.map */

@@ -1,13 +1,22 @@
 import React from 'react';
 import css from './button.module.scss';
+type ButtonType = "button" | "submit" | "reset";
 
-const Button = ({ label, sendIcon, arrowUpIcon, onClick }) => {
+interface ButtonProps {
+    label: string;
+    sendIcon?: React.ReactNode;
+    arrowUpIcon?: React.ReactNode;
+    onClick?: () => void;
+    type?: ButtonType;
+}
+
+const Button: React.FC<ButtonProps> = ({ label, sendIcon, arrowUpIcon, onClick, type = "button" }) => {
 	return (
-		<div className={css.button} onClick={onClick}>
+		<button type={type} className={css.button} onClick={onClick}>
             <span>{label}</span>
 			{sendIcon && <span className={css.icon}>{sendIcon}</span>}
 			{arrowUpIcon && <span className={css.icon}>{arrowUpIcon}</span>}
-		</div>
+		</button>
 	);
 };
 export default Button;

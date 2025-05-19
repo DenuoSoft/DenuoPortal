@@ -1,19 +1,28 @@
+import PropTypes from 'prop-types';
 import css from './adminItem.module.scss';
+import Button from '../shared/buttons/button'
 
-const AdminItem = () => {
+const AdminItem = ({name, description, onDelete}) => {
 	return (
 		<div className={css.layout}>
 			<div className={css.itemBox}>
-				<h1>Title</h1>
+				<h1>{name}</h1>
 				<span>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio qui
-					nesciunt non ab earum. Consequuntur, similique laudantium? Veniam,
-					ipsum ipsa. Voluptatem suscipit repellat atque rerum culpa.
-					Consectetur cum odio nihil.
+					{description}
 				</span>
 			</div>
+			<span> 
+				
+				<Button type="button" label="Delete" onClick={onDelete}/>
+			</span>
 		</div>
 	);
 };
+
+AdminItem.propTypes = {
+	name: PropTypes.string,
+	description: PropTypes.string,
+	onDelete: PropTypes.func
+}
 
 export default AdminItem;

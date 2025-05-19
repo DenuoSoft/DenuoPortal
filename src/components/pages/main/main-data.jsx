@@ -4,9 +4,12 @@ export const tabs = [
     { name: 'Events' },
     { name: 'Other' },
   ];
+
   
-  export const content = {
-	  News: <div className={ css.news}>
+export const content = {
+	  
+	  News: <div className={css.news}>
+		 
       <h1>News 1</h1>
 							<span>
 								Lorem ipsum dolor, sit amet consectetur adipisicing elit. In
