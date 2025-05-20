@@ -42,9 +42,8 @@ const Profile = ({name}) => {
                     Welcome, {name}
                 </p>
             ) : (
-                <p>
-                    Loading user info...
-                </p>
+                <p >
+                    Unknown user!!!</p>
             )}
 			</div>
 			<IconProfile />

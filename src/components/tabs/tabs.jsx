@@ -30,5 +30,5 @@ export const Tabs = ({ tabs, content}) => {
 }
 Tabs.propTypes = {
   tabs: PropTypes.array,
-  content: PropTypes.array, 
+  content: PropTypes.object, 
 };

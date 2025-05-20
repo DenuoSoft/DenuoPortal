@@ -1,9 +1,25 @@
 {
   "news": [
     {
-      "id": "2c4317a2-b908-488f-9f7d-d4d3f1aa6dd8",
+      "id": "66349f1a-3a08-4d43-bc03-5836cb7883b9",
       "name": "News 1",
-      "description": "News 1 description"
+      "description": "News 1 descr",
+      "publishDate": "20.05.2025"
+    }
+  ],
+  "events": [
+    {
+      "id": "ce2e7ab8-01a7-4ad5-81c5-57d9e5fe4ec7",
+      "name": "Event 1",
+      "description": "Event 1 description",
+      "date": "28.08.2025"
+    },
+    {
+      "id": "01a760ac-369c-4abc-9922-140419e50ae3",
+      "name": "Event 2",
+      "description": "Event 2 description",
+      "publishDate": "31.05.2025",
+      "date": "31.05.2025"
     }
   ]
 }

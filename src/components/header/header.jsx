@@ -10,7 +10,7 @@ import {
 	HeaderSearch,
 } from './header.styled';
 
-const Header = ({name}) => {
+const Header = ({name, isAuthenticated}) => {
 	const getActive = ({ isActive }) => {
 		return {
       color: isActive ? '#d7ff23' : '#28282d',
@@ -41,9 +41,11 @@ const Header = ({name}) => {
 						<HeaderLink to='/phonebook' style={getActive}>
 							Phone Book
 						</HeaderLink>
-						<HeaderLink to='/admin' style={getActive}>
-							Admin page
-						</HeaderLink>
+						{isAuthenticated && (
+							<HeaderLink to="/admin" style={getActive}>
+								Admin page
+							</HeaderLink>
+						)}
 					</HeaderList>
 				</HeaderNav>
 				<HeaderSearch>
@@ -55,6 +57,7 @@ const Header = ({name}) => {
 	);
 };
 Header.propTypes = {
-	name: PropTypes.string
+	name: PropTypes.string,
+	isAuthenticated: PropTypes.bool
 }
 export default Header

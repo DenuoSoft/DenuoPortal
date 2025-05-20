@@ -3,14 +3,18 @@
     display: flex;
     flex-flow: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     gap: 15px;
     // height: 86vh;
 }
 .title {
-   padding-bottom: 10px;
+   padding: 10px 0 10px 0;
 }
-
+.items {
+    margin-top: 15px;    
+    display: flex;
+    flex-direction: column;
+}
 
 
 

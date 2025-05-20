@@ -3,7 +3,7 @@ import RadioButton from './radiobutton';
 import { useState, useEffect } from 'react';
 import css from './radiobuttons.module.scss';
 
-const RadioButtons = ({ title, options, onChange, value, name }) => {
+const RadioButtons = ({ title, options, onChange, value, name}) => {
 	const [selectedValue, setSelectedValue] = useState(value || '');
   useEffect(() => {
     setSelectedValue(value || '');
