@@ -12,7 +12,7 @@
 }
 
 .items {
-  margin-top: 15px;
-  display: flex;
-  flex-direction: column;
+  width: 100%;
+  padding: 15px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }/*# sourceMappingURL=main.module.css.map */

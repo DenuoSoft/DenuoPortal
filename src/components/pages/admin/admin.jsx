@@ -68,7 +68,7 @@ const Admin = () => {
 	};
 	const handleRadioChange = (value) => {
 		setSelectedType(value);
-		setTitle(''); // Reset поля при смене типа
+		setTitle(''); 
 		setDescription('');
 	};
 
@@ -105,7 +105,7 @@ const Admin = () => {
 						{selectedType === 'event' && (
 							<div className="flex flex-col">
 								<label htmlFor="eventDate" className="mb-2 text-gray-700">
-									Event Date:
+									Event Date: 
 								</label>
 								<DatePicker
 									id="eventDate"
