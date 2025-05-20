@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 //import { Modal } from '../../modal/modal';
 //const userData = { name: 'User Name' };
 
-const Profile = ({name}) => {
+const Profile = (name) => {
 	
 	//const [isOpen, setIsOpen] = useState(false);
 	const [isMenuShown, setIsMenuShown] = useState(false);
@@ -39,7 +39,7 @@ const Profile = ({name}) => {
 			<div className={css.user} onClick={() => setIsMenuShown(!isMenuShown)}>
 			{name ? (
                 <p>
-                    Welcome, {name}
+						Welcome, {name}
                 </p>
             ) : (
                 <p >

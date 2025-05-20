@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import Profile from './profile/profile';
 import PropTypes from 'prop-types';
+import { useAuth } from '../../hooks/authProvider.jsx';
 import logo from '../../assets/img/logo.png';
 import {
 	HeaderBlock,
@@ -10,7 +11,8 @@ import {
 	HeaderSearch,
 } from './header.styled';
 
-const Header = ({name, isAuthenticated}) => {
+const Header = () => {
+	const { authenticated, userInfo} = useAuth();
 	const getActive = ({ isActive }) => {
 		return {
       color: isActive ? '#d7ff23' : '#28282d',
@@ -41,7 +43,7 @@ const Header = ({name, isAuthenticated}) => {
 						<HeaderLink to='/phonebook' style={getActive}>
 							Phone Book
 						</HeaderLink>
-						{isAuthenticated && (
+						{authenticated && (
 							<HeaderLink to="/admin" style={getActive}>
 								Admin page
 							</HeaderLink>
@@ -49,7 +51,7 @@ const Header = ({name, isAuthenticated}) => {
 					</HeaderList>
 				</HeaderNav>
 				<HeaderSearch>
-					<Profile name={name}/>
+					<Profile name={userInfo.name} />
 				</HeaderSearch>
 			</HeaderBlock>
 			<Outlet />
