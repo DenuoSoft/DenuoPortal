@@ -8,10 +8,13 @@
     
     // height: 86vh;
 }
-.title {
-   padding: 10px 0 10px 0;
-}
+//.title {
+//   padding: 10px 0 10px 0;
+//}
 .items {
+    display: flex;
+    flex-flow: column;
+    gap: 10px;
     width: 100%;
     padding: 15px;
 	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
