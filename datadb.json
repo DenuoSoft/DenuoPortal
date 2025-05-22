@@ -5,6 +5,12 @@
       "name": "News 1",
       "description": "News 1 descr",
       "publishDate": "20.05.2025"
+    },
+    {
+      "id": "41895514-7588-40b2-8efb-fdc5e65d871c",
+      "name": "News 2",
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus modi quasi doloremque consectetur sed veritatis incidunt illum quos maiores nam corporis repellat nostrum, mollitia ad explicabo placeat dolore molestiae quis ipsam magni ab necessitatibus. Quidem reiciendis quasi eum officia aperiam doloremque soluta ullam nulla mollitia autem deleniti magni harum consequuntur quae, maxime earum, itaque expedita. Sapiente non saepe magnam commodi et. Quam accusantium quae sit ut, exercitationem, pariatur autem dolores ipsam voluptatum esse doloremque sunt voluptate ullam aliquid provident harum quibusdam labore dicta explicabo aliquam vitae nemo perspiciatis eaque cupiditate. Illo quos voluptate ut corporis tempora, nesciunt quidem illum aperiam!",
+      "publishDate": "22.05.2025"
     }
   ],
   "events": [

@@ -104,14 +104,14 @@ const Admin = () => {
 						/>
 						{selectedType === 'event' && (
 							<div className="flex flex-col">
-								<label htmlFor="eventDate" className="mb-2 text-gray-700">
+								<label htmlFor="eventDate" className={css.label}>
 									Event Date: 
 								</label>
 								<DatePicker
 									id="eventDate"
 									selected={eventDate}
 									onChange={(date) => setEventDate(date)}
-									className="w-full p-3 border rounded-md text-gray-700 focus:ring-2 focus:ring-blue-500"
+									className={css.datePicker}
 								/>
 							</div>
 						)}
