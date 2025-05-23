@@ -2,7 +2,15 @@
 import Header from './components/header/header';
 import {Footer} from './components/footer/footer';
 import {Layout} from './components/layout/layout';
-import {Main, HR, Marketing, IT, Forms, Phonebook, Admin }  from './components/pages/index'
+import {
+	Main,
+	HR,
+	Marketing,
+	IT,
+	Forms,
+	Phonebook,
+	AdminPage,
+} from './components/pages/index';
 import {Routes, Route} from 'react-router-dom';
 import Keycloak from 'keycloak-js';
 import {useState, useEffect} from 'react';
@@ -70,18 +78,24 @@ export const App = () => {
 		}
 	}, []);
 	return (
-		<Layout>
-			<Header name={userInfo.name} email={userInfo.email} isAuthenticated={authenticated}/>
-			<Routes>
-				<Route path="/" element={<Main />} />
-				<Route path="/hr" element={<HR />} />
-				<Route path="/marketing" element={<Marketing />} />
-				<Route path="/it" element={<IT />} />
-				<Route path="/forms" element={<Forms />} />
-				<Route path="/phonebook" element={<Phonebook />} />
-				<Route path="/admin" element={<Admin />} />
-			</Routes>
+		<>
+			<Header
+				name={userInfo.name}
+				email={userInfo.email}
+				isAuthenticated={authenticated}
+			/>
+			<Layout>
+				<Routes>
+					<Route path="/" element={<Main />} />
+					<Route path="/hr" element={<HR />} />
+					<Route path="/marketing" element={<Marketing />} />
+					<Route path="/it" element={<IT />} />
+					<Route path="/forms" element={<Forms />} />
+					<Route path="/phonebook" element={<Phonebook />} />
+					<Route path="/admin" element={<AdminPage />} />
+				</Routes>
+			</Layout>
 			<Footer />
-		</Layout>
+		</>
 	);
 };

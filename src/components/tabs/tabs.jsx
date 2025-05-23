@@ -11,7 +11,7 @@ export const Tabs = ({ tabs, content}) => {
   };
   
   return (
-    <main>
+    <>
       <div className={css.tabsLayout}>
         {tabs.map((tab) => (
           <div key={tab.name}
@@ -25,7 +25,7 @@ export const Tabs = ({ tabs, content}) => {
       <div className={css.tabContent}>
         {content[activeTab]}
       </div>
-    </main>
+    </>
   );
 }
 Tabs.propTypes = {

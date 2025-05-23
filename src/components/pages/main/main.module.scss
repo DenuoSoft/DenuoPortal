@@ -1,67 +1,32 @@
 .layout {
-    margin-top: 15px;
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 15px;
-    
-    // height: 86vh;
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: flex-start;
+	gap: 15px;
 }
-//.title {
-//   padding: 10px 0 10px 0;
-//}
+
 .items {
-    display: flex;
-    flex-flow: column;
-    gap: 10px;
-    width: 100%;
-    padding: 15px;
+	display: flex;
+	flex-direction: row;
+	width: 1140px;
+	padding: 15px;
 	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.imageBox {
+	width: 200px;
+	height: auto;
+}
+.image {
+	width: 100%;
+	object-fit: cover;
+	overflow: hidden;
+}
+.text {
+	width: 895px;
+	margin-left: 15px;
+}
+.title {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}

@@ -1,5 +1,4 @@
 .layout {
-  margin-top: 15px;
   display: flex;
   flex-flow: column;
   justify-content: center;
@@ -9,9 +8,30 @@
 
 .items {
   display: flex;
-  flex-flow: column;
-  gap: 10px;
-  width: 100%;
+  flex-direction: row;
+  width: 1140px;
   padding: 15px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.imageBox {
+  width: 200px;
+  height: auto;
+}
+
+.image {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  overflow: hidden;
+}
+
+.text {
+  width: 895px;
+  margin-left: 15px;
+}
+
+.title {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }/*# sourceMappingURL=main.module.css.map */

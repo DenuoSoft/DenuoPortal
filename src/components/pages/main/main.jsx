@@ -31,9 +31,14 @@ export const Main = () => {
 			<div className={css.layout}>
 				{news.map((item) => (
 					<div key={item.id} className={css.items}>
-						<span>{item.publishDate}</span>
-						<h1 className={css.title}>{item.name}</h1>
-						<span>{item.description}</span>
+						<div className={css.imageBox}>
+							<img className={css.image} src={item.image} alt="image" />
+						</div>
+						<div className={css.text}>
+							<span>{item.publishDate}</span>
+							<h1 className={css.title}>{item.name}</h1>
+							<span>{item.description}</span>
+						</div>
 					</div>
 				))}
 			</div>
@@ -48,9 +53,11 @@ export const Main = () => {
 			<div className={css.layout}>
 				{event.map((item) => (
 					<div key={item.id} className={css.items}>
-						<h1 className={css.title}>{item.name}</h1>
-						<span>Event date: {item.date}</span>
-						<span>{item.description}</span>
+						<div className={css.text}>
+							<span>Event date: {item.date}</span>
+							<h1 className={css.title}>{item.name}</h1>
+							<span>{item.description}</span>
+						</div>
 					</div>
 				))}
 			</div>

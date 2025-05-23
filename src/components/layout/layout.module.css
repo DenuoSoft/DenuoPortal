@@ -3,8 +3,9 @@
   flex-flow: column;
   min-height: 100vh;
 }
-.layout main {
+
+.main {
   flex: 1;
   flex-shrink: 0;
-  padding: 20px 16px;
+  padding: 80px 16px 16px 16px;
 }/*# sourceMappingURL=layout.module.css.map */

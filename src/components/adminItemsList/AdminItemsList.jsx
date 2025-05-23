@@ -16,10 +16,11 @@ const AdminItemsList = () => {
 		isError: isNewsError,
 	} = useGetNewsQuery();
 	const {
-		data: event = [],
+		data: events = [],
 		isLoading: isEventsLoading,
 		isError: isEventsError,
 	} = useGetEventQuery();
+
 	const [deleteNews] = useDeleteNewsMutation();
 	const [deleteEvent] = useDeleteEventMutation();
 
@@ -30,7 +31,7 @@ const AdminItemsList = () => {
 		(id, type) => {
 			if (type === 'news') {
 				deleteNews(id);
-			} else if (type === 'event') {
+			} else if (type === 'events') {
 				deleteEvent(id);
 			}
 		},
@@ -63,8 +64,8 @@ const AdminItemsList = () => {
 
 	const newsList = useMemo(() => renderList(news, 'news'), [news, renderList]);
 	const eventsList = useMemo(
-		() => renderList(event, 'event'),
-		[event, renderList]
+		() => renderList(events, 'events'),
+		[events, renderList]
 	);
 	if (isLoading) {
 		return <span>...Loading</span>;

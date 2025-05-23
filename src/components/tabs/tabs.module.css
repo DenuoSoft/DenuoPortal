@@ -2,7 +2,6 @@
   display: flex;
   justify-content: flex-start;
   margin-left: 250px;
-  margin-top: 60px;
   position: fixed;
   z-index: 1000;
 }
@@ -23,12 +22,12 @@
 }
 
 .tabContent {
-  margin-top: 100px;
+  margin-top: 70px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-start;
-  width: 1140px;
+  width: auto;
   margin-left: 250px;
 }
 

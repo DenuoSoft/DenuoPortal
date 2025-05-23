@@ -1,31 +1,28 @@
 {
   "news": [
     {
-      "id": "66349f1a-3a08-4d43-bc03-5836cb7883b9",
+      "id": "75d98dfb-a530-49fc-9fda-f4684abe978e",
       "name": "News 1",
       "description": "News 1 descr",
-      "publishDate": "20.05.2025"
+      "image": "http://localhost:5173/images/Background_1.jpg",
+      "publishDate": "23.05.2025"
     },
     {
-      "id": "41895514-7588-40b2-8efb-fdc5e65d871c",
+      "id": "15c74e24-245d-4104-8b84-20483bfa0abe",
       "name": "News 2",
-      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus modi quasi doloremque consectetur sed veritatis incidunt illum quos maiores nam corporis repellat nostrum, mollitia ad explicabo placeat dolore molestiae quis ipsam magni ab necessitatibus. Quidem reiciendis quasi eum officia aperiam doloremque soluta ullam nulla mollitia autem deleniti magni harum consequuntur quae, maxime earum, itaque expedita. Sapiente non saepe magnam commodi et. Quam accusantium quae sit ut, exercitationem, pariatur autem dolores ipsam voluptatum esse doloremque sunt voluptate ullam aliquid provident harum quibusdam labore dicta explicabo aliquam vitae nemo perspiciatis eaque cupiditate. Illo quos voluptate ut corporis tempora, nesciunt quidem illum aperiam!",
-      "publishDate": "22.05.2025"
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore distinctio tempore rem consequuntur impedit blanditiis, consectetur omnis itaque provident magnam voluptates, veritatis veniam. Eos, cumque!",
+      "image": "http://localhost:5173/images/Background_2.jpg",
+      "publishDate": "23.05.2025"
     }
   ],
   "events": [
     {
-      "id": "ce2e7ab8-01a7-4ad5-81c5-57d9e5fe4ec7",
+      "id": "0882027f-96ca-4254-bd42-1fa0d7cbfd16",
       "name": "Event 1",
-      "description": "Event 1 description",
-      "date": "28.08.2025"
-    },
-    {
-      "id": "01a760ac-369c-4abc-9922-140419e50ae3",
-      "name": "Event 2",
-      "description": "Event 2 description",
-      "publishDate": "31.05.2025",
-      "date": "31.05.2025"
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore distinctio tempore rem consequuntur impedit blanditiis, consectetur omnis itaque provident magnam voluptates, veritatis veniam. Eos, cumque!",
+      "image": "",
+      "publishDate": "23.05.2025",
+      "date": "25.06.2025"
     }
   ]
 }

@@ -1,26 +1,27 @@
 import {useState} from 'react';
 import {v4 as uuidv4} from 'uuid';
-import AdminItemsList from '../../adminItemsList/AdminItemsList';
-import Input from '../../form/input/input';
-import {TextArea} from '../../form/textarea/textarea';
-import Button from '../../shared/buttons/button';
+import AdminItemsList from '../adminItemsList/AdminItemsList';
+import Input from '../form/input/input';
+import {TextArea} from '../form/textarea/textarea';
+import Button from '../shared/buttons/button';
 import css from './admin.module.css';
 import {
 	useCreateNewsMutation,
 	useCreateEventMutation,
-} from '../../../api/apiSlice';
-import RadioButtons from '../../form/radiobuttons/radiobuttons';
+} from '../../api/apiSlice';
+import RadioButtons from '../form/radiobuttons/radiobuttons';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import {formatDate} from '../../../utils/formatDate';
+import {formatDate} from '../../utils/formatDate';
 
 const radioOptions = [
 	{label: 'News', value: 'news'},
-	{label: 'Events', value: 'event'},
+	{label: 'Events', value: 'events'},
 ];
 
 const Admin = () => {
 	const [title, setTitle] = useState('');
+	const [image, setImage] = useState('')
 	const [description, setDescription] = useState('');
 	// eslint-disable-next-line no-unused-vars
 	const [publishDate, setPublishDate] = useState('');
@@ -39,6 +40,7 @@ const Admin = () => {
 			id: uuidv4(),
 			name: title,
 			description: description,
+			image: image,
 			publishDate: formattedDate,
 		};
 		if (selectedType === 'news') {
@@ -46,6 +48,7 @@ const Admin = () => {
 				.unwrap()
 				.then(() => {
 					setTitle('');
+					setImage('');
 					setDescription('');
 					setPublishDate('');
 				});
@@ -61,6 +64,7 @@ const Admin = () => {
 				.then(() => {
 					setEventDate(new Date());
 					setTitle('');
+					setImage('');
 					setDescription('');
 					setPublishDate('');
 				});
@@ -68,7 +72,8 @@ const Admin = () => {
 	};
 	const handleRadioChange = (value) => {
 		setSelectedType(value);
-		setTitle(''); 
+		setTitle('');
+		setImage('');
 		setDescription('');
 	};
 
@@ -94,7 +99,17 @@ const Admin = () => {
 							value={title}
 							onChange={(e) => setTitle(e.target.value)}
 						/>
-
+						{selectedType === 'news' && (
+							<Input
+							placeholder="Paste path to image"
+							type="text"
+							name="image"
+							id="image"
+							value={image}
+							onChange={(e) => setImage(e.target.value)}
+						/>
+						)}
+						
 						<TextArea
 							placeholder="Add info here"
 							name="description"
@@ -102,10 +117,10 @@ const Admin = () => {
 							value={description}
 							onChange={(e) => setDescription(e.target.value)}
 						/>
-						{selectedType === 'event' && (
+						{selectedType === 'events' && (
 							<div className="flex flex-col">
 								<label htmlFor="eventDate" className={css.label}>
-									Event Date: 
+									Event Date:
 								</label>
 								<DatePicker
 									id="eventDate"
