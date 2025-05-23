@@ -1,0 +1,54 @@
+.layout {
+  display: flex;
+  justify-content: space-around;
+  gap: 15px;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  padding: 20px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  margin: 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.buttons {
+  margin-top: 15px;
+  display: flex;
+  gap: 30px;
+}
+
+.datePicker {
+  width: 255px;
+  height: 50px;
+  border: none;
+  outline: none;
+  background-color: #f0f0f0;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+  margin-left: 10px;
+  margin-top: 10px;
+  color: #999;
+  font-size: 16px;
+}
+
+.datePicker:focus {
+  border-bottom: 2px solid rgb(98, 121, 167);
+  box-shadow: none;
+}
+
+.label {
+  color: #000;
+}/*# sourceMappingURL=adminForm.module.css.map */

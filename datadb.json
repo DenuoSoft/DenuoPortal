@@ -13,6 +13,13 @@
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore distinctio tempore rem consequuntur impedit blanditiis, consectetur omnis itaque provident magnam voluptates, veritatis veniam. Eos, cumque!",
       "image": "http://localhost:5173/images/Background_2.jpg",
       "publishDate": "23.05.2025"
+    },
+    {
+      "id": "4ab6e373-00c9-43f3-a9a0-ca04b2890e14",
+      "name": "News 3",
+      "description": "orem ipsum dolor sit amet consectetur adipisicing elit. Dolore distinctio tempore rem consequuntur impedit blanditiis, consectet",
+      "image": "http://localhost:5173/images/Background_1.jpg",
+      "publishDate": "23.05.2025"
     }
   ],
   "events": [
