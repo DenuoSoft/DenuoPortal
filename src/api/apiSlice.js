@@ -43,7 +43,6 @@ export const apiSlice = createApi({
 			}),
 			invalidatesTags: ['Events'],
 		}),
-	
 	}),
 });
 export const {
@@ -53,5 +52,4 @@ export const {
 	useGetEventQuery,
 	useCreateEventMutation,
 	useDeleteEventMutation,
-	
 } = apiSlice;

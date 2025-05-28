@@ -1,7 +1,6 @@
-.layout {
+.box {
   display: flex;
-  flex-flow: column;
-  justify-content: center;
+  flex-wrap: wrap;
   align-items: flex-start;
   gap: 15px;
 }
@@ -9,9 +8,9 @@
 .items {
   display: flex;
   flex-direction: row;
-  width: 1140px;
   padding: 15px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  flex-grow: 1;
 }
 
 .imageBox {
@@ -27,11 +26,13 @@
 }
 
 .text {
-  width: 895px;
+  width: 100%;
   margin-left: 15px;
 }
 
 .title {
+  margin: 0;
+  font-weight: normal;
   padding-top: 10px;
   padding-bottom: 10px;
 }/*# sourceMappingURL=main.module.css.map */

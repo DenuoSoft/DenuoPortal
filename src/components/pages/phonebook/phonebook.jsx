@@ -74,6 +74,7 @@ export const Phonebook = () => {
 						placeholder='Search...'
 						value={searchTerm}
 						onChange={handleSearchChange}
+						readOnly = {true}
 					/>
 				</div>
 			</div>

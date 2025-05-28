@@ -38,9 +38,9 @@ const Profile = ({name}) => {
 		<div className={css.profile}>
 			<div className={css.user} onClick={() => setIsMenuShown(!isMenuShown)}>
 			{name ? (
-                <p>
+                <span>
                     Welcome, {name}
-                </p>
+                </span>
             ) : (
                 <p >
                     Unknown user!!!</p>

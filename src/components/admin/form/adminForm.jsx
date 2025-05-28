@@ -1,10 +1,13 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
+import {useState, useCallback} from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import {RadioButtons, Input, TextArea} from '../../form/index';
+import {Modal} from '../../modal/modal';
 import Button from '../../shared/buttons/button';
 import css from './adminForm.module.css';
+import {images} from '../../../data/imagesdb.jsx';
 
 const AdminForm = ({
 	title,
@@ -21,6 +24,11 @@ const AdminForm = ({
 	handleRadioChange,
 	onSubmit,
 }) => {
+	//const [images, setImages] = useState(images || []);
+	const [modalData, setModalData] = useState(null);
+	const [isModalOpen, setIsModalOpen] = useState(false);
+	const [previewImage, setPreviewImage] = useState('');
+
 	const onSubmitHandler = (e) => {
 		e.preventDefault();
 		const data = {
@@ -30,16 +38,52 @@ const AdminForm = ({
 			...(selectedType === 'news' ? {image} : {eventDate}),
 		};
 		onSubmit(data);
+		setPreviewImage('');
+	};
+	const openModal = () => {
+		setModalData();
+		setIsModalOpen(true);
+	};
+
+	const closeModal = () => {
+		setIsModalOpen(false);
+		setModalData(null);
+	};
+	const selectImage = (image) => {
+		setImage(image.url);
+		setPreviewImage(image.url);
+		closeModal();
 	};
 	return (
 		<div className={css.box}>
-			<h1>Admin form</h1>
+			<h1 className={css.title}>Admin form</h1>
 			<RadioButtons
 				options={radioOptions}
 				onChange={handleRadioChange}
 				value={selectedType}
 			/>
 			<form onSubmit={onSubmitHandler}>
+				{selectedType === 'news' && (
+					<>
+						<Button
+							label="Select image"
+							type="button"
+							name="image"
+							id="image"
+							onClick={openModal}
+						/>
+						{previewImage && (
+							<div className={css.previewBox}>
+								<span className={css.selected}>Selected image:</span>
+								<img
+									src={previewImage}
+									alt="Preview"
+									className={css.previewImage}
+								/>
+							</div>
+						)}
+					</>
+				)}
 				<Input
 					placeholder="Info title"
 					type="text"
@@ -48,16 +92,7 @@ const AdminForm = ({
 					value={title}
 					onChange={(e) => setTitle(e.target.value)}
 				/>
-				{selectedType === 'news' && (
-					<Input
-						placeholder="Paste path to image"
-						type="text"
-						name="image"
-						id="image"
-						value={image}
-						onChange={(e) => setImage(e.target.value)}
-					/>
-				)}
+
 				<TextArea
 					placeholder="Add info here"
 					name="description"
@@ -85,6 +120,23 @@ const AdminForm = ({
 					/>
 				</div>
 			</form>
+			<Modal isOpen={isModalOpen} onClose={closeModal}>
+				<div className={css.images}>
+					<h4>Select image:</h4>
+					<ul className={css.imageList}>
+						{images.map((image, index) => (
+							<li
+								key={index}
+								onClick={() => selectImage(image)}
+								className={css.imageItem}
+							>
+								<img src={image.url} className={css.image} alt={image.name} />
+								<span>{image.name}</span>
+							</li>
+						))}
+					</ul>
+				</div>
+			</Modal>
 		</div>
 	);
 };

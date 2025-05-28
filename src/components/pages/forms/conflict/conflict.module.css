@@ -1,5 +1,6 @@
 .formLayout {
-  margin-left: 150px;
+  display: flex;
+  flex-direction: column;
 }
 
 .form {

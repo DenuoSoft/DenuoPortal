@@ -4,9 +4,7 @@ import styled from 'styled-components';
 export const HeaderBlock = styled.header`
 	height: var(--header-height);
 	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	align-items: center;
+	justify-content: center;
 	color: #ffffff;
 	padding-left: 16px;
 	padding-right: 16px;
@@ -15,9 +13,19 @@ export const HeaderBlock = styled.header`
 	z-index: 999;	
 	width: 100%
 `;
+export const HeaderContainer = styled.div`
+    width: 1440px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+`
 export const HeaderNav = styled.nav`
 	display: flex;
 	align-items: center;
+	img {
+	width: 200px;
+	overflow: hidden;
+	}
 `;
 export const HeaderList = styled.ul`
 	display: flex;
@@ -31,6 +39,7 @@ export const HeaderList = styled.ul`
 export const HeaderLink = styled(NavLink)<{ isActive: boolean }>`
 	text-decoration: none;
 	font-size: 22px;
+	font-weight: 300;
 	padding-left: 25px;
     &:hover, &:focus {
 		color: #d7ff23;

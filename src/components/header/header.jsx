@@ -4,13 +4,14 @@ import PropTypes from 'prop-types';
 import logo from '../../assets/img/logo.png';
 import {
 	HeaderBlock,
+	HeaderContainer,
 	HeaderLink,
 	HeaderList,
 	HeaderNav,
 	HeaderSearch,
 } from './header.styled';
 
-const Header = ({name, isAuthenticated}) => {
+const Header = ({name}) => {
 	const getActive = ({isActive}) => {
 		return {
 			color: isActive ? '#d7ff23' : '#28282d',
@@ -19,37 +20,34 @@ const Header = ({name, isAuthenticated}) => {
 	return (
 		<>
 			<HeaderBlock>
-				<HeaderNav>
-					<img src={logo} alt="logo" />
-					<HeaderList>
-						<HeaderLink to="/" style={getActive}>
-							Main
-						</HeaderLink>
-						<HeaderLink to="/hr" style={getActive}>
-							HR
-						</HeaderLink>
-						<HeaderLink to="/marketing" style={getActive}>
-							Marketing
-						</HeaderLink>
-						<HeaderLink to="/it" style={getActive}>
-							IT
-						</HeaderLink>
-						<HeaderLink to="/forms" style={getActive}>
-							Forms
-						</HeaderLink>
-						<HeaderLink to="/phonebook" style={getActive}>
-							Phone Book
-						</HeaderLink>
-						{isAuthenticated && (
-							<HeaderLink to="/admin" style={getActive}>
-								Admin page
+				<HeaderContainer>
+					<HeaderNav>
+						<img src={logo} alt="logo" />
+						<HeaderList>
+							<HeaderLink to="/" style={getActive}>
+								Main
 							</HeaderLink>
-						)}
-					</HeaderList>
-				</HeaderNav>
-				<HeaderSearch>
-					<Profile name={name} />
-				</HeaderSearch>
+							<HeaderLink to="/hr" style={getActive}>
+								HR
+							</HeaderLink>
+							<HeaderLink to="/marketing" style={getActive}>
+								Marketing
+							</HeaderLink>
+							<HeaderLink to="/it" style={getActive}>
+								IT
+							</HeaderLink>
+							<HeaderLink to="/forms" style={getActive}>
+								Forms
+							</HeaderLink>
+							<HeaderLink to="/phonebook" style={getActive}>
+								Phone Book
+							</HeaderLink>
+						</HeaderList>
+					</HeaderNav>
+					<HeaderSearch>
+						<Profile name={name} />
+					</HeaderSearch>
+				</HeaderContainer>
 			</HeaderBlock>
 			<Outlet />
 		</>

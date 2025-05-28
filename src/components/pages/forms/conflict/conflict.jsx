@@ -137,7 +137,7 @@ export const Form = () => {
 	};
 
 	return (
-		<main>
+		
 			<div className={css.formLayout}>
 				<form className={css.form} noValidate autoComplete='off'>
 					<Autocomplete
@@ -267,6 +267,6 @@ export const Form = () => {
 					)}
 				</div>
 			</div>
-		</main>
+		
 	);
 };

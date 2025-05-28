@@ -12,7 +12,7 @@ const AdminItem = ({name, description, date, image, onDelete, publishDate}) => {
 				</div>
 				<div className={css.text}>
 					{publishDate && <span>Publish Date: {publishDate}</span>}
-					<h1>{name}</h1>
+					<h1 className={css.title}>{name}</h1>
 					{date && <span>Event date: {date}</span>}
 					<span>{description}</span>
 				</div>

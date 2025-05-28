@@ -3,24 +3,24 @@
 import css from './input.module.scss';
 //import { useState } from 'react';
 
-const Input = ({ placeholder, onChange, value, onKeyDown, name}) => {
+const Input = ({placeholder, onChange, onClick, value, onKeyDown, name}) => {
 	//const [searchTerm, setSearchTerm] = useState('');
 
 	const clearInput = () => {
-		onChange({ target: { value: '', name: name } });
+		onChange({target: {value: '', name: name}});
 	};
 
 	return (
 		<div className={css.inputbox}>
 			<input
-				type='text'
+				type="text"
 				className={css.input}
 				value={value}
+				onClick={onClick}
 				onChange={onChange}
 				placeholder={placeholder}
 				onKeyDown={onKeyDown}
 				name={name}
-				
 			/>
 			{value && (
 				<button onClick={clearInput} className={css.clearButton}>

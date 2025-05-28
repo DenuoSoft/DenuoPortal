@@ -1,12 +1,15 @@
 .layout {
 	display: flex;
 	flex-flow: column;
-	//position: absolute;
+	justify-content: center;
+	align-items: center;
+//position: absolute;
 	min-height: 100vh;
 	//  width: 100vw;
 }
 .main {
 	flex: 1;
 	flex-shrink: 0;
-	padding: 80px 16px 16px 16px;
+	padding-top: 80px;
+	width: 1440px;
 }

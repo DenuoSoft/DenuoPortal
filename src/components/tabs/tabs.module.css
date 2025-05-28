@@ -1,7 +1,6 @@
 .tabsLayout {
   display: flex;
   justify-content: flex-start;
-  margin-left: 250px;
   position: fixed;
   z-index: 1000;
 }
@@ -24,11 +23,7 @@
 .tabContent {
   margin-top: 70px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: flex-start;
-  width: auto;
-  margin-left: 250px;
 }
 
 .activeTab {

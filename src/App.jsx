@@ -84,7 +84,7 @@ export const App = () => {
 				email={userInfo.email}
 				isAuthenticated={authenticated}
 			/>
-			<Layout>
+			<Layout isAuthenticated={authenticated}>
 				<Routes>
 					<Route path="/" element={<Main />} />
 					<Route path="/hr" element={<HR />} />

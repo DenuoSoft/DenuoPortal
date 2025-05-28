@@ -1,35 +1,43 @@
 {
   "news": [
     {
-      "id": "75d98dfb-a530-49fc-9fda-f4684abe978e",
+      "id": "11b4d78f-2e01-48d8-9a09-519781cbdf09",
       "name": "News 1",
-      "description": "News 1 descr",
-      "image": "http://localhost:5173/images/Background_1.jpg",
-      "publishDate": "23.05.2025"
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis alias earum in quisquam optio ullam iusto officia magni vero maiores.",
+      "image": "http://localhost:5173/images/background_3.jpg",
+      "publishDate": "27.05.2025"
     },
     {
-      "id": "15c74e24-245d-4104-8b84-20483bfa0abe",
+      "id": "893d5037-d831-432c-95a2-ec649cb5d44c",
       "name": "News 2",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore distinctio tempore rem consequuntur impedit blanditiis, consectetur omnis itaque provident magnam voluptates, veritatis veniam. Eos, cumque!",
-      "image": "http://localhost:5173/images/Background_2.jpg",
-      "publishDate": "23.05.2025"
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis alias earum in quisquam optio ullam iusto officia magni vero maiores.",
+      "image": "http://localhost:5173/images/background_2.jpg",
+      "publishDate": "28.05.2025"
     },
     {
-      "id": "4ab6e373-00c9-43f3-a9a0-ca04b2890e14",
+      "id": "e7e619e1-9743-4d97-a445-6992e3dbeb00",
       "name": "News 3",
-      "description": "orem ipsum dolor sit amet consectetur adipisicing elit. Dolore distinctio tempore rem consequuntur impedit blanditiis, consectet",
-      "image": "http://localhost:5173/images/Background_1.jpg",
-      "publishDate": "23.05.2025"
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis alias earum in quisquam optio ullam iusto officia magni vero maiores.Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis alias earum in quisquam optio ullam iusto officia magni vero maiores.",
+      "image": "http://localhost:5173/images/background_6.jpg",
+      "publishDate": "28.05.2025"
     }
   ],
   "events": [
     {
-      "id": "0882027f-96ca-4254-bd42-1fa0d7cbfd16",
+      "id": "048033a7-f4c8-4d6a-8da8-62cd0f1e12e6",
       "name": "Event 1",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore distinctio tempore rem consequuntur impedit blanditiis, consectetur omnis itaque provident magnam voluptates, veritatis veniam. Eos, cumque!",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis alias earum in quisquam optio ullam iusto officia magni vero maiores.",
       "image": "",
-      "publishDate": "23.05.2025",
-      "date": "25.06.2025"
+      "publishDate": "28.05.2025",
+      "date": "01.07.2025"
+    },
+    {
+      "id": "e7c2a7ae-0d74-4a1c-bb87-2608530bcdfc",
+      "name": "Event 2",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis alias earum in quisquam optio ullam iusto officia magni vero maiores.Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis alias earum in quisquam optio ullam iusto officia magni vero maiores.",
+      "image": "",
+      "publishDate": "28.05.2025",
+      "date": "23.07.2025"
     }
   ]
 }

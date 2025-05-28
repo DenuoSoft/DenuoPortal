@@ -14,8 +14,9 @@
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
+.title {
   margin: 0;
+  font-weight: 300;
 }
 
 form {
@@ -51,4 +52,44 @@ form {
 
 .label {
   color: #000;
+}
+
+.previewBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+  gap: 15px;
+  background-color: #f0f0f0;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+.previewImage {
+  width: 200px;
+}
+
+.selected {
+  color: #999;
+}
+
+.imageList {
+  list-style: none;
+}
+
+.imageItem {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+.imageItem:hover {
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.image {
+  width: 100px;
 }/*# sourceMappingURL=adminForm.module.css.map */

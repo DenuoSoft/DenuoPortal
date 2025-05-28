@@ -10,6 +10,7 @@ import {
 
 import 'react-datepicker/dist/react-datepicker.css';
 import {formatDate} from '../../utils/formatDate';
+//import ImageUploader from '../imageUploader/ImageUploader';
 
 const radioOptions = [
 	{label: 'News', value: 'news'},
@@ -28,8 +29,7 @@ const Admin = () => {
 	const [createNews, {isLoading}] = useCreateNewsMutation();
 	const [createEvent] = useCreateEventMutation();
 
-
-const handleRadioChange = (value) => {
+	const handleRadioChange = (value) => {
 		setSelectedType(value);
 		setTitle('');
 		setImage('');
@@ -74,7 +74,8 @@ const handleRadioChange = (value) => {
 				});
 		}
 	};
-	
+
+	// eslint-disable-next-line no-unused-vars
 	const data = {
 		title,
 		description,
@@ -88,9 +89,10 @@ const handleRadioChange = (value) => {
 		<>
 			<div className={css.layout}>
 				<div className={css.box}>
+					<h1 className={css.title}>Preview</h1>
 					<AdminItemsList />
 				</div>
-				<>
+				<div>
 					<AdminForm
 						title={title}
 						setTitle={setTitle}
@@ -106,7 +108,7 @@ const handleRadioChange = (value) => {
 						handleRadioChange={handleRadioChange}
 						onSubmit={handleSubmit}
 					/>
-				</>
+				</div>
 			</div>
 		</>
 	);

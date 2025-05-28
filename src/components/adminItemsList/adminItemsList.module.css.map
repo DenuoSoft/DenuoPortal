@@ -1,1 +1,1 @@
-{"version":3,"sources":["adminItemsList.module.scss","adminItemsList.module.css"],"names":[],"mappings":"AAAA;EACI,WAAA;EACA,aAAA;EACA,sBAAA;ACCJ","file":"adminItemsList.module.css"}
+{"version":3,"sources":["adminItemsList.module.scss","adminItemsList.module.css"],"names":[],"mappings":"AAAA;EACI,WAAA;EACA,aAAA;EACA,sBAAA;EACA,mBAAA;ACCJ","file":"adminItemsList.module.css"}
