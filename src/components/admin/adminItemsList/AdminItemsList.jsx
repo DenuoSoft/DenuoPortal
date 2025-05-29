@@ -7,7 +7,7 @@ import {
 	useDeleteNewsMutation,
 	useGetEventQuery,
 	useDeleteEventMutation,
-} from '../../api/apiSlice';
+} from '../../../api/apiSlice';
 
 const AdminItemsList = () => {
 	const {

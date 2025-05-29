@@ -3,7 +3,9 @@ import {useGetNewsQuery, useGetEventQuery} from '../../../api/apiSlice';
 import css from './main.module.scss';
 import {Tabs} from '../../tabs/tabs';
 import Admin from '../../admin/admin';
-import { parseDate } from '../../../utils/parseDate';
+import {parseDate} from '../../../utils/parseDate';
+import ContentItems from '../../contentItems/ContentItems';
+import ContentLayout from '../../contentLayout/ContentLayout';
 
 export const Main = (isAuthenticated) => {
 	const {
@@ -44,9 +46,9 @@ export const Main = (isAuthenticated) => {
 		newsContent = <div className={css.items}>No any news</div>;
 	} else {
 		newsContent = (
-			<div className={css.box}>
+			<ContentLayout>
 				{sortedNews.map((item) => (
-					<div key={item.id} className={css.items}>
+					<ContentItems key={item.id}>
 						<div className={css.imageBox}>
 							<img className={css.image} src={item.image} alt="image" />
 						</div>
@@ -55,9 +57,9 @@ export const Main = (isAuthenticated) => {
 							<h1 className={css.title}>{item.name}</h1>
 							<span>{item.description}</span>
 						</div>
-					</div>
+					</ContentItems>
 				))}
-			</div>
+			</ContentLayout>
 		);
 	}
 
@@ -66,17 +68,17 @@ export const Main = (isAuthenticated) => {
 		eventContent = <div className={css.items}>No any events</div>;
 	} else {
 		eventContent = (
-			<div className={css.box}>
+			<ContentLayout>
 				{event.map((item) => (
-					<div key={item.id} className={css.items}>
+					<ContentItems key={item.id}>
 						<div className={css.text}>
 							<span>Event date: {item.date}</span>
 							<h1 className={css.title}>{item.name}</h1>
 							<span>{item.description}</span>
 						</div>
-					</div>
+					</ContentItems>
 				))}
-			</div>
+			</ContentLayout>
 		);
 	}
 	let adminContent;

@@ -19,7 +19,7 @@ const AppContent = () => {
 			<Header userInfo={userInfo} isAuthenticated={authenticated} />
 			<Layout isAuthenticated={authenticated}>
 				<Routes>
-					<Route path="/" element={<Main />} />
+					<Route path="/" element={<Main isAuthenticated={authenticated}/>} />
 					<Route path="/hr" element={<HR />} />
 					<Route path="/marketing" element={<Marketing />} />
 					<Route path="/it" element={<IT />} />

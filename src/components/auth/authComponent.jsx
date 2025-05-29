@@ -52,10 +52,11 @@ const AuthComponent = ({ children }) => {
 						};
 
 						kc.loadUserInfo()
-							.then((data) => {
-								setUserInfo({
+              .then((data) => {
+                setUserInfo({
 									name: data.name,
-									email: data.email,
+                  email: data.email,
+                  shortname: data.preferred_username
 								});
 							})
 							.catch((error) => {

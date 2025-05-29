@@ -1,17 +1,27 @@
 /* eslint-disable react/prop-types */
 import css from './modal.module.scss'
-import { useEffect } from 'react';
-export const Modal = ({isOpen, onClose, children}) => {
+import { useEffect, useRef } from 'react';
+
+export const Modal = ({ isOpen, onClose, children }) => {
+  const modalRef = useRef(null);
   useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (modalRef.current && !modalRef.current.contains(event.target)) {
+        onClose();
+      }
+    };
     if (isOpen) {
+       document.removeEventListener('mousedown', handleClickOutside);
       document.body.style.overflow = 'hidden'; 
     } else {
+       document.removeEventListener('mousedown', handleClickOutside);
       document.body.style.overflow = 'unset'; 
     }
     return () => {
+       document.removeEventListener('mousedown', handleClickOutside);
       document.body.style.overflow = 'unset'; 
     };
-  }, [isOpen]);
+  }, [isOpen, onClose]);
 
   if (!isOpen) return null;
 

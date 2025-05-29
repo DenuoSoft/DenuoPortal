@@ -8,5 +8,14 @@
       "publishDate": "29.05.2025"
     }
   ],
-  "events": []
+  "events": [
+    {
+      "id": "e5962cbb-df5b-4d5c-bc1e-918996eded49",
+      "name": "Event 1",
+      "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor fuga totam facere perferendis aperiam commodi laudantium unde aliquid facilis quibusdam veritatis odio magnam esse ad voluptatem maxime iusto, nulla excepturi dolore hic mollitia expedita labore debitis!",
+      "image": "",
+      "publishDate": "29.05.2025",
+      "date": "21.08.2025"
+    }
+  ]
 }

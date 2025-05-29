@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import css from './adminItem.module.scss';
-import Button from '../shared/buttons/button';
+import Button from '../../shared/buttons/button';
 
 const AdminItem = ({name, description, date, image, onDelete, publishDate}) => {
 	return (

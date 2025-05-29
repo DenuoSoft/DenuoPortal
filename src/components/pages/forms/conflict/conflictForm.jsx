@@ -8,14 +8,14 @@ import {
 	textData,
 	currency,
 	yesNoOptions,
-	allInputs,
+//	allInputs,
 	dnentity,
 } from './conflict-data';
 import Button from '../../../../components/shared/buttons/button';
 import SendIcon from '@mui/icons-material/Send';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import Input from '../../../form/input/input';
-import {TextArea} from '../../../form/textarea/textarea';
+//import {TextArea} from '../../../form/textarea/textarea';
 import {useState, useRef, useEffect} from 'react';
 
 const initialFormData = {

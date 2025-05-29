@@ -1,53 +1,40 @@
-//import { IconChevron } from '../../shared/icons/icon-chevron';
-import { IconProfile } from '../../shared/icons/icon-profile';
+import {IconProfile} from '../../shared/icons/icon-profile';
 import css from './profile.module.scss';
-import { useState } from 'react';
+import {useState} from 'react';
 import PropTypes from 'prop-types';
-//import { userData } from '../../../data/userData';
-//import { Modal } from '../../modal/modal';
-//const userData = { name: 'User Name' };
+import {Modal} from '../../modal/modal';
 
 const Profile = ({userInfo}) => {
-	
-	//const [isOpen, setIsOpen] = useState(false);
-	const [isMenuShown, setIsMenuShown] = useState(false);
-	//const [userName, setUserName] = useState('Guest');
+	const [isOpen, setIsOpen] = useState(false);
 
-	/* const handleOpenModal = () => {
+	const openModal = () => {
 		setIsOpen(true);
 	};
 
-	const handleCloseModal = () => {
+	const closeModal = () => {
 		setIsOpen(false);
-		setIsMenuShown(false);
 	};
- */
-	/* useEffect(() => {
-		const cookieUserName = document.cookie
-			.split('; ')
-			.find((row) => row.startsWith('username='));
-		if (cookieUserName) {
-			const name = cookieUserName.split('=')[1];
-			setUserName(name);
-		} else {
-			setUserName(userData.name);
-		}
-	}, []); */
 
 	return (
-		<div className={css.profile}>
-			<div className={css.user} onClick={() => setIsMenuShown(!isMenuShown)}>
-			{userInfo && userInfo.name? (
-                <span>
-                    Welcome, {userInfo.name}
-                </span>
-            ) : (
-                <p >
-                    Unknown user!!!</p>
-            )}
+		<div>
+			<div className={css.profile} role="button" onClick={openModal}>
+				<div className={css.user}>
+					{userInfo && userInfo.name ? (
+						<span>Welcome, {userInfo.name}</span>
+					) : (
+						<p>Unknown user!!!</p>
+					)}
+				</div>
+
+				<IconProfile />
 			</div>
-			<IconProfile />
-		{/* 	<div className={`${css.chevron} ${isMenuShown ? css.up : ''}`}>
+			<Modal isOpen={isOpen} onClose={closeModal}>
+				<h2 className={css.title}>Profile Information</h2>
+				<p className={css.userInfo}>User name: {userInfo.name}</p>
+				<p className={css.userInfo}>Short Name: {userInfo.shortname}</p>
+				<p className={css.userInfo}>Email address: {userInfo.email}</p>
+			</Modal>
+			{/* 	<div className={`${css.chevron} ${isMenuShown ? css.up : ''}`}>
 				<IconChevron />
 			</div>
 			{isMenuShown && (
@@ -73,9 +60,10 @@ const Profile = ({userInfo}) => {
 };
 Profile.propTypes = {
 	userInfo: PropTypes.shape({
-    name: PropTypes.string,
-    email: PropTypes.string,
-    id: PropTypes.string,
-  }),
-}
-export default Profile
+		name: PropTypes.string,
+		shortname: PropTypes.string,
+		email: PropTypes.string,
+		id: PropTypes.string,
+	}),
+};
+export default Profile;

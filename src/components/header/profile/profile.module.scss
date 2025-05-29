@@ -1,39 +1,47 @@
 .profile {
-  display: flex;
-  position: relative;
-  align-items: center;
-  // cursor: pointer;
-  -webkit-user-select: none;
-  user-select: none; 
-  .chevron {
-    &.up > svg {
-      transform: scaleY(-1);
-    }
-  }
+	display: flex;
+	position: relative;
+	align-items: center;
+	cursor: pointer;
+	-webkit-user-select: none;
+	user-select: none;
 
-  .menu {
-    position: fixed;
-    top: 82px;
-    right: 16px;
-    min-width: 120px;
-    background-color: #c8d2e6;
-    color: #000000;
-    border-radius: 4px;
-    padding: 8px 12px;
-  }
+	.chevron {
+		&.up > svg {
+			transform: scaleY(-1);
+		}
+	}
+	
+	.menu {
+		position: fixed;
+		top: 82px;
+		right: 16px;
+		min-width: 120px;
+		background-color: #c8d2e6;
+		color: #000000;
+		border-radius: 4px;
+		padding: 8px 12px;
+	}
 }
 .menuItems {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  .item:hover {
-    color: #d7ff23;
-  }
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	.item:hover {
+		color: #d7ff23;
+	}
 }
 .user {
-  padding: 0 15px;
-  width: 200px;
-  text-align: right;
-  color: #000000;
+	padding: 0 15px;
+	width: 200px;
+	text-align: right;
+	color: #000;
+	font-weight: 300;
+}
+.title {
   font-weight: 300;
+  color: #474747
+}
+.userInfo {
+  color: #999
 }

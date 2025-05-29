@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import {v4 as uuidv4} from 'uuid';
-import AdminItemsList from '../adminItemsList/AdminItemsList';
+import AdminItemsList from './adminItemsList/AdminItemsList';
 import AdminForm from './form/adminForm';
 import css from './admin.module.css';
 import {

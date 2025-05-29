@@ -2,6 +2,7 @@
   display: flex;
   position: relative;
   align-items: center;
+  cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
        user-select: none;
@@ -33,6 +34,15 @@
   padding: 0 15px;
   width: 200px;
   text-align: right;
-  color: #000000;
+  color: #000;
   font-weight: 300;
+}
+
+.title {
+  font-weight: 300;
+  color: #474747;
+}
+
+.userInfo {
+  color: #999;
 }/*# sourceMappingURL=profile.module.css.map */
