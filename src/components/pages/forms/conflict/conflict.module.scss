@@ -1,40 +1,36 @@
 .formLayout {
 	display: flex;
 	flex-direction: column;
+	width: 1440px;
 }
 .form {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	gap: 15px;
 }
+
 .questionsBox {
-	width: 500px;
+
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	align-items: center;
 }
 .radio {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	
 	align-items: center;
 	margin-top: 20px;
 }
-.bottomBox{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 50px;
+.bottomBox {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 50px;
 }
 .navigation {
 	margin-top: 30px;
 	display: flex;
 	gap: 100px;
-	justify-content: center;
 	align-items: center;
 	margin-bottom: 20px;
 }
@@ -47,8 +43,8 @@
 	line-height: 1.3;
 }
 .success {
-    color: green
+	color: green;
 }
 .error {
-    color: red;
+	color: red;
 }

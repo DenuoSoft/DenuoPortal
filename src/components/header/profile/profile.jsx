@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 //import { Modal } from '../../modal/modal';
 //const userData = { name: 'User Name' };
 
-const Profile = ({name}) => {
+const Profile = ({userInfo}) => {
 	
 	//const [isOpen, setIsOpen] = useState(false);
 	const [isMenuShown, setIsMenuShown] = useState(false);
@@ -37,9 +37,9 @@ const Profile = ({name}) => {
 	return (
 		<div className={css.profile}>
 			<div className={css.user} onClick={() => setIsMenuShown(!isMenuShown)}>
-			{name ? (
+			{userInfo && userInfo.name? (
                 <span>
-                    Welcome, {name}
+                    Welcome, {userInfo.name}
                 </span>
             ) : (
                 <p >
@@ -72,6 +72,10 @@ const Profile = ({name}) => {
 	);
 };
 Profile.propTypes = {
-	name: PropTypes.string
+	userInfo: PropTypes.shape({
+    name: PropTypes.string,
+    email: PropTypes.string,
+    id: PropTypes.string,
+  }),
 }
 export default Profile

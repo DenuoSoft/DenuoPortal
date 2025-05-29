@@ -1,7 +1,7 @@
 import css from './conflict.module.scss';
 import Autocomplete from '../../../form/autocomplete/autocomplete';
-import { userData } from '../../../../data/userData';
-import { clientData } from '../../../../data/clientData';
+import {userData} from '../../../../data/userData';
+import {clientData} from '../../../../data/clientData';
 import RadioButtons from '../../../form/radiobuttons/radiobuttons';
 
 import {
@@ -15,8 +15,8 @@ import Button from '../../../../components/shared/buttons/button';
 import SendIcon from '@mui/icons-material/Send';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import Input from '../../../form/input/input';
-import { TextArea } from '../../../form/textarea/textarea';
-import { useState, useRef, useEffect } from 'react';
+import {TextArea} from '../../../form/textarea/textarea';
+import {useState, useRef, useEffect} from 'react';
 
 const initialFormData = {
 	partner: '',
@@ -31,7 +31,7 @@ const initialFormData = {
 	otherInfo: '',
 };
 
-export const Form = () => {
+export const ConflictForm = () => {
 	const [formData, setFormData] = useState(initialFormData);
 	const [isSubmitting, setIsSubmitting] = useState(false);
 	const [submissionResult, setSubmissionResult] = useState(null);
@@ -47,18 +47,18 @@ export const Form = () => {
 		setIsSubmitting(true);
 		setSubmissionResult(null);
 		setButtonLabel('Sending...');
-		const questionKeys = textData.reduce((acc, { questions }) => {
+		const questionKeys = textData.reduce((acc, {questions}) => {
 			Object.keys(questions).forEach((key) => acc.add(key));
 			return acc;
 		}, new Set());
 
-		const additionalQuestions = textData.map(({ name, questions }) => {
+		const additionalQuestions = textData.map(({name, questions}) => {
 			const questionValues = Object.keys(questions).reduce((acc, key) => {
 				acc[key] = formData[key];
 				return acc;
 			}, {});
 
-			return { name: name, ...questionValues };
+			return {name: name, ...questionValues};
 		});
 		const mainData = Object.keys(formData).reduce((acc, key) => {
 			if (!questionKeys.has(key)) {
@@ -68,12 +68,12 @@ export const Form = () => {
 		}, {});
 		timerRef.current = setTimeout(async () => {
 			try {
-				const response = await fetch('http://localhost:3000/conflict', {
+				const response = await fetch('http://localhost:3001/conflict', {
 					method: 'POST',
 					headers: {
 						'Content-Type': 'application/json',
 					},
-					body: JSON.stringify({ mainData, additionalQuestions }),
+					body: JSON.stringify({mainData, additionalQuestions}),
 				});
 				const result = await response.json();
 				if (response.ok) {
@@ -123,7 +123,7 @@ export const Form = () => {
 		}));
 	};
 	const handleInputChange = (event) => {
-		const { name, value } = event.target;
+		const {name, value} = event.target;
 		setFormData((prevFormData) => ({
 			...prevFormData,
 			[name]: value,
@@ -137,47 +137,49 @@ export const Form = () => {
 	};
 
 	return (
-		
-			<div className={css.formLayout}>
-				<form className={css.form} noValidate autoComplete='off'>
+		<div className={css.formLayout}>
+			<form className={css.form} noValidate autoComplete="off">
 					<Autocomplete
-						placeholder='Partner'
+						placeholder="Partner"
 						data={userData}
 						value={formData.partner}
 						onChange={(value) =>
-							setFormData((prevState) => ({ ...prevState, partner: value }))
+							setFormData((prevState) => ({...prevState, partner: value}))
 						}
 					/>
 					<Autocomplete
-						placeholder='Fee Earner'
+						placeholder="Fee Earner"
 						data={userData}
 						value={formData.feeEarner}
 						onChange={(value) =>
-							setFormData((prevState) => ({ ...prevState, feeEarner: value }))
+							setFormData((prevState) => ({...prevState, feeEarner: value}))
 						}
 					/>
 					<Autocomplete
-						placeholder='Denuo legal entity'
+						placeholder="Denuo legal entity"
 						data={dnentity}
 						value={formData.dnentity}
 						onChange={(value) =>
-							setFormData((prevState) => ({ ...prevState, dnentity: value }))
+							setFormData((prevState) => ({...prevState, dnentity: value}))
 						}
 					/>
 					<Autocomplete
-						placeholder='Client'
+						placeholder="Client"
 						data={clientData}
 						value={formData.client}
-						onChange={(value) => setFormData({ ...formData, client: value })}
+						onChange={(value) => setFormData({...formData, client: value})}
 					/>
-					<RadioButtons
-						title='Currency'
-						options={currency}
-						onChange={handleCurrencyChange}
-						name='currency'
-						value={formData.currency}
-					/>
-					{allInputs.map(({ id, label, name }) => (
+				
+
+				<RadioButtons
+					title="Currency"
+					options={currency}
+					onChange={handleCurrencyChange}
+					name="currency"
+					value={formData.currency}
+				/>
+
+				 {/* {allInputs.map(({ id, label, name }) => (
 						<Input
 							key={id}
 							placeholder={label}
@@ -185,37 +187,37 @@ export const Form = () => {
 							onChange={handleInputChange}
 							value={formData[name] || ''}
 						/>
-					))}
-					<span className={css.questions}>Is this matter contentious?</span>
-					<RadioButtons
-						options={yesNoOptions}
-						onChange={(value) => handleYesNoChange('isContentious', value)}
-						name='isContentious'
-						value={formData.isContentious}
-					/>
-					<span className={css.questions}>
-						Is this matter confidential/sensitive?
-					</span>
-					<RadioButtons
-						options={yesNoOptions}
-						onChange={(value) => handleYesNoChange('isConfidential', value)}
-						name='isConfidential'
-						value={formData.isConfidential}
-					/>
-					<Input
-						placeholder='Reason:'
-						name='reason'
-						onChange={handleInputChange}
-						value={formData.reason || ''}
-					/>
-					<span className={css.title}>Client intake criteria</span>
-					<Input
-						placeholder='Client sector:'
-						name='clientSector'
-						onChange={handleInputChange}
-						value={formData.clientSector || ''}
-					/>
-					{textData.map(({ id, name, questions }) => (
+					))}  */}
+				<span className={css.questions}>Is this matter contentious?</span>
+				<RadioButtons
+					options={yesNoOptions}
+					onChange={(value) => handleYesNoChange('isContentious', value)}
+					name="isContentious"
+					value={formData.isContentious}
+				/>
+				<span className={css.questions}>
+					Is this matter confidential/sensitive?
+				</span>
+				<RadioButtons
+					options={yesNoOptions}
+					onChange={(value) => handleYesNoChange('isConfidential', value)}
+					name="isConfidential"
+					value={formData.isConfidential}
+				/>
+				<Input
+					placeholder="Reason:"
+					name="reason"
+					onChange={handleInputChange}
+					value={formData.reason || ''}
+				/>
+				<span className={css.title}>Client intake criteria</span>
+				<Input
+					placeholder="Client sector:"
+					name="clientSector"
+					onChange={handleInputChange}
+					value={formData.clientSector || ''}
+				/>
+				{/*  {textData.map(({ id, name, questions }) => (
 						<div key={id} className={css.questionsBox}>
 							<span className={css.title}>{name}</span>
 							{Object.keys(questions).map((key, index) => (
@@ -230,43 +232,42 @@ export const Form = () => {
 								</div>
 							))}
 						</div>
-					))}
+					))}  */}
 
-					<TextArea
-						placeholder='Any other important information on the client or matter...'
-						name='otherInfo'
-						onChange={handleInputChange}
-						value={formData.otherInfo || ''}
+				{/* <TextArea
+					placeholder="Any other important information on the client or matter..."
+					name="otherInfo"
+					onChange={handleInputChange}
+					value={formData.otherInfo || ''}
+				/> */}
+			</form>
+			<div className={css.bottomBox}>
+				<div className={css.navigation}>
+					<Button
+						type="button"
+						label="Go Up"
+						arrowUpIcon={<ArrowUpwardIcon fontSize="small" />}
+						onClick={scrollToTop}
 					/>
-				</form>
-				<div className={css.bottomBox}>
-					<div className={css.navigation}>
-						<Button
-							type='button'
-							label='Go Up'
-							arrowUpIcon={<ArrowUpwardIcon fontSize='small' />}
-							onClick={scrollToTop}
-						/>
 
-						<Button
-							type='button'
-							label={buttonLabel}
-							sendIcon={<SendIcon fontSize='small' />}
-							disabled={isSubmitting}
-							onClick={handleSubmit}
-						/>
-					</div>
-					{submissionResult && (
-						<div
-							className={
-								submissionResult.type === 'success' ? css.success : css.error
-							}
-						>
-							{submissionResult.message}
-						</div>
-					)}
+					<Button
+						type="button"
+						label={buttonLabel}
+						sendIcon={<SendIcon fontSize="small" />}
+						disabled={isSubmitting}
+						onClick={handleSubmit}
+					/>
 				</div>
+				{submissionResult && (
+					<div
+						className={
+							submissionResult.type === 'success' ? css.success : css.error
+						}
+					>
+						{submissionResult.message}
+					</div>
+				)}
 			</div>
-		
+		</div>
 	);
 };

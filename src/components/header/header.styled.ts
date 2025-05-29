@@ -5,9 +5,8 @@ export const HeaderBlock = styled.header`
 	height: var(--header-height);
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	color: #ffffff;
-	padding-left: 16px;
-	padding-right: 16px;
 	background-color: #c8d2e6;
 	position: fixed;
 	z-index: 999;	

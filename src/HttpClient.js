@@ -1,7 +1,5 @@
 import axios from 'axios';
 
-const httpClient = axios.create({
-   
-});
+const httpClient = axios.create({});
 
-export {httpClient}
+export {httpClient};

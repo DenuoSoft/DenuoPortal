@@ -11,7 +11,8 @@ import {
 	HeaderSearch,
 } from './header.styled';
 
-const Header = ({name}) => {
+// eslint-disable-next-line no-unused-vars
+const Header = ({userInfo, isAuthenticated}) => {
 	const getActive = ({isActive}) => {
 		return {
 			color: isActive ? '#d7ff23' : '#28282d',
@@ -45,7 +46,7 @@ const Header = ({name}) => {
 						</HeaderList>
 					</HeaderNav>
 					<HeaderSearch>
-						<Profile name={name} />
+						<Profile userInfo={userInfo} />
 					</HeaderSearch>
 				</HeaderContainer>
 			</HeaderBlock>
@@ -54,7 +55,11 @@ const Header = ({name}) => {
 	);
 };
 Header.propTypes = {
-	name: PropTypes.string,
+	userInfo: PropTypes.shape({
+		name: PropTypes.string,
+		email: PropTypes.string,
+		id: PropTypes.string,
+	}),
 	isAuthenticated: PropTypes.bool,
 };
 export default Header;

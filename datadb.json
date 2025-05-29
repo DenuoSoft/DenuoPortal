@@ -1,43 +1,12 @@
 {
   "news": [
     {
-      "id": "11b4d78f-2e01-48d8-9a09-519781cbdf09",
+      "id": "1d411885-3857-4bf4-a748-67185592e7bf",
       "name": "News 1",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis alias earum in quisquam optio ullam iusto officia magni vero maiores.",
-      "image": "http://localhost:5173/images/background_3.jpg",
-      "publishDate": "27.05.2025"
-    },
-    {
-      "id": "893d5037-d831-432c-95a2-ec649cb5d44c",
-      "name": "News 2",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis alias earum in quisquam optio ullam iusto officia magni vero maiores.",
-      "image": "http://localhost:5173/images/background_2.jpg",
-      "publishDate": "28.05.2025"
-    },
-    {
-      "id": "e7e619e1-9743-4d97-a445-6992e3dbeb00",
-      "name": "News 3",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis alias earum in quisquam optio ullam iusto officia magni vero maiores.Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis alias earum in quisquam optio ullam iusto officia magni vero maiores.",
-      "image": "http://localhost:5173/images/background_6.jpg",
-      "publishDate": "28.05.2025"
+      "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor fuga totam facere perferendis aperiam commodi laudantium unde aliquid facilis quibusdam veritatis odio magnam esse ad voluptatem maxime iusto, nulla excepturi dolore hic mollitia expedita labore debitis! Obcaecati ipsam ipsum, magnam odit, doloribus quam, quasi consequuntur earum voluptatem qui quas. Animi!",
+      "image": "http://localhost:5173/images/background_4.jpg",
+      "publishDate": "29.05.2025"
     }
   ],
-  "events": [
-    {
-      "id": "048033a7-f4c8-4d6a-8da8-62cd0f1e12e6",
-      "name": "Event 1",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis alias earum in quisquam optio ullam iusto officia magni vero maiores.",
-      "image": "",
-      "publishDate": "28.05.2025",
-      "date": "01.07.2025"
-    },
-    {
-      "id": "e7c2a7ae-0d74-4a1c-bb87-2608530bcdfc",
-      "name": "Event 2",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis alias earum in quisquam optio ullam iusto officia magni vero maiores.Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis alias earum in quisquam optio ullam iusto officia magni vero maiores.",
-      "image": "",
-      "publishDate": "28.05.2025",
-      "date": "23.07.2025"
-    }
-  ]
+  "events": []
 }

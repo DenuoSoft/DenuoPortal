@@ -55,7 +55,7 @@ const Autocomplete = ({ placeholder, data, onChange, name, value }) => {
 	};
 
 	return (
-		<div className='relative w-full'>
+		<div>
 			<div className={css.searchbox}>
 				<Input
 					type='text'

@@ -3,7 +3,7 @@ import {useGetNewsQuery, useGetEventQuery} from '../../../api/apiSlice';
 import css from './main.module.scss';
 import {Tabs} from '../../tabs/tabs';
 import Admin from '../../admin/admin';
-import parseDate from '../../../utils/parseDate';
+import { parseDate } from '../../../utils/parseDate';
 
 export const Main = (isAuthenticated) => {
 	const {

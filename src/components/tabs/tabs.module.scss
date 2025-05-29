@@ -2,7 +2,7 @@
 	display: flex;
 	justify-content: flex-start;
 	position: fixed;
-	z-index: 1000;
+	
 }
 .tabsItem {
 	display: flex;
@@ -20,9 +20,8 @@
 .tabContent {
 	margin-top: 70px;
 	display: flex;
-	
+
 	align-items: flex-start;
-	
 }
 .activeTab {
 	border-bottom: 2px solid rgb(98, 121, 167);
