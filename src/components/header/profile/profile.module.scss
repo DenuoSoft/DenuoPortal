@@ -23,6 +23,9 @@
 		padding: 8px 12px;
 	}
 }
+.profile:hover {
+	color: #d7ff23;
+}
 .menuItems {
 	display: flex;
 	flex-direction: column;
@@ -38,10 +41,12 @@
 	color: #000;
 	font-weight: 300;
 }
+.user:hover {
+	color: #d7ff23;
+}
 .title {
-  font-weight: 300;
   color: #474747
 }
 .userInfo {
-  color: #999
+  color: #6c6c6c
 }
