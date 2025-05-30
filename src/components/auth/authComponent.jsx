@@ -53,7 +53,6 @@ const AuthComponent = ({children}) => {
 
 						kc.loadUserInfo()
 							.then((data) => {
-								console.log(data)
 								setUserInfo({
 									name: data.name,
 									email: data.email,

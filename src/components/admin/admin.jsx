@@ -7,7 +7,6 @@ import {
 	useCreateNewsMutation,
 	useCreateEventMutation,
 } from '../../api/apiSlice';
-
 import 'react-datepicker/dist/react-datepicker.css';
 import {formatDate} from '../../utils/formatDate';
 //import ImageUploader from '../imageUploader/ImageUploader';

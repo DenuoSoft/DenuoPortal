@@ -24,8 +24,7 @@ const AdminForm = ({
 	handleRadioChange,
 	onSubmit,
 }) => {
-	//const [images, setImages] = useState(images || []);
-	const [modalData, setModalData] = useState(null);
+	//const [modalData, setModalData] = useState(null);
 	const [isModalOpen, setIsModalOpen] = useState(false);
 	const [previewImage, setPreviewImage] = useState('');
 
@@ -41,13 +40,13 @@ const AdminForm = ({
 		setPreviewImage('');
 	};
 	const openModal = () => {
-		setModalData();
+		//setModalData();
 		setIsModalOpen(true);
 	};
 
 	const closeModal = () => {
 		setIsModalOpen(false);
-		setModalData(null);
+		//setModalData(null);
 	};
 	const selectImage = (image) => {
 		setImage(image.url);
