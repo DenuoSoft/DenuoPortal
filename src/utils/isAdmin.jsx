@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 const adminUsers = [
-    {main: ['losevi']},
+    {main: ['losevi', 'fedorcha', 'petrovao']},
 	{it: ['shirinn', 'khlgatye', 'losevi', 'tersinv', 'prokhore']},
-	{hr: ['ivanovv', 'petrovv', 'losevi']},
-	{market: ['semonov', 'zykov']},
+	{hr: ['kulakovv', 'nurullaa']},
+	{market: ['piotrovm', 'fedorcha', 'petrovao']},
 ];
 const IsAdmin = ({userInfo, groupType}) => {
 	if (!userInfo || !userInfo.shortname || !groupType) {
