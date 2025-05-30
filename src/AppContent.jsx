@@ -17,12 +17,12 @@ const AppContent = () => {
 	return (
 		<>
 			<Header userInfo={userInfo} isAuthenticated={authenticated} />
-			<Layout isAuthenticated={authenticated}>
+			<Layout isAuthenticated={authenticated} userInfo={userInfo}>
 				<Routes>
-					<Route path="/" element={<Main isAuthenticated={authenticated}/>} />
-					<Route path="/hr" element={<HR />} />
-					<Route path="/marketing" element={<Marketing />} />
-					<Route path="/it" element={<IT />} />
+					<Route path="/" element={<Main userInfo={userInfo}/>} />
+					<Route path="/hr" element={<HR userInfo={userInfo}/>} />
+					<Route path="/marketing" element={<Marketing userInfo={userInfo}/>} />
+					<Route path="/it" element={<IT userInfo={userInfo}/>} />
 					<Route path="/forms" element={<Forms />} />
 					<Route path="/phonebook" element={<Phonebook />} />
 				</Routes>

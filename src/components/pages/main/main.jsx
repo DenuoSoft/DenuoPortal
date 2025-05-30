@@ -1,13 +1,15 @@
 import {useMemo} from 'react';
 import {useGetNewsQuery, useGetEventQuery} from '../../../api/apiSlice';
+import PropTypes from 'prop-types';
 import css from './main.module.scss';
 import {Tabs} from '../../tabs/tabs';
 import Admin from '../../admin/admin';
 import {parseDate} from '../../../utils/parseDate';
 import ContentItems from '../../contentItems/ContentItems';
 import ContentLayout from '../../contentLayout/ContentLayout';
+import IsAdmin from '../../../utils/isAdmin';
 
-export const Main = (isAuthenticated) => {
+export const Main = ({userInfo}) => {
 	const {
 		data: news = [],
 		isLoading: isNewsLoading,
@@ -84,9 +86,13 @@ export const Main = (isAuthenticated) => {
 	let adminContent;
 	adminContent = <Admin />;
 
-	const tabs = isAuthenticated
-		? [{name: 'News'}, {name: 'Events'}, {name: 'Other'}, {name: 'Admin'}]
-		: [{name: 'News'}, {name: 'Events'}, {name: 'Other'}];
+	const isAdmin = IsAdmin({userInfo, groupType: 'main'});
+	let tabs;
+	if (isAdmin) {
+		tabs = [{name: 'News'}, {name: 'Events'}, {name: 'Other'}, {name: 'Admin'}];
+	} else {
+		tabs = [{name: 'News'}, {name: 'Events'}, {name: 'Other'}];
+	}
 
 	const content = {
 		News: newsContent,
@@ -97,3 +103,12 @@ export const Main = (isAuthenticated) => {
 
 	return <Tabs tabs={tabs} content={content} />;
 };
+Main.propTypes = {
+	userInfo: PropTypes.shape({
+		name: PropTypes.string,
+		shortname: PropTypes.string,
+		email: PropTypes.string,
+		id: PropTypes.string,
+	}),
+};
+export default Main;

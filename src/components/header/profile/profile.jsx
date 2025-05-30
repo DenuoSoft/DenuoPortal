@@ -31,9 +31,9 @@ const Profile = ({userInfo}) => {
 			<Modal isOpen={isOpen} onClose={closeModal}>
 				<h2 className={css.title}>Profile Information</h2>
 				
-				<p className={css.userInfo}>User name: {userInfo.name}</p>
-				<p className={css.userInfo}>Short Name: {userInfo.shortname}</p>
-				<p className={css.userInfo}>Email address: {userInfo.email}</p>
+				<p className={css.userInfo}><strong>User name:</strong> {userInfo.name}</p>
+				<p className={css.userInfo}><strong>Short Name:</strong> {userInfo.shortname}</p>
+				<p className={css.userInfo}><strong>Email address:</strong> {userInfo.email}</p>
 			</Modal>
 			{/* 	<div className={`${css.chevron} ${isMenuShown ? css.up : ''}`}>
 				<IconChevron />

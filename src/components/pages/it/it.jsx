@@ -1,8 +1,11 @@
 import ContentItems from '../../contentItems/ContentItems';
 import ContentLayout from '../../contentLayout/ContentLayout';
 import {Tabs} from '../../tabs/tabs';
+import PropTypes from 'prop-types';
+import IsAdmin from '../../../utils/isAdmin';
+import Admin from '../../admin/admin';
 
-export const IT = () => {
+export const IT = ({userInfo}) => {
 	let infoContent;
 	let policyContent;
 	let docsContent;
@@ -27,8 +30,8 @@ export const IT = () => {
 	);
 	policyContent = (
 		<ContentLayout>
-                  <ContentItems>
-                        <div></div>
+			<ContentItems>
+				<div></div>
 				<div>
 					<h1>Police 1</h1>
 					<span>
@@ -40,13 +43,13 @@ export const IT = () => {
 						corporis voluptatum tenetur, provident quia voluptates
 					</span>
 				</div>
-                  </ContentItems>
+			</ContentItems>
 		</ContentLayout>
-      );
-      docsContent = (
-            <ContentLayout>
-                  <ContentItems>
-                        <div></div>
+	);
+	docsContent = (
+		<ContentLayout>
+			<ContentItems>
+				<div></div>
 				<div>
 					<h1>Police 1</h1>
 					<span>
@@ -58,16 +61,37 @@ export const IT = () => {
 						corporis voluptatum tenetur, provident quia voluptates
 					</span>
 				</div>
-                  </ContentItems>
+			</ContentItems>
 		</ContentLayout>
-      )
-
-	const tabs = [{name: 'Info'}, {name: 'Policies'}, {name: 'Docs'}];
+	);
+	let adminContent;
+	adminContent = <Admin />;
+	const isAdmin = IsAdmin({userInfo, groupType: 'it'});
+	let tabs;
+	if (isAdmin) {
+		tabs = [
+			{name: 'Info'},
+			{name: 'Policies'},
+			{name: 'Docs'},
+			{name: 'Admin'},
+		];
+	} else {
+		tabs = [{name: 'Info'}, {name: 'Vacations'}, {name: 'Policies'}];
+	}
 
 	const content = {
 		Info: infoContent,
 		Policies: policyContent,
 		Docs: docsContent,
+		Admin: adminContent,
 	};
 	return <Tabs tabs={tabs} content={content} />;
+};
+IT.propTypes = {
+	userInfo: PropTypes.shape({
+		name: PropTypes.string,
+		shortname: PropTypes.string,
+		email: PropTypes.string,
+		id: PropTypes.string,
+	}),
 };

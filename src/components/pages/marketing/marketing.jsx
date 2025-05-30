@@ -1,8 +1,11 @@
 import { Tabs } from '../../tabs/tabs';
 import ContentItems from '../../contentItems/ContentItems';
 import ContentLayout from '../../contentLayout/ContentLayout';
+import PropTypes from 'prop-types';
+import IsAdmin from '../../../utils/isAdmin';
+import Admin from '../../admin/admin';
 
-export const Marketing = () => {
+export const Marketing = ({userInfo}) => {
           let infoContent;
           let policyContent;
           let newsContent;
@@ -62,13 +65,34 @@ export const Marketing = () => {
                </ContentLayout>
            )
      
-          const tabs = [{name: 'Info'}, {name: 'News'}, {name: 'Policies'}];
+     let adminContent;
+	adminContent = <Admin />;
+	const isAdmin = IsAdmin({userInfo, groupType: 'market'});
+	let tabs;
+	if (isAdmin) {
+		tabs = [
+			{name: 'Info'},
+			{name: 'News'},
+			{name: 'Docs'},
+			{name: 'Admin'},
+		];
+	} else {
+		tabs = [{name: 'Info'}, {name: 'News'}, {name: 'Docs'}];
+	}
      
           const content = {
                Info: infoContent,
                News: newsContent,
                Policies: policyContent,
-               
+               Admin: adminContent
           };
      return <Tabs tabs={tabs} content={content} />;
 }
+Marketing.propTypes = {
+     userInfo: PropTypes.shape({
+          name: PropTypes.string,
+          shortname: PropTypes.string,
+          email: PropTypes.string,
+          id: PropTypes.string,
+     }),
+};

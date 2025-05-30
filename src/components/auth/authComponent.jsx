@@ -3,7 +3,7 @@ import {useState, useEffect} from 'react';
 import Keycloak from 'keycloak-js';
 import {httpClient} from '../../HttpClient';
 import PropTypes from 'prop-types';
-import { KeycloakContext } from './keycloak-context';
+import {KeycloakContext} from './keycloak-context';
 const initOptions = {
 	url: 'https://sso.denuo.ru:8443',
 	realm: 'denuo',
@@ -12,8 +12,8 @@ const initOptions = {
 
 let kc;
 
-const AuthComponent = ({ children }) => {
-  const [infoMessage, setInfoMessage] = useState('');
+const AuthComponent = ({children}) => {
+	const [infoMessage, setInfoMessage] = useState('');
 	const [authenticated, setAuthenticated] = useState(false);
 	const [userInfo, setUserInfo] = useState({name: '', email: '', id: ''});
 	const [keycloakInstance, setKeycloakInstance] = useState(null);
@@ -48,15 +48,16 @@ const AuthComponent = ({ children }) => {
 						}
 
 						kc.onTokenExpired = () => {
-								console.log('token expired');
+							console.log('token expired');
 						};
 
 						kc.loadUserInfo()
-              .then((data) => {
-                setUserInfo({
+							.then((data) => {
+								console.log(data)
+								setUserInfo({
 									name: data.name,
-                  email: data.email,
-                  shortname: data.preferred_username
+									email: data.email,
+									shortname: data.preferred_username,
 								});
 							})
 							.catch((error) => {

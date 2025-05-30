@@ -11,13 +11,12 @@ import {
 	HeaderSearch,
 } from './header.styled';
 
-// eslint-disable-next-line no-unused-vars
-const Header = ({userInfo, isAuthenticated}) => {
-	const getActive = ({isActive}) => {
+const Header = ({userInfo}) => {
+	/* const getActive = ({isActive}) => {
 		return {
 			color: isActive ? '#d7ff23' : '#28282d',
 		};
-	};
+	}; */
 	return (
 		<>
 			<HeaderBlock>
@@ -25,22 +24,22 @@ const Header = ({userInfo, isAuthenticated}) => {
 					<HeaderNav>
 						<img src={logo} alt="logo" />
 						<HeaderList>
-							<HeaderLink to="/" style={getActive}>
+							<HeaderLink to="/" >
 								Main
 							</HeaderLink>
-							<HeaderLink to="/hr" style={getActive}>
+							<HeaderLink to="/hr" >
 								HR
 							</HeaderLink>
-							<HeaderLink to="/marketing" style={getActive}>
+							<HeaderLink to="/marketing" >
 								Marketing
 							</HeaderLink>
-							<HeaderLink to="/it" style={getActive}>
+							<HeaderLink to="/it" >
 								IT
 							</HeaderLink>
-							<HeaderLink to="/forms" style={getActive}>
+							<HeaderLink to="/forms" >
 								Forms
 							</HeaderLink>
-							<HeaderLink to="/phonebook" style={getActive}>
+							<HeaderLink to="/phonebook" >
 								Phone Book
 							</HeaderLink>
 						</HeaderList>
@@ -60,6 +59,6 @@ Header.propTypes = {
 		email: PropTypes.string,
 		id: PropTypes.string,
 	}),
-	isAuthenticated: PropTypes.bool,
+	
 };
 export default Header;

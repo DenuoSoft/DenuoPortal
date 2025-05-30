@@ -35,14 +35,18 @@ export const HeaderList = styled.ul`
 	}
 `;
 
-export const HeaderLink = styled(NavLink)<{ isActive: boolean }>`
+export const HeaderLink = styled(NavLink)`
 	text-decoration: none;
 	font-size: 22px;
 	font-weight: 300;
+	color: #000;
 	padding-left: 25px;
     &:hover, &:focus {
 		color: #d7ff23;
 	}
+	&.active {
+        color: #d7ff23;
+    }	
 `;
 export const HeaderSearch = styled.div`
 	display: flex;
