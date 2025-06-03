@@ -13,6 +13,20 @@
       "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor fuga totam facere perferendis aperiam commodi laudantium unde aliquid facilis quibusdam veritatis odio magnam esse ad voluptatem maxime iusto, nulla excepturi dolore hic mollitia expedita labore debitis! ",
       "image": "http://localhost:5173/images/background_3.jpg",
       "publishDate": "30.05.2025"
+    },
+    {
+      "id": "ccba6cdb-cb7b-45b5-b8c9-ea159dd92229",
+      "name": "News 3",
+      "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor fuga totam facere perferendis aperiam commodi laudantium unde aliquid facilis quibusdam veritatis odio magnam esse ad voluptatem maxime iusto, nulla excepturi dolore hic mollitia expedita labore debitis! Obcaecati ipsam ipsum, magnam odit, doloribus quam, quasi consequuntur earum voluptatem qui quas. Animi!",
+      "image": "http://localhost:5173/images/background_2.jpg",
+      "publishDate": "03.06.2025"
+    },
+    {
+      "id": "9b5a3b96-4c7f-4071-acd5-3f5b072f9469",
+      "name": "News 4",
+      "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor fuga totam facere perferendis aperiam commodi laudantium unde aliquid facilis quibusdam veritatis odio magnam esse ad voluptatem maxime iusto, nulla excepturi dolore hic mollitia expedita labore debitis! Obcaecati ipsam ipsum, magnam odit, doloribus quam, quasi consequuntur earum voluptatem qui quas. Animi!",
+      "image": "http://localhost:5173/images/background_1.jpg",
+      "publishDate": "03.06.2025"
     }
   ],
   "events": [

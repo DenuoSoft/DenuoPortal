@@ -1,4 +1,4 @@
-import AuthComponent from './components/auth/authComponent';
+import AuthComponent from '../auth/authComponent';
 import AppContent from './AppContent';
 
 

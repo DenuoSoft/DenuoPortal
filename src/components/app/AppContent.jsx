@@ -1,8 +1,8 @@
 import {Routes, Route} from 'react-router-dom';
-import {Layout} from './components/layout/layout';
-import Header from './components/header/header';
-import {Footer} from './components/footer/footer';
-import {useKeycloak} from './components/auth/keycloak-context';
+import {Layout} from '../layout/layout';
+import Header from '../header/header';
+import {Footer} from '../footer/footer';
+import {useKeycloak} from '../auth/keycloak-context';
 import {
 	Main,
 	HR,
@@ -10,7 +10,7 @@ import {
 	IT,
 	Forms,
 	Phonebook,
-} from './components/pages/index';
+} from '../pages/index';
 const AppContent = () => {
 	const {authenticated, userInfo} = useKeycloak();
 

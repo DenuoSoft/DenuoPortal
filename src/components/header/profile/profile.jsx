@@ -22,7 +22,7 @@ const Profile = ({userInfo}) => {
 					{userInfo && userInfo.name ? (
 						<span>Welcome, {userInfo.name}</span>
 					) : (
-						<p>Unknown user!!!</p>
+						<p className={css.alert}>Unknown user!!!</p>
 					)}
 				</div>
 
