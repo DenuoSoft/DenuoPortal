@@ -1,13 +1,6 @@
 {
   "news": [
     {
-      "id": "1d411885-3857-4bf4-a748-67185592e7bf",
-      "name": "News 1",
-      "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor fuga totam facere perferendis aperiam commodi laudantium unde aliquid facilis quibusdam veritatis odio magnam esse ad voluptatem maxime iusto, nulla excepturi dolore hic mollitia expedita labore debitis! Obcaecati ipsam ipsum, magnam odit, doloribus quam, quasi consequuntur earum voluptatem qui quas. Animi!",
-      "image": "http://localhost:5173/images/background_4.jpg",
-      "publishDate": "29.05.2025"
-    },
-    {
       "id": "d6491b3e-5db1-40b9-95e8-57418b70e6dd",
       "name": "News 2",
       "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor fuga totam facere perferendis aperiam commodi laudantium unde aliquid facilis quibusdam veritatis odio magnam esse ad voluptatem maxime iusto, nulla excepturi dolore hic mollitia expedita labore debitis! ",
@@ -27,16 +20,73 @@
       "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor fuga totam facere perferendis aperiam commodi laudantium unde aliquid facilis quibusdam veritatis odio magnam esse ad voluptatem maxime iusto, nulla excepturi dolore hic mollitia expedita labore debitis! Obcaecati ipsam ipsum, magnam odit, doloribus quam, quasi consequuntur earum voluptatem qui quas. Animi!",
       "image": "http://localhost:5173/images/background_1.jpg",
       "publishDate": "03.06.2025"
+    },
+    {
+      "id": "e0057dec-1aa1-4c06-8c61-c379a2afba19",
+      "name": "News 5",
+      "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor fuga totam facere perferendis aperiam commodi laudantium unde aliquid facilis quibusdam veritatis odio magnam ",
+      "image": "http://localhost:5173/images/background_5.jpg",
+      "publishDate": "04.06.2025",
+      "venue": "",
+      "participants": "",
+      "organizer": ""
     }
   ],
   "events": [
     {
-      "id": "e5962cbb-df5b-4d5c-bc1e-918996eded49",
-      "name": "Event 1",
-      "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor fuga totam facere perferendis aperiam commodi laudantium unde aliquid facilis quibusdam veritatis odio magnam esse ad voluptatem maxime iusto, nulla excepturi dolore hic mollitia expedita labore debitis!",
+      "id": "bd478bc5-9ca0-48cd-9e35-831db5c111a6",
+      "name": "Committee Event: Current Trends in Investment Activity and Financial Markets",
+      "description": "",
       "image": "",
-      "publishDate": "29.05.2025",
-      "date": "21.08.2025"
+      "publishDate": "03.06.2025",
+      "venue": "Moscow",
+      "participants": "Ushakov  (speaking)",
+      "organizer": "Investment Environment Development Committee of the Moscow Chamber  of Commerce and Industry",
+      "date": "04.06.2025"
+    },
+    {
+      "id": "80cbb2cd-32b1-4517-9d31-ce435bca2420",
+      "name": "Annual Meeting with North-Western Customs Administration (SZTU)",
+      "description": "",
+      "image": "",
+      "publishDate": "03.06.2025",
+      "venue": "St Petersburg",
+      "participants": "Vasiliev  (moderating, speaking)",
+      "organizer": "Association  of European Businesses",
+      "date": "09.06.2025"
+    },
+    {
+      "id": "ca736318-cfaf-48f9-a2d3-c30153b4b251",
+      "name": "Legal Quiz ",
+      "description": "",
+      "image": "",
+      "publishDate": "03.06.2025",
+      "venue": "St Petersburg",
+      "participants": "Vinokurova   (moderating)",
+      "organizer": "St Petersburg International Business Association",
+      "date": "05.06.2025"
+    },
+    {
+      "id": "431c185e-65a8-4c33-8007-f6671b1b2b6b",
+      "name": "Forum Mining.ru",
+      "description": "",
+      "image": "",
+      "publishDate": "03.06.2025",
+      "venue": "Moscow",
+      "participants": "Ushakov  (speaking)",
+      "organizer": "Industrial Mining Association",
+      "date": "10.06.2025"
+    },
+    {
+      "id": "f05c4c02-f33d-41f4-834f-11153da9c83d",
+      "name": "Customs Conference",
+      "description": "",
+      "image": "",
+      "publishDate": "03.06.2025",
+      "venue": "St Petersburg",
+      "participants": "Vasiliev  (speaking)",
+      "organizer": "Russian-German Chamber of Commerce",
+      "date": "25.06.2025"
     }
   ]
 }

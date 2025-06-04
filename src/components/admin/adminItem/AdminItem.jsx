@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import css from './adminItem.module.scss';
 import Button from '../../shared/buttons/button';
 
-const AdminItem = ({name, description, date, image, onDelete, publishDate}) => {
+const AdminItem = ({name, description, date, organizer, venue, participants, image, onDelete, publishDate}) => {
 	return (
 		<div className={css.layout}>
 			<div className={css.itemBox}>
@@ -10,10 +10,14 @@ const AdminItem = ({name, description, date, image, onDelete, publishDate}) => {
 					{image && <img className={css.image} src={image} alt="image" />}
 				
 				</div>
+				
 				<div className={css.text}>
 					{publishDate && <span>Publish Date: {publishDate}</span>}
 					<h1 className={css.title}>{name}</h1>
 					{date && <span>Event date: {date}</span>}
+					{venue && <span>Venue: {venue}</span>}
+					{organizer && <span>Organizer: {organizer}</span>}
+					{participants && <span>Participants: {participants}</span>}
 					<span>{description}</span>
 				</div>
 			</div>
@@ -27,6 +31,9 @@ const AdminItem = ({name, description, date, image, onDelete, publishDate}) => {
 AdminItem.propTypes = {
 	name: PropTypes.string,
 	date: PropTypes.string,
+	participants: PropTypes.string,
+	organizer: PropTypes.string,
+	venue: PropTypes.string,
 	image: PropTypes.string,
 	publishDate: PropTypes.string,
 	description: PropTypes.string,

@@ -75,54 +75,70 @@ export const Main = ({userInfo}) => {
 	}
 
 	let newsContent = (
-		<ContentLayout>
-			{newsPaginatedContent.length === 0 ? (
-				<div className={css.items}>No any news</div>
-			) : (
-				newsPaginatedContent.map((item) => (
-					<ContentItems key={item.id}>
-						<div className={css.imageBox}>
-							<img className={css.image} src={item.image} alt="image" />
-						</div>
-						<div className={css.text}>
-							<span>{item.publishDate}</span>
-							<h1 className={css.title}>{item.name}</h1>
-							<span>{item.description}</span>
-						</div>
-					</ContentItems>
-				))
-			)}
-			<Pagination 
-                currentPage={newsCurrentPage} 
-                totalPages={newsTotalPages} 
-                onNext={handleNewsNextClick} 
-                onPrev={handleNewsPrevClick} 
-            />
-		</ContentLayout>
+		<div>
+			<ContentLayout>
+				{newsPaginatedContent.length === 0 ? (
+					<div className={css.items}>No any news</div>
+				) : (
+					newsPaginatedContent.map((item) => (
+						<ContentItems key={item.id}>
+							<div className={css.imageBox}>
+								<img className={css.image} src={item.image} alt="image" />
+							</div>
+							<div className={css.text}>
+								<span>{item.publishDate}</span>
+								<h2 className={css.title}>{item.name}</h2>
+								<span>{item.description}</span>
+							</div>
+						</ContentItems>
+					))
+				)}
+			</ContentLayout>
+			<Pagination
+				currentPage={newsCurrentPage}
+				totalPages={newsTotalPages}
+				onNext={handleNewsNextClick}
+				onPrev={handleNewsPrevClick}
+			/>
+		</div>
 	);
 
 	let eventContent = (
-		<ContentLayout>
-			{eventPaginatedContent.length === 0 ? (
-				<div className={css.items}>No any events</div>
-			) : (
-				eventPaginatedContent.map((item) => (
-					<ContentItems key={item.id}>
-						<div className={css.text}>
-							<span>Event date: {item.date}</span>
-							<h1 className={css.title}>{item.name}</h1>
-							<span>{item.description}</span>
-						</div>
-					</ContentItems>
-				))
-			)}
-			<Pagination 
-                currentPage={eventCurrentPage} 
-                totalPages={eventTotalPages} 
-                onNext={handleEventNextClick} 
-                onPrev={handleEventPrevClick} 
-            />
-		</ContentLayout>
+		<div>
+			<ContentLayout>
+				{eventPaginatedContent.length === 0 ? (
+					<div className={css.items}>No any events</div>
+				) : (
+					eventPaginatedContent.map((item) => (
+						<ContentItems key={item.id}>
+							<div className={css.date}>
+								<h4>Event date:</h4> {item.date}
+							</div>
+							<div className={css.text}>
+								<h2 className={css.title}>{item.name}</h2>
+								<p>
+									<strong>Venue: </strong>{item.venue}
+								</p>
+								<p>
+									<strong>Organizer: </strong>
+									{item.organizer}
+								</p>
+								<p>
+									<strong>Participants: </strong>
+									{item.participants}
+								</p>
+							</div>
+						</ContentItems>
+					))
+				)}
+			</ContentLayout>
+			<Pagination
+				currentPage={eventCurrentPage}
+				totalPages={eventTotalPages}
+				onNext={handleEventNextClick}
+				onPrev={handleEventPrevClick}
+			/>
+		</div>
 	);
 
 	let adminContent = <Admin />;

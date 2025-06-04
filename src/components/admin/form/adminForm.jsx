@@ -5,7 +5,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import {RadioButtons, Input, TextArea} from '../../form/index';
 import {Modal} from '../../modal/modal';
-import Button from '../../shared/buttons/button';
+import Button from '../../shared/buttons/button.jsx';
 import css from './adminForm.module.css';
 import {images} from '../../../data/imagesdb.jsx';
 
@@ -14,6 +14,12 @@ const AdminForm = ({
 	setTitle,
 	image,
 	setImage,
+	venue,
+	setVenue,
+	organizer,
+	setOrganizer,
+	participants,
+	setParticipants,
 	description,
 	setDescription,
 	eventDate,
@@ -62,6 +68,15 @@ const AdminForm = ({
 				value={selectedType}
 			/>
 			<form onSubmit={onSubmitHandler}>
+				<Input
+					placeholder="Title"
+					type="text"
+					name="title"
+					id="title"
+					value={title}
+					onChange={(e) => setTitle(e.target.value)}
+				/>
+
 				{selectedType === 'news' && (
 					<>
 						<Button
@@ -81,35 +96,53 @@ const AdminForm = ({
 								/>
 							</div>
 						)}
+						<TextArea
+							placeholder="Add info here"
+							name="description"
+							id="text"
+							value={description}
+							onChange={(e) => setDescription(e.target.value)}
+						/>
 					</>
 				)}
-				<Input
-					placeholder="Info title"
-					type="text"
-					name="title"
-					id="title"
-					value={title}
-					onChange={(e) => setTitle(e.target.value)}
-				/>
 
-				<TextArea
-					placeholder="Add info here"
-					name="description"
-					id="text"
-					value={description}
-					onChange={(e) => setDescription(e.target.value)}
-				/>
 				{selectedType === 'events' && (
-					<div className="flex flex-col">
-						<label htmlFor="eventDate" className={css.label}>
-							Event Date:
-						</label>
-						<DatePicker
-							id="eventDate"
-							selected={eventDate}
-							onChange={(date) => setEventDate(date)}
-							className={css.datePicker}
+					<div className={css.events}>
+						<Input
+							placeholder="Venue"
+							type="text"
+							name="venue"
+							id="venue"
+							value={venue}
+							onChange={(e) => setVenue(e.target.value)}
 						/>
+						<Input
+							placeholder="Organizer"
+							type="text"
+							name="organizer"
+							id="organizer"
+							value={organizer}
+							onChange={(e) => setOrganizer(e.target.value)}
+						/>
+						<Input
+							placeholder="Participants"
+							type="text"
+							name="participants"
+							id="participants"
+							value={participants}
+							onChange={(e) => setParticipants(e.target.value)}
+						/>
+						<div>
+							<label htmlFor="eventDate" className={css.label}>
+								Event Date:
+							</label>
+							<DatePicker
+								id="eventDate"
+								selected={eventDate}
+								onChange={(date) => setEventDate(date)}
+								className={css.datePicker}
+							/>
+						</div>
 					</div>
 				)}
 				<div className={css.buttons}>

@@ -1,6 +1,6 @@
 import Button from '../shared/buttons/button'
 import PropTypes from 'prop-types';
-import css from './pagination.module.scss'; // Assuming you have some styles for the pagination
+import css from './pagination.module.scss'; 
 
 const Pagination = ({ currentPage, totalPages, onNext, onPrev }) => {
     return (

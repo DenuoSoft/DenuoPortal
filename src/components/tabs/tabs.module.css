@@ -1,7 +1,6 @@
-.tabsLayout {
+.tabs {
   display: flex;
   justify-content: flex-start;
-  position: fixed;
 }
 
 .tabsItem {
@@ -20,7 +19,7 @@
 }
 
 .tabContent {
-  margin-top: 70px;
+  margin-top: 15px;
   display: flex;
   align-items: flex-start;
 }

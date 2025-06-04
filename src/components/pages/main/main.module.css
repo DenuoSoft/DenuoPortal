@@ -18,11 +18,20 @@
 .title {
   margin: 0;
   font-weight: normal;
-  padding-top: 10px;
-  padding-bottom: 10px;
 }
 
 .loading {
   margin-top: 30px;
   font-size: 20px;
+}
+
+p {
+  margin: 0;
+  padding-top: 8px;
+}
+
+.date {
+  margin: 0;
+  text-align: center;
+  width: 200px;
 }/*# sourceMappingURL=main.module.css.map */

@@ -19,6 +19,9 @@ const radioOptions = [
 const Admin = () => {
 	const [title, setTitle] = useState('');
 	const [image, setImage] = useState('');
+	const [venue, setVenue] = useState('');
+	const [participants, setParticipants] = useState('');
+	const [organizer, setOrganizer] = useState('');
 	const [description, setDescription] = useState('');
 	// eslint-disable-next-line no-unused-vars
 	const [publishDate, setPublishDate] = useState('');
@@ -33,6 +36,9 @@ const Admin = () => {
 		setTitle('');
 		setImage('');
 		setDescription('');
+		setVenue('');
+		setParticipants('');
+		setOrganizer('');
 	};
 
 	const onSubmitHandler = () => {
@@ -45,6 +51,9 @@ const Admin = () => {
 			description: description,
 			image: image,
 			publishDate: formattedDate,
+			venue: venue,
+			participants: participants,
+			organizer: organizer,
 		};
 		if (selectedType === 'news') {
 			createNews(newItem)
@@ -70,6 +79,9 @@ const Admin = () => {
 					setImage('');
 					setDescription('');
 					setPublishDate('');
+					setVenue('');
+					setParticipants('');
+					setOrganizer('');
 				});
 		}
 	};
@@ -95,6 +107,12 @@ const Admin = () => {
 					<AdminForm
 						title={title}
 						setTitle={setTitle}
+						venue={venue}
+						setVenue={setVenue}
+						organizer={organizer}
+						setOrganizer={setOrganizer}
+						participants={participants}
+						setParticipants={setParticipants}
 						image={image}
 						setImage={setImage}
 						description={description}

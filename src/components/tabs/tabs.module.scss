@@ -1,9 +1,9 @@
-.tabsLayout {
+
+.tabs {
 	display: flex;
 	justify-content: flex-start;
-	position: fixed;
-	
 }
+
 .tabsItem {
 	display: flex;
 	justify-content: center;
@@ -18,10 +18,10 @@
 	color: rgb(98, 121, 167);
 }
 .tabContent {
-	margin-top: 70px;
+	margin-top: 15px;
 	display: flex;
-
 	align-items: flex-start;
+	
 }
 .activeTab {
 	border-bottom: 2px solid rgb(98, 121, 167);
