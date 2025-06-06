@@ -20,16 +20,6 @@
       "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor fuga totam facere perferendis aperiam commodi laudantium unde aliquid facilis quibusdam veritatis odio magnam esse ad voluptatem maxime iusto, nulla excepturi dolore hic mollitia expedita labore debitis! Obcaecati ipsam ipsum, magnam odit, doloribus quam, quasi consequuntur earum voluptatem qui quas. Animi!",
       "image": "http://localhost:5173/images/background_1.jpg",
       "publishDate": "03.06.2025"
-    },
-    {
-      "id": "e0057dec-1aa1-4c06-8c61-c379a2afba19",
-      "name": "News 5",
-      "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor fuga totam facere perferendis aperiam commodi laudantium unde aliquid facilis quibusdam veritatis odio magnam ",
-      "image": "http://localhost:5173/images/background_5.jpg",
-      "publishDate": "04.06.2025",
-      "venue": "",
-      "participants": "",
-      "organizer": ""
     }
   ],
   "events": [
@@ -43,17 +33,6 @@
       "participants": "Ushakov  (speaking)",
       "organizer": "Investment Environment Development Committee of the Moscow Chamber  of Commerce and Industry",
       "date": "04.06.2025"
-    },
-    {
-      "id": "80cbb2cd-32b1-4517-9d31-ce435bca2420",
-      "name": "Annual Meeting with North-Western Customs Administration (SZTU)",
-      "description": "",
-      "image": "",
-      "publishDate": "03.06.2025",
-      "venue": "St Petersburg",
-      "participants": "Vasiliev  (moderating, speaking)",
-      "organizer": "Association  of European Businesses",
-      "date": "09.06.2025"
     },
     {
       "id": "ca736318-cfaf-48f9-a2d3-c30153b4b251",

@@ -10,7 +10,8 @@ export const HeaderBlock = styled.header`
 	background-color: #c8d2e6;
 	position: fixed;
 	z-index: 999;	
-	width: 100%
+	width: 100%;
+	
 `;
 export const HeaderContainer = styled.div`
     width: 1440px;
@@ -22,7 +23,7 @@ export const HeaderNav = styled.nav`
 	display: flex;
 	align-items: center;
 	img {
-	width: 200px;
+	width: 100px;
 	overflow: hidden;
 	}
 `;

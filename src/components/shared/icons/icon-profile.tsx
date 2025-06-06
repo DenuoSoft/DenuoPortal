@@ -1,12 +1,5 @@
 import React, {useState} from 'react';
 
-const styles = {
-	svg: {
-		cursor: 'pointer',
-		outline: 'none',
-	},
-};
-
 export const IconProfile = ({
 	defaultColor = '#2E3436',
 	hoverColor = '#d7ff23',
@@ -28,7 +21,6 @@ export const IconProfile = ({
 			xmlns="http://www.w3.org/2000/svg"
 			onMouseEnter={() => setIsHovered(true)}
 			onMouseLeave={() => setIsHovered(false)}
-			style={styles.svg}
 			{...ariaAttributes}
 		>
 			<g clipPath="url(#clip0_13031_109)">
