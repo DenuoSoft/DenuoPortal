@@ -11,7 +11,7 @@ export const HeaderBlock = styled.header`
 	position: fixed;
 	z-index: 999;	
 	width: 100%;
-	
+	transition: background-color 0.3s ease, color 0.3s ease;
 `;
 export const HeaderContainer = styled.div`
     width: 1440px;

@@ -1,67 +1,68 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:wght@400;700&display=swap');
 :root {
-  --header-height: 60px;
-  --footer-height: 60px;
-  --background-color: #fff;
-  --text-color: #000;
-  --main-color: #c8d2e6;
-  --accent-color: #d7ff23;
-  --items-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-  --button-bgcolor: #f0f0f0;
-  --button-color: rgba(0, 0, 0, 0.6);
-  --items-shadow-hover: 2px 2px 5px rgba(0, 0, 0, 0.1);
-  --tab-color: #c8d2e6;
-  --tab-active: #6279a7;
-  --tab-hover: #6279a7;
-  --tab-border-bottom: 2px solid #6279a7;
-  --tab-item: #c8d2e6;
-  --input-bgcolor: #f0f0f0;
-  --input-color: #999;
-  --input-border-bottom:1px solid #aaa8a8;
-  --input-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
-  --input-border: #f0f0f0;
-  --input-border-focus:  2px solid #6279a7;
-  --radio-button-label-color: #6279a7;
-  --radio-title-color: #838383;
-  --form-text-color: #767676;
-  --table-header-color: #f0f0f0;
+	--header-height: 60px;
+	--footer-height: 60px;
+	--background-color: #fff;
+	--text-color: #000;
+	--main-color: #c8d2e6;
+	--accent-color: #d7ff23;
+	--items-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+	--button-bgcolor: #f0f0f0;
+	--button-color: rgba(0, 0, 0, 0.6);
+	--items-shadow-hover: 2px 2px 5px rgba(0, 0, 0, 0.1);
+	--tab-color: #c8d2e6;
+	--tab-active: #6279a7;
+	--tab-hover: #6279a7;
+	--tab-border-bottom: 2px solid #6279a7;
+	--tab-item: #c8d2e6;
+	--input-bgcolor: #f0f0f0;
+	--input-color: #999;
+	--input-border-bottom: 1px solid #aaa8a8;
+	--input-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
+	--input-border: #f0f0f0;
+	--input-border-focus: 2px solid #6279a7;
+	--radio-button-label-color: #6279a7;
+	--radio-title-color: #838383;
+	--form-text-color: #767676;
+	--table-header-color: #f0f0f0;
 }
 body {
-  margin: 0;
-  font-family: 'Roboto Flex',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	margin: 0;
+	font-family: 'Roboto Flex', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	
 }
 body::-webkit-scrollbar {
-            display: none; 
-        }
+	display: none;
+}
 /* * {
   box-sizing: border-box;
 } */
 body.dark {
-  --background-color: #4c5262; 
-  --text-color: #c8d2e6; 
-  --main-color: #555a69;
-  --accent-color: #aaff00;
-  --tabs-color: #444;
-  --items-shadow: 2px 2px 5px rgba(181, 188, 201, 0.2);
-  --button-bgcolor: #6b6b6b;
-  --button-color: rgba(255, 255, 255, 0.6);
-  --items-shadow-hover: 2px 2px 5px rgba(0, 0, 0, 0.1);
-  --tab-color: #8fa1c6;
-  --tab-active: #c8d2e6;
-  --tab-hover: #c8d2e6;
-  --tab-border-bottom: 2px solid #c8d2e6;
-  --tab-item: #6279a7;
-  --input-bgcolor: #c6c6c6;
-  --input-color: #a9a9a9;
-  --input-border-bottom:1px solid #ababab;
-  --input-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
-  --input-border: #f0f0f0;
-  --input-border-focus:  2px solid #ebedf2;
-  --radio-button-label-color: #8fa1c6;
-   --radio-title-color: #bebebe;
-  --form-text-color: #bebebe;
-  --table-header-color: #c6c6c6;
-} 
+	--background-color: #4c5262;
+	--text-color: #c8d2e6;
+	--main-color: #555a69;
+	--accent-color: #aaff00;
+	--tabs-color: #444;
+	--items-shadow: 2px 2px 5px rgba(181, 188, 201, 0.2);
+	--button-bgcolor: #6b6b6b;
+	--button-color: rgba(255, 255, 255, 0.6);
+	--items-shadow-hover: 2px 2px 5px rgba(0, 0, 0, 0.1);
+	--tab-color: #8fa1c6;
+	--tab-active: #c8d2e6;
+	--tab-hover: #c8d2e6;
+	--tab-border-bottom: 2px solid #c8d2e6;
+	--tab-item: #6279a7;
+	--input-bgcolor: #c6c6c6;
+	--input-color: #a9a9a9;
+	--input-border-bottom: 1px solid #ababab;
+	--input-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
+	--input-border: #f0f0f0;
+	--input-border-focus: 2px solid #ebedf2;
+	--radio-button-label-color: #8fa1c6;
+	--radio-title-color: #bebebe;
+	--form-text-color: #bebebe;
+	--table-header-color: #c6c6c6;
+  
+}
