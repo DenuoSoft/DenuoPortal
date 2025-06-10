@@ -10,7 +10,7 @@ import {
 	HeaderLink,
 	HeaderList,
 	HeaderNav,
-	HeaderSearch,
+	HeaderProfile,
 } from './header.styled';
 import { ThemeSwitch } from '../shared/icons/theme-switch';
 import { ThemeContext } from '../themes/ThemeContext';
@@ -39,10 +39,10 @@ const Header = ({ userInfo }) => {
 						</HeaderList>
 					</HeaderNav>
 
-					<HeaderSearch>
+					<HeaderProfile>
 						<Profile userInfo={userInfo} />
 						<ThemeSwitch label="Dark" onClick={toggleTheme} />
-					</HeaderSearch>
+					</HeaderProfile>
 				</HeaderContainer>
 			</HeaderBlock>
 			<Outlet />

@@ -23,7 +23,7 @@ export const HeaderNav = styled.nav`
 	display: flex;
 	align-items: center;
 	img {
-	width: 100px;
+	width: 150px;
 	overflow: hidden;
 	}
 `;
@@ -49,10 +49,7 @@ export const HeaderLink = styled(NavLink)`
         color: #d7ff23;
     }	
 `;
-export const HeaderSearch = styled.div`
+export const HeaderProfile = styled.div`
 	display: flex;
 	flex-direction: row;
 `;
-export const ThemeSwitcher = styled.div`
-
-`
