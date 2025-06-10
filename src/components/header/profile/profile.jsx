@@ -4,6 +4,7 @@ import {useState} from 'react';
 import PropTypes from 'prop-types';
 import {Modal} from '../../modal/modal';
 
+
 const Profile = ({userInfo}) => {
 	const [isOpen, setIsOpen] = useState(false);
 
@@ -30,10 +31,17 @@ const Profile = ({userInfo}) => {
 			</div>
 			<Modal isOpen={isOpen} onClose={closeModal}>
 				<h2 className={css.title}>Profile Information</h2>
+
+				<p className={css.userInfo}>
+					<strong>User name:</strong> {userInfo.name}
+				</p>
+				<p className={css.userInfo}>
+					<strong>Short Name:</strong> {userInfo.shortname}
+				</p>
+				<p className={css.userInfo}>
+					<strong>Email address:</strong> {userInfo.email}
+				</p>
 				
-				<p className={css.userInfo}><strong>User name:</strong> {userInfo.name}</p>
-				<p className={css.userInfo}><strong>Short Name:</strong> {userInfo.shortname}</p>
-				<p className={css.userInfo}><strong>Email address:</strong> {userInfo.email}</p>
 			</Modal>
 			{/* 	<div className={`${css.chevron} ${isMenuShown ? css.up : ''}`}>
 				<IconChevron />

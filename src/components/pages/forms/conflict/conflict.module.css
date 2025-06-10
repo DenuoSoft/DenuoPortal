@@ -43,7 +43,7 @@
 
 .questions {
   font-size: 16px;
-  color: #767676;
+  color: var(--form-text-color);
   line-height: 1.3;
 }
 

@@ -7,17 +7,17 @@
   outline: none;
   padding: 10px;
   min-width: 0;
-  background-color: #f0f0f0;
-  border-left: #f0f0f0;
-  border-top: #f0f0f0;
-  border-right: #f0f0f0;
-  border-bottom: 1px solid #aaa8a8;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+  background-color: var(--input-bgcolor);
+  border-left: var(--input-border);
+  border-top: var(--input-border);
+  border-right: var(--input-border);
+  border-bottom: var(--input-border-bottom);
+  box-shadow: var(--input-shadow);
   font-size: 16px;
-  color: #999;
+  color: var(--input-color);
 }
 
 .textarea:focus {
-  border-bottom: 2px solid rgb(98, 121, 167);
+  border-bottom: var(--input-border-focus);
   box-shadow: none;
 }/*# sourceMappingURL=textarea.module.css.map */

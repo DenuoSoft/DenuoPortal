@@ -14,15 +14,15 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--items-shadow);
 }
 
 .columnHeader {
   display: flex;
-  background-color: rgb(240, 240, 240);
+  background-color: var(--table-header-color);
   font-weight: bold;
   color: #4e4949;
-  border-bottom: 1px solid #aaa8a8;
+  border-bottom: var(--input-border-bottom);
 }
 
 .header {
@@ -33,19 +33,19 @@
 
 .columnElem {
   display: flex;
-  border-bottom: 1px solid #ddd;
+  border-bottom: var(--input-border-bottom);
 }
 
 .columnCell {
   flex: 1;
   padding: 10px;
-  color: #4e4949;
+  color: var(--text-color);
 }
 
 .columnCellNM {
   flex: 1;
   padding: 10px;
-  color: #4e4949;
+  color: var(--text-color);
 }
 
 .columnCellNM:hover {

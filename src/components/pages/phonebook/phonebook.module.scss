@@ -1,81 +1,76 @@
 .layout {
- display: flex;
- flex-direction: column;
- margin-top: 15px;  
-    
+	display: flex;
+	flex-direction: column;
+	margin-top: 15px;
 }
 .searchBlock {
-    display: flex;
-    justify-content: flex-end;
+	display: flex;
+	justify-content: flex-end;
 }
 
 .columns {
-    margin-top: 15px;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+	margin-top: 15px;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	box-shadow: var(--items-shadow);
 }
 .columnHeader {
-    display: flex;
-  background-color: rgb(240, 240, 240);
-  font-weight: bold;
-  color: #4e4949;
-  border-bottom:1px solid #aaa8a8;
+	display: flex;
+	background-color: var(--table-header-color);
+	font-weight: bold;
+	color: #4e4949;
+	border-bottom: var(--input-border-bottom);
 }
 .header {
-    flex: 1;
-    padding: 10px;
-    text-align: left;
-    
+	flex: 1;
+	padding: 10px;
+	text-align: left;
 }
 .columnElem {
-    display: flex;
-    border-bottom: 1px solid #ddd;
+	display: flex;
+	border-bottom: var(--input-border-bottom);
 }
 .columnCell {
-    flex: 1;
-    padding: 10px;
-    color: #4e4949;
-    
+	flex: 1;
+	padding: 10px;
+	// color: #4e4949;
+    color: var(--text-color)
 }
 .columnCellNM {
-    flex: 1;
-    padding: 10px;
-    color: #4e4949;
+	flex: 1;
+	padding: 10px;
+	//color: #4e4949;
+    color: var(--text-color)
 }
 .columnCellNM:hover {
-    font-weight: bold;
+	font-weight: bold;
 }
 .textCenter {
-    padding-top: 20px;
-    text-align: center;
-    color: red;
+	padding-top: 20px;
+	text-align: center;
+	color: red;
 }
 p {
-    color:#4e4343;
+	color: #4e4343;
 }
 .pagination {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 25px;    
-    margin-top: 25px;
-
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 25px;
+	margin-top: 25px;
 }
 .pageButton {
-    background-color: #f0f0f0;
-    border: none;
-    border-radius: 5px;
-    padding: 7px;
-    font-size: 14px;
-    cursor: pointer;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+	background-color: #f0f0f0;
+	border: none;
+	border-radius: 5px;
+	padding: 7px;
+	font-size: 14px;
+	cursor: pointer;
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
 }
 .pageButton:hover {
-    background-color: #c8d2e6;
-    color: #d7ff23;
-}    
-
-
-
+	background-color: #c8d2e6;
+	color: #d7ff23;
+}

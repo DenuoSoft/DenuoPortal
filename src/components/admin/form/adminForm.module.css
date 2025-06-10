@@ -33,25 +33,25 @@ form {
 }
 
 .datePicker {
-  width: 255px;
+  width: 245px;
   height: 50px;
   border: none;
   outline: none;
-  background-color: #f0f0f0;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+  background-color: var(--input-bgcolor);
+  box-shadow: var(--input-shadow);
   margin-left: 10px;
   margin-top: 10px;
-  color: #999;
+  color: var(--input-color);
   font-size: 16px;
 }
 
 .datePicker:focus {
-  border-bottom: 2px solid rgb(98, 121, 167);
+  border-bottom: var(--input-border-focus);
   box-shadow: none;
 }
 
 .label {
-  color: #000;
+  color: var(--input-color);
 }
 
 .previewBox {
@@ -82,12 +82,12 @@ form {
   align-items: center;
   padding: 10px;
   gap: 10px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+  box-shadow: var(--items-shadow);
   cursor: pointer;
 }
 
 .imageItem:hover {
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--items-shadow-hover);
 }
 
 .image {

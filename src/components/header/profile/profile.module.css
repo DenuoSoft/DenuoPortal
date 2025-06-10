@@ -6,6 +6,7 @@
   -webkit-user-select: none;
   -moz-user-select: none;
        user-select: none;
+  padding-right: 30px;
 }
 .profile .chevron.up > svg {
   transform: scaleY(-1);
@@ -38,7 +39,7 @@
   padding: 0 15px;
   width: 200px;
   text-align: right;
-  color: #000;
+  color: var(--text-color);
   font-weight: 300;
 }
 

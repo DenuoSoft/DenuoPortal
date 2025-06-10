@@ -7,7 +7,7 @@ export const HeaderBlock = styled.header`
 	justify-content: center;
 	align-items: center;
 	color: #ffffff;
-	background-color: #c8d2e6;
+	background-color: var(--main-color);
 	position: fixed;
 	z-index: 999;	
 	width: 100%;
@@ -40,7 +40,7 @@ export const HeaderLink = styled(NavLink)`
 	text-decoration: none;
 	font-size: 22px;
 	font-weight: 300;
-	color: #000;
+	color: var(--text-color);
 	padding-left: 25px;
     &:hover, &:focus {
 		color: #d7ff23;
@@ -53,3 +53,6 @@ export const HeaderSearch = styled.div`
 	display: flex;
 	flex-direction: row;
 `;
+export const ThemeSwitcher = styled.div`
+
+`

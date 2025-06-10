@@ -8,4 +8,5 @@
 	border-right:solid 1px rgba(98, 121, 167, 0.3); 
 	flex-grow: 1;
 	width: 100%;
+	color: var(--text-color)
 }

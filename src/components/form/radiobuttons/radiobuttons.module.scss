@@ -5,14 +5,26 @@
     
 }
 .radioLabel {
-    color: #838383;
+    color: var(--radio-title-color);
     
 }
+
 label {
     cursor: pointer;
-    color: rgb(98, 121, 167);
+    color: var( --radio-button-label-color);
     
 }
 input[type="radio"] {
-    accent-color: rgb(98, 121, 167);
+    accent-color: var( --radio-button-label-color);
+    
+}
+input[type="radio"]:not(:checked):not(:disabled) {
+  appearance: none;
+  margin-bottom: 0;
+  width: 1em;
+  height: 1em;
+  background: var(--input-bgcolor);
+}
+input[type="radio"]:not(:checked):not(:disabled) {
+  border-radius: 100px;
 }

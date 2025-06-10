@@ -1,4 +1,4 @@
-import {css} from 'styled-components';
+import css from './radiobuttons.module.scss';
 
 /* eslint-disable react/prop-types */
 const RadioButton = ({label, value, onChange, name, checked}) => {

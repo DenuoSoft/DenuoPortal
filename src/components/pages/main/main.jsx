@@ -116,17 +116,17 @@ export const Main = ({userInfo}) => {
 							</div>
 							<div className={css.text}>
 								<h2 className={css.title}>{item.name}</h2>
-								<p>
+								<span>
 									<strong>Venue: </strong>{item.venue}
-								</p>
-								<p>
+								</span>
+								<span>
 									<strong>Organizer: </strong>
 									{item.organizer}
-								</p>
-								<p>
+								</span>
+								<span>
 									<strong>Participants: </strong>
 									{item.participants}
-								</p>
+								</span>
 							</div>
 						</ContentItems>
 					))
