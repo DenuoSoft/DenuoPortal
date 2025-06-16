@@ -58,28 +58,49 @@ form {
 .previewImage {
 	width: 200px;
 }
+
 .selected{
 	color: #999;
 }
+.title {
+	margin: 0;
+	font-weight: bold;
+}
+.images {
+	display: flex;
+	flex-direction: column;
+
+}
 .imageList {
 	list-style: none;
+	margin-left: 0;
+	padding-left: 0;
 }
 .imageItem {
 	display: flex;
 	justify-content: flex-start;
 	align-items: center; 
 	padding: 10px;
-	gap: 10px;
+	gap: 15px;
+	margin-bottom: 10px;
 	box-shadow: var(--items-shadow);
 	cursor: pointer;
 }
 
 .imageItem:hover {
 	box-shadow: var( --items-shadow-hover)
+
 }
 .image {
 	width: 100px;
+	object-fit: cover;
+	transition: transform 0.3s ease;
 }
+.image:hover {
+	transform: translate(70px, -90px) scale(4.4);
+	
+}
+
 .events {
 	display: flex;
 	flex-direction: column;

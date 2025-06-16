@@ -9,20 +9,42 @@
 	justify-content: center;
 	align-items: center;
 	z-index: 999;
+	opacity: 0; 
+	transition: opacity 0.3s ease-in-out;
+}
+.modalOverlay.overlayVisible {
+    opacity: 1; 
 }
 .modalContent {
-	background-color: white;
+	background-color: var(--background-color);
 	padding: 20px;
 	border-radius: 5px;
-	width: 350px;
+	width: auto;
 	height: auto;
+	opacity: 0;
+	transform: translateY(-100px);
+	transition: opacity 0.3s ease-out, transform 0.3s ease-out;
 	
 }
-
+.modalContent.visible {
+	opacity: 1; 
+	transform: translateY(0); 
+}
+.mcontent {
+	display: flex;
+	justify-content: flex-end;
+	height: 10px;
+}
 .closeButton {
-	float: right;
+	margin: 0;
+	padding: 0;
 	background: transparent;
 	border: none;
-	font-size: 50px;
+	font-size: 36px;
 	cursor: pointer;
+	color: var(--button-color);
+	transform: translate(15px, -25px);
+}
+.closeButton:hover {
+	color: var(--accent-color);
 }

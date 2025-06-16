@@ -1,9 +1,9 @@
-import { useContext } from 'react';
-import { Outlet } from 'react-router-dom';
+import {useContext} from 'react';
+import {Outlet} from 'react-router-dom';
 import Profile from './profile/profile';
 import PropTypes from 'prop-types';
 import logolight from '../../assets/img/logo.png';
-import logodark from '../../assets/img/logo-dark.png'
+import logodark from '../../assets/img/logo-dark.png';
 import {
 	HeaderBlock,
 	HeaderContainer,
@@ -11,18 +11,17 @@ import {
 	HeaderList,
 	HeaderNav,
 	HeaderProfile,
+	ThemeBlock,
+	LightLabel,
+	DarkLabel,
 } from './header.styled';
-import { ThemeSwitch } from '../shared/icons/theme-switch';
-import { ThemeContext } from '../themes/ThemeContext';
+import {ThemeContext} from '../themes/ThemeContext';
+import Switch from '@mui/material/Switch';
 
-const Header = ({ userInfo }) => {
-	const { theme, toggleTheme } = useContext(ThemeContext)
+const Header = ({userInfo}) => {
+	const {theme, toggleTheme} = useContext(ThemeContext);
 	const headerImage = theme === 'light' ? logolight : logodark;
-	/* const getActive = ({isActive}) => {
-		return {
-			color: isActive ? '#d7ff23' : '#28282d',
-		};
-	}; */
+
 	return (
 		<>
 			<HeaderBlock>
@@ -38,10 +37,13 @@ const Header = ({ userInfo }) => {
 							<HeaderLink to="/phonebook">Phone Book</HeaderLink>
 						</HeaderList>
 					</HeaderNav>
-
 					<HeaderProfile>
 						<Profile userInfo={userInfo} />
-						<ThemeSwitch label="Dark" onClick={toggleTheme} />
+						<ThemeBlock>
+							<LightLabel>Light</LightLabel>
+							<Switch checked={theme === 'dark'} onClick={toggleTheme} />
+							<DarkLabel>Dark</DarkLabel>
+						</ThemeBlock>
 					</HeaderProfile>
 				</HeaderContainer>
 			</HeaderBlock>

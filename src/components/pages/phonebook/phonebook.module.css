@@ -82,4 +82,16 @@ p {
 .pageButton:hover {
   background-color: #c8d2e6;
   color: #d7ff23;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: var(--text-color);
+}
+
+.title {
+  margin: 0;
+  padding-bottom: 15px;
 }/*# sourceMappingURL=phonebook.module.css.map */

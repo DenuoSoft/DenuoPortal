@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars */
 import css from './phonebook.module.scss';
-import { useState } from 'react';
-import { userData } from '../../../data/userData.jsx';
-import { Modal } from '../../modal/modal.jsx';
+import {useState} from 'react';
+import {userData} from '../../../data/userData.jsx';
+import {Modal} from '../../modal/modal.jsx';
 import Pagination from '../../pagination/pagination.jsx';
 import Input from '../../form/input/input.jsx';
 
@@ -70,11 +70,11 @@ export const Phonebook = () => {
 			<div className={css.layout}>
 				<div className={css.searchBlock}>
 					<Input
-						type='text'
-						placeholder='Search...'
+						type="text"
+						placeholder="Search..."
 						value={searchTerm}
 						onChange={handleSearchChange}
-						readOnly = {true}
+						readOnly={true}
 					/>
 				</div>
 			</div>
@@ -92,7 +92,7 @@ export const Phonebook = () => {
 						<div key={contact.id} className={css.columnElem}>
 							<div
 								className={css.columnCellNM}
-								style={{ cursor: 'pointer' }}
+								style={{cursor: 'pointer'}}
 								onClick={() => openModal(contact)}
 							>
 								{contact.name}
@@ -107,23 +107,37 @@ export const Phonebook = () => {
 					<div className={css.textCenter}>There is no such user!!!</div>
 				)}
 			</div>
-			 <Pagination 
-                currentPage={currentPage} 
-                totalPages={totalPages} 
-                onNext={() => handlePageChange('next')} 
-                onPrev={() => handlePageChange('prev')} 
-            />
+			<Pagination
+				currentPage={currentPage}
+				totalPages={totalPages}
+				onNext={() => handlePageChange('next')}
+				onPrev={() => handlePageChange('prev')}
+			/>
 
 			<Modal isOpen={isModalOpen} onClose={closeModal}>
 				{modalData && (
 					<div>
-						<h2>{modalData.name}</h2>
-						<p><strong>Job Position:</strong> {modalData.position}</p>
-						<p><strong>Extension:</strong> {modalData.phone}</p>
-						<p><strong>Mobile Phone:</strong> {modalData.mobile}</p>
-						<p><strong>Office:</strong> {modalData.location}</p>
-						<p><strong>Assistant:</strong> {modalData.assistant}</p>
-						<p><strong>Assistant extension:</strong> {modalData.assistantExt}</p>
+						<h2 className={css.title}>{modalData.name}</h2>
+						<div className={css.text}>
+							<span>
+								<strong>Job Position:</strong> {modalData.position}
+							</span>
+							<span>
+								<strong>Extension:</strong> {modalData.phone}
+							</span>
+							<span>
+								<strong>Mobile Phone:</strong> {modalData.mobile}
+							</span>
+							<span>
+								<strong>Office:</strong> {modalData.location}
+							</span>
+							<span>
+								<strong>Assistant:</strong> {modalData.assistant}
+							</span>
+							<span>
+								<strong>Assistant extension:</strong> {modalData.assistantExt}
+							</span>
+						</div>
 					</div>
 				)}
 			</Modal>

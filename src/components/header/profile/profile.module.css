@@ -48,11 +48,14 @@
 }
 
 .title {
-  color: #474747;
+  margin: 0;
+  padding-bottom: 10px;
+  color: var(--text-color);
 }
 
 .userInfo {
-  color: #6c6c6c;
+  color: var(--text-color);
+  margin: 0;
 }
 
 .alert {

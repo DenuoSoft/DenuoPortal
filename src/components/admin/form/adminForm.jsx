@@ -154,7 +154,7 @@ const AdminForm = ({
 			</form>
 			<Modal isOpen={isModalOpen} onClose={closeModal}>
 				<div className={css.images}>
-					<h4>Select image:</h4>
+					<h4 className={css.title}>Select image:</h4>
 					<ul className={css.imageList}>
 						{images.map((image, index) => (
 							<li
@@ -163,7 +163,7 @@ const AdminForm = ({
 								className={css.imageItem}
 							>
 								<img src={image.url} className={css.image} alt={image.name} />
-								<span>{image.name}</span>
+								<span className={css.imgName}>{image.name}</span>
 							</li>
 						))}
 					</ul>

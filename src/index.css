@@ -1,8 +1,7 @@
 @font-face {
-  font-family: 'Graphik'; 
-  src: url('./assets/fonts/GraphikLC-Regular.woff2') format('truetype'); 
-  font-weight: normal;
-  
+	font-family: 'Graphik';
+	src: url('./assets/fonts/GraphikLC-Regular.woff2') format('truetype');
+	font-weight: normal;
 }
 :root {
 	--header-height: 60px;
@@ -10,6 +9,8 @@
 	--background-color: #fff;
 	--text-color: #000;
 	--main-color: #c8d2e6;
+	--light-color: #c8d2e6;
+	--dark-color: #000;
 	--accent-color: #d7ff23;
 	--items-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 	--button-bgcolor: #f0f0f0;
@@ -36,7 +37,6 @@ body {
 	font-family: 'Graphik', Arial, Helvetica, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	
 }
 body::-webkit-scrollbar {
 	display: none;
@@ -49,6 +49,8 @@ body.dark {
 	--text-color: #c8d2e6;
 	--main-color: #555a69;
 	--accent-color: #aaff00;
+	--light-color: #c8d2e6;
+	--dark-color: #555a69;
 	--tabs-color: #444;
 	--items-shadow: 2px 2px 5px rgba(181, 188, 201, 0.2);
 	--button-bgcolor: #6b6b6b;
@@ -69,5 +71,4 @@ body.dark {
 	--radio-title-color: #bebebe;
 	--form-text-color: #bebebe;
 	--table-header-color: #c6c6c6;
-  
 }

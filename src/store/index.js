@@ -2,7 +2,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { apiSlice } from '../api/apiSlice';
 
-
 const stringMiddleware = () => (next) => (action) => {
 	if (typeof action === 'string') {
 		return next({
