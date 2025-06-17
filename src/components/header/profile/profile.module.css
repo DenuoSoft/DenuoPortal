@@ -8,30 +8,8 @@
        user-select: none;
   padding-right: 30px;
 }
-.profile .chevron.up > svg {
-  transform: scaleY(-1);
-}
-.profile .menu {
-  position: fixed;
-  top: 82px;
-  right: 16px;
-  min-width: 120px;
-  background-color: #c8d2e6;
-  color: #000000;
-  border-radius: 4px;
-  padding: 8px 12px;
-}
 
 .profile:hover {
-  color: #d7ff23;
-}
-
-.menuItems {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.menuItems .item:hover {
   color: #d7ff23;
 }
 
@@ -49,6 +27,8 @@
 
 .title {
   margin: 0;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #282828;
   padding-bottom: 10px;
   color: var(--text-color);
 }
@@ -56,6 +36,10 @@
 .userInfo {
   color: var(--text-color);
   margin: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding-bottom: 10px;
 }
 
 .alert {

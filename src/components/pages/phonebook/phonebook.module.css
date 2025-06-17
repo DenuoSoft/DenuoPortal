@@ -85,6 +85,7 @@ p {
 }
 
 .text {
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -93,5 +94,12 @@ p {
 
 .title {
   margin: 0;
-  padding-bottom: 15px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #282828;
+}
+
+.textItem {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
 }/*# sourceMappingURL=phonebook.module.css.map */

@@ -73,7 +73,6 @@ export const Main = ({userInfo}) => {
 	if (isError) {
 		return <div className={css.loading}>Error loading info</div>;
 	}
-
 	let newsContent = (
 		<div>
 			<ContentLayout>
@@ -85,10 +84,12 @@ export const Main = ({userInfo}) => {
 							<div className={css.imageBox}>
 								<img className={css.image} src={item.image} alt="image" />
 							</div>
-							<div className={css.text}>
-								<span>{item.publishDate}</span>
-								<h2 className={css.title}>{item.name}</h2>
-								<span>{item.description}</span>
+							<div className={css.infobox}>
+								<div className={css.text}>
+									<span>{item.publishDate}</span>
+									<h2 className={css.title}>{item.name}</h2>
+								</div>
+								<span className={css.descr}>{item.description}</span>
 							</div>
 						</ContentItems>
 					))
@@ -102,7 +103,6 @@ export const Main = ({userInfo}) => {
 			/>
 		</div>
 	);
-
 	let eventContent = (
 		<div>
 			<ContentLayout>
@@ -111,22 +111,27 @@ export const Main = ({userInfo}) => {
 				) : (
 					eventPaginatedContent.map((item) => (
 						<ContentItems key={item.id}>
-							<div className={css.date}>
-								<h4>Event date:</h4> {item.date}
-							</div>
-							<div className={css.text}>
-								<h2 className={css.title}>{item.name}</h2>
-								<span>
-									<strong>Venue: </strong>{item.venue}
-								</span>
-								<span>
-									<strong>Organizer: </strong>
-									{item.organizer}
-								</span>
-								<span>
-									<strong>Participants: </strong>
-									{item.participants}
-								</span>
+							<div className={css.evntbox}>
+								<div className={css.date}>
+									<h4>Event date:</h4> {item.date}
+								</div>
+								<div className={css.evnttitle}>
+									<h2>{item.name}</h2>
+								</div>
+								<div className={css.evntdescr}>
+									<span>
+										<strong>Venue: </strong>
+										{item.venue}
+									</span>
+									<span>
+										<strong>Organizer: </strong>
+										{item.organizer}
+									</span>
+									<span>
+										<strong>Participants: </strong>
+										{item.participants}
+									</span>
+								</div>
 							</div>
 						</ContentItems>
 					))

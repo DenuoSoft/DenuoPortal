@@ -119,24 +119,24 @@ export const Phonebook = () => {
 					<div>
 						<h2 className={css.title}>{modalData.name}</h2>
 						<div className={css.text}>
-							<span>
-								<strong>Job Position:</strong> {modalData.position}
-							</span>
-							<span>
-								<strong>Extension:</strong> {modalData.phone}
-							</span>
-							<span>
+							<div className={css.textItem}>
+							<strong>Job Position:</strong>{modalData.position}
+							</div>
+							<div className={css.textItem}>
+								<strong>Extension:</strong>{modalData.phone} 
+							</div>
+							<div className={css.textItem}>
 								<strong>Mobile Phone:</strong> {modalData.mobile}
-							</span>
-							<span>
+							</div>
+							<div className={css.textItem}>
 								<strong>Office:</strong> {modalData.location}
-							</span>
-							<span>
+							</div>
+							<div className={css.textItem}>
 								<strong>Assistant:</strong> {modalData.assistant}
-							</span>
-							<span>
+							</div>
+							<div className={css.textItem}>
 								<strong>Assistant extension:</strong> {modalData.assistantExt}
-							</span>
+							</div>
 						</div>
 					</div>
 				)}

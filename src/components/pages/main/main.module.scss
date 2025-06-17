@@ -7,19 +7,40 @@
 	object-fit: cover;
 	overflow: hidden;
 }
-.text {
+.infobox {
 	display: flex;
 	flex-direction: column;
-	gap: 5px;	
-	width: 100%;
-	margin-left: 15px;
+	margin-left: 25px;
+	width: 1200px;
+}
+.text {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: baseline;
+	gap: 15px;	
 	color: var(--text-color);
 }
 .title {
 	margin: 0;
 	font-weight: normal;
-	padding-top: 5px;
-	padding-bottom: 5px;
+	
+}
+h4 {
+	margin: 0;
+	padding-bottom: 10px;
+}
+.evntbox {
+	display: flex;
+}
+.evntdescr {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	justify-content: top;
+	width: 500px;
 }
 .loading {
 	margin-top: 30px;
@@ -30,7 +51,14 @@ p {
 	padding-top: 8px;
 }
 .date {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	margin: 0;
-	text-align: center;
+	
 	width: 200px;
+}
+.evnttitle {
+	
+	width: 700px;
 }

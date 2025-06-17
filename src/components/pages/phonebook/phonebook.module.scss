@@ -1,7 +1,6 @@
 .layout {
 	display: flex;
 	flex-direction: column;
-	
 }
 .searchBlock {
 	display: flex;
@@ -35,13 +34,13 @@
 	flex: 1;
 	padding: 10px;
 	// color: #4e4949;
-    color: var(--text-color)
+	color: var(--text-color);
 }
 .columnCellNM {
 	flex: 1;
 	padding: 10px;
 	//color: #4e4949;
-    color: var(--text-color)
+	color: var(--text-color);
 }
 .columnCellNM:hover {
 	font-weight: bold;
@@ -74,13 +73,21 @@ p {
 	background-color: #c8d2e6;
 	color: #d7ff23;
 }
+
 .text {
-   display: flex;
-   flex-direction: column;
-   gap: 10px; 
-   color: var(--text-color);    
+	margin-top: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	color: var(--text-color);
 }
 .title {
 	margin: 0;
-	padding-bottom: 15px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #282828;
+}
+.textItem {
+	display: flex;
+	justify-content: space-between;
+	gap: 15px;
 }
