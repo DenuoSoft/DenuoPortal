@@ -9,6 +9,7 @@ import ContentItems from '../../contentItems/ContentItems';
 import ContentLayout from '../../contentLayout/ContentLayout';
 import IsAdmin from '../../../utils/isAdmin';
 import Pagination from '../../pagination/pagination';
+import CutDescription from '../../cutDescription/cutDescription';
 
 export const Main = ({userInfo}) => {
 	const {
@@ -89,7 +90,8 @@ export const Main = ({userInfo}) => {
 									<span>{item.publishDate}</span>
 									<h2 className={css.title}>{item.name}</h2>
 								</div>
-								<span className={css.descr}>{item.description}</span>
+								{/* <span className={css.descr}>{item.description}</span> */}
+								<CutDescription description={item.description} />
 							</div>
 						</ContentItems>
 					))

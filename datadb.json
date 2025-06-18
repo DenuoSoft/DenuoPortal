@@ -19,10 +19,7 @@
       "name": "News Title",
       "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor fuga totam facere perferendis aperiam commodi laudantium unde aliquid facilis quibusdam veritatis odio magnam esse ad voluptatem maxime iusto, nulla excepturi dolore hic mollitia expedita labore debitis! Obcaecati ipsam ipsum, magnam odit, doloribus quam, quasi consequuntur earum voluptatem qui quas. Animi!",
       "image": "http://localhost:5173/images/background_2.jpg",
-      "publishDate": "17.06.2025",
-      "venue": "",
-      "participants": "",
-      "organizer": ""
+      "publishDate": "17.06.2025"
     },
     {
       "id": "2da4eb87-d4b0-4e14-ad72-9c33eb2bf3b0",
@@ -33,6 +30,30 @@
       "venue": "",
       "participants": "",
       "organizer": ""
+    },
+    {
+      "id": "27cd12ff-98eb-46c8-ac53-82f56f86c091",
+      "name": "News title ",
+      "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor fuga totam facere perferendis aperiam commodi laudantium unde aliquid facilis quibusdam veritatis odio magnam esse ad voluptatem maxime iusto, nulla excepturi dolore hic mollitia expedita labore debitis! Obcaecati ipsam ipsum, magnam odit, doloribus quam, quasi consequuntur earum voluptatem qui quas. Animi!",
+      "image": "http://localhost:5173/images/background_3.jpg",
+      "publishDate": "18.06.2025",
+      "venue": "",
+      "participants": "",
+      "organizer": ""
+    },
+    {
+      "id": "8d6978e0-d164-4611-b541-5848f2fde9a4",
+      "name": "News title 2",
+      "description": "orem ipsum dolor, sit amet consectetur adipisicing elit. Dolor fuga totam facere perferendis aperiam commodi laudantium unde aliquid facilis quibusdam veritatis odio magnam esse ad voluptatem maxime iusto, nulla excepturi dolore hic mollitia expedita labore debitis! Obcaecati ipsam ipsum, magnam odit, doloribus quam, quasi consequuntur earum voluptatem qui quas. Animi! Lorem ipsum dolor, sit ",
+      "image": "http://localhost:5173/images/background_6.jpg",
+      "publishDate": "18.06.2025"
+    },
+    {
+      "id": "3fe79c31-3c5d-4353-857c-e973e3f101ca",
+      "name": "News title 3",
+      "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor fuga totam facere perferendis aperiam commodi laudantium unde aliquid facilis quibusdam veritatis odio magnam esse ad voluptatem maxime iusto, nulla excepturi dolore hic mollitia expedita labore debitis! Obcaecati ipsam ipsum, magnam odit, doloribus quam, quasi consequuntur earum voluptatem qui quas. Animi! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor fuga totam facere perferendis aperiam commodi laudantium unde aliquid facilis quibusdam veritatis odio magnam esse ad voluptatem maxime iusto, nulla excepturi dolore hic mollitia expedita labore debitis! Obcaecati ipsam ipsum, magnam odit, doloribus quam, quasi consequuntur earum voluptatem qui quas. Animi!Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor fuga totam facere perferendis aperiam commodi laudantium unde aliquid facilis quibusdam veritatis odio magnam esse ad voluptatem maxime iusto, nulla excepturi dolore hic mollitia expedita labore debitis! Obcaecati ipsam ipsum, magnam odit, doloribus quam, quasi consequuntur earum voluptatem qui quas. Animi! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor fuga totam facere perferendis aperiam commodi laudantium unde aliquid facilis quibusdam veritatis odio magnam esse ad voluptatem maxime iusto, nulla excepturi dolore hic mollitia expedita labore debitis! Obcaecati ipsam ipsum, magnam odit, doloribus quam, quasi consequuntur earum voluptatem qui quas. Animi!",
+      "image": "http://localhost:5173/images/background_2.jpg",
+      "publishDate": "18.06.2025"
     }
   ],
   "events": [

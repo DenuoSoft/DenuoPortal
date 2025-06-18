@@ -1,3 +1,4 @@
+
 import {useState} from 'react';
 import {v4 as uuidv4} from 'uuid';
 import AdminItemsList from './adminItemsList/AdminItemsList';
@@ -9,7 +10,6 @@ import {
 } from '../../api/apiSlice';
 import 'react-datepicker/dist/react-datepicker.css';
 import {formatDate} from '../../utils/formatDate';
-//import ImageUploader from '../imageUploader/ImageUploader';
 
 const radioOptions = [
 	{label: 'News', value: 'news'},
@@ -27,6 +27,7 @@ const Admin = () => {
 	const [publishDate, setPublishDate] = useState('');
 	const [selectedType, setSelectedType] = useState('news');
 	const [eventDate, setEventDate] = useState(new Date());
+
 	// eslint-disable-next-line no-unused-vars
 	const [createNews, {isLoading}] = useCreateNewsMutation();
 	const [createEvent] = useCreateEventMutation();
@@ -39,23 +40,23 @@ const Admin = () => {
 		setVenue('');
 		setParticipants('');
 		setOrganizer('');
+		setEventDate(new Date()); 
 	};
 
 	const onSubmitHandler = () => {
 		const currentDate = new Date();
-		const formattedDate = formatDate(currentDate);
-		setPublishDate(formattedDate);
-		const newItem = {
-			id: uuidv4(),
-			name: title,
-			description: description,
-			image: image,
-			publishDate: formattedDate,
-			venue: venue,
-			participants: participants,
-			organizer: organizer,
-		};
+		const formattedPublishDate = formatDate(currentDate);
+		setPublishDate(formattedPublishDate); 
+
+		let newItem;
 		if (selectedType === 'news') {
+			newItem = {
+				id: uuidv4(),
+				name: title,
+				description: description,
+				image: image,
+				publishDate: formattedPublishDate,
+			};
 			createNews(newItem)
 				.unwrap()
 				.then(() => {
@@ -63,15 +64,22 @@ const Admin = () => {
 					setImage('');
 					setDescription('');
 					setPublishDate('');
-				});
-		} else {
+				})
+				.catch((error) => console.error('Failed to create news:', error));
+		} else if (selectedType === 'events') {
 			const formattedEventDate = formatDate(eventDate);
-			const eventItem = {
-				...newItem,
+			newItem = {
+				id: uuidv4(),
+				name: title,
+				description: description,
+				image: image,
+				publishDate: formattedPublishDate,
+				venue: venue,
+				participants: participants,
+				organizer: organizer,
 				date: formattedEventDate,
-				publishDate: formattedDate,
 			};
-			createEvent(eventItem)
+			createEvent(newItem)
 				.unwrap()
 				.then(() => {
 					setEventDate(new Date());
@@ -82,20 +90,15 @@ const Admin = () => {
 					setVenue('');
 					setParticipants('');
 					setOrganizer('');
-				});
+				})
+				.catch((error) => console.error('Failed to create event:', error));
 		}
 	};
 
-	// eslint-disable-next-line no-unused-vars
-	const data = {
-		title,
-		description,
-		type: selectedType,
-		...(selectedType === 'news' ? {image} : {eventDate}),
+	const handleSubmit = () => {
+		onSubmitHandler();
 	};
-	const handleSubmit = (data) => {
-		onSubmitHandler(data);
-	};
+
 	return (
 		<>
 			<div className={css.layout}>
@@ -120,9 +123,8 @@ const Admin = () => {
 						eventDate={eventDate}
 						setEventDate={setEventDate}
 						selectedType={selectedType}
-						setSelectedType={setSelectedType}
-						radioOptions={radioOptions}
 						handleRadioChange={handleRadioChange}
+						radioOptions={radioOptions}
 						onSubmit={handleSubmit}
 					/>
 				</div>
@@ -132,3 +134,4 @@ const Admin = () => {
 };
 
 export default Admin;
+

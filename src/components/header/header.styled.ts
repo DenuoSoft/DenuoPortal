@@ -38,8 +38,11 @@ export const HeaderList = styled.ul`
 
 export const HeaderLink = styled(NavLink)`
 	text-decoration: none;
-	font-size: 22px;
-	font-weight: 300;
+	
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+    
 	color: var(--text-color);
 	padding-left: 25px;
 	&:hover,
