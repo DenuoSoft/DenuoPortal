@@ -7,11 +7,13 @@
 	--header-height: 60px;
 	--footer-height: 60px;
 	--background-color: #fff;
+	--border-radius: 35px;
 	--text-color: #000;
 	--main-color: #c8d2e6;
 	--light-color: #c8d2e6;
 	--dark-color: #000;
 	--accent-color: #d7ff23;
+	--text-shadow: rgba(0, 0, 0, 0.1) 2px 2px;
 	--items-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 	--button-bgcolor: #f0f0f0;
 	--button-color: rgba(0, 0, 0, 0.6);
@@ -19,7 +21,8 @@
 	--tab-color: #c8d2e6;
 	--tab-active: #6279a7;
 	--tab-hover: #6279a7;
-	--tab-border-bottom: 2px solid #6279a7;
+	--tab-border: 1px solid #c8d2e6;
+	--tab-border-active: 2px solid #c8d2e6;
 	--tab-item: #c8d2e6;
 	--input-bgcolor: #f0f0f0;
 	--input-color: #999;
@@ -31,6 +34,7 @@
 	--radio-title-color: #838383;
 	--form-text-color: #767676;
 	--table-header-color: #f0f0f0;
+	--border-bottom-phb: 2px solid #555555;
 }
 body {
 	margin: 0;
@@ -71,4 +75,6 @@ body.dark {
 	--radio-title-color: #bebebe;
 	--form-text-color: #bebebe;
 	--table-header-color: #c6c6c6;
+	--border-bottom-phb: 2px solid #c8d2e6;
+	
 }

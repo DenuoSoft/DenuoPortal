@@ -16,14 +16,13 @@
   border-top: var(--input-border);
   border-right: var(--input-border);
   border-bottom: var(--input-border-bottom);
-  box-shadow: var(--input-shadow);
   font-family: "Graphik", Arial, Helvetica, sans-serif;
   font-size: 16px;
   color: var(--input-color);
 }
 .inputbox .input:focus {
   border-bottom: var(--input-border-focus);
-  box-shadow: none;
+  box-shadow: var(--input-shadow);
 }
 
 .clearButton {

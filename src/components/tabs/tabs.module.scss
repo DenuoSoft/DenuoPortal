@@ -1,8 +1,8 @@
 .tabs {
 	display: flex;
-	justify-content: flex-start;
+	justify-content: center;
+	border-bottom: var(--tab-border)
 }
-
 .tabsItem {
 	display: flex;
 	justify-content: center;
@@ -16,15 +16,17 @@
 }
 .tabsItem:hover {
 	color: var(--tab-hover);
+	border-bottom: var(--tab-border-active);
+	
 }
 .tabContent {
-	margin-top: 15px;
+	margin-top: 25px;
 	display: flex;
 	align-items: flex-start;
 	
 }
-
 .activeTab {
-	border-bottom: var(--tab-border-bottom);
+	border-bottom: var(--tab-border-active);
 	color: var(--tab-active);
+	
 }

@@ -18,10 +18,9 @@
 
 .columnHeader {
   display: flex;
-  background-color: var(--table-header-color);
   font-weight: bold;
-  color: #4e4949;
-  border-bottom: var(--input-border-bottom);
+  color: var(--text-color);
+  border-bottom: var(--border-bottom-phb);
 }
 
 .header {
@@ -49,6 +48,8 @@
 
 .columnCellNM:hover {
   font-weight: bold;
+  text-shadow: var(--text-shadow);
+  transition: box-shadow 0.5s ease;
 }
 
 .textCenter {

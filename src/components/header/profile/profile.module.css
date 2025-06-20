@@ -23,6 +23,7 @@
 
 .user:hover {
   color: #d7ff23;
+  text-shadow: var(--text-shadow);
 }
 
 .title {

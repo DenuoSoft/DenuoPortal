@@ -12,6 +12,7 @@ export const HeaderBlock = styled.header`
 	z-index: 999;
 	width: 100%;
 	transition: background-color 0.3s ease, color 0.3s ease;
+	
 `;
 export const HeaderContainer = styled.div`
 	width: 1440px;
@@ -38,19 +39,21 @@ export const HeaderList = styled.ul`
 
 export const HeaderLink = styled(NavLink)`
 	text-decoration: none;
-	
-    font-weight: 400;
-    font-size: 1.4rem;
-    line-height: 1.7rem;
-    
+
+	font-weight: 400;
+	font-size: 1.4rem;
+	line-height: 1.7rem;
+
 	color: var(--text-color);
 	padding-left: 25px;
 	&:hover,
 	&:focus {
 		color: #d7ff23;
+		text-shadow: var(--text-shadow);
 	}
 	&.active {
 		color: #d7ff23;
+		text-shadow: var(--text-shadow);
 	}
 `;
 export const HeaderProfile = styled.div`
