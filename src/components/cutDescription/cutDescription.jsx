@@ -4,7 +4,7 @@ import css from './cutDecription.module.css';
 
 const CutDescription = ({description}) => {
 	const [showFullDescription, setShowFullDescription] = useState(false);
-	const wordLimit = 80;
+	const wordLimit = 60;
 	const words = description.split(' ');
 	const needsTruncation = words.length > wordLimit;
 

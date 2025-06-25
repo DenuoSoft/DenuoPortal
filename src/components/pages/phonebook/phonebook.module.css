@@ -20,7 +20,7 @@
   display: flex;
   font-weight: bold;
   color: var(--text-color);
-  border-bottom: var(--border-bottom-phb);
+  border-bottom: 2px solid var(--border-bottom-phb);
 }
 
 .header {
@@ -96,7 +96,7 @@ p {
 .title {
   margin: 0;
   padding-bottom: 5px;
-  border-bottom: 1px solid #282828;
+  border-bottom: 1px solid var(--border-bottom-phb);
 }
 
 .textItem {

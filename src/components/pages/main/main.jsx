@@ -72,7 +72,7 @@ export const Main = ({userInfo}) => {
 	}
 
 	if (isError) {
-		return <div className={css.loading}>Error loading info</div>;
+		return <div className={css.loading}>Error loading</div>;
 	}
 	let newsContent = (
 		<div>
@@ -90,7 +90,7 @@ export const Main = ({userInfo}) => {
 									<span>{item.publishDate}</span>
 									<h2 className={css.title}>{item.name}</h2>
 								</div>
-								{/* <span className={css.descr}>{item.description}</span> */}
+							
 								<CutDescription description={item.description} />
 							</div>
 						</ContentItems>

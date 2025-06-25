@@ -17,7 +17,7 @@
 	display: flex;
 	font-weight: bold;
 	color: var(--text-color);
-	border-bottom: var(--border-bottom-phb);
+	border-bottom: 2px solid var(--border-bottom-phb);
 }
 .header {
 	flex: 1;
@@ -31,13 +31,11 @@
 .columnCell {
 	flex: 1;
 	padding: 10px;
-	// color: #4e4949;
 	color: var(--text-color);
 }
 .columnCellNM {
 	flex: 1;
 	padding: 10px;
-	//color: #4e4949;
 	color: var(--text-color);
 }
 .columnCellNM:hover {
@@ -84,7 +82,7 @@ p {
 .title {
 	margin: 0;
 	padding-bottom: 5px;
-	border-bottom: 1px solid #282828;
+	border-bottom: 1px solid var(--border-bottom-phb);
 }
 .textItem {
 	display: flex;

@@ -1,22 +1,31 @@
 .button {
-   display: flex;
-   align-items: center; 
-   padding: 6px 8px;
-   text-transform: uppercase;
-   font-family: 'Graphik', Arial, Helvetica, sans-serif;
-   font-size: 14px;
-   background-color: var(--button-bgcolor);
-   color: var(--button-color);
-   
-   border: none;
-   cursor: pointer;
+	display: flex;
+	align-items: center;
+	padding: 6px 8px;
+	text-transform: uppercase;
+	font-family: 'Graphik', Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	background-color: var(--button-bgcolor);
+	color: var(--button-color);
+
+	border: none;
+	cursor: pointer;
 }
 .button:hover {
-    background-color: #c8d2e6;
-    color: #d7ff23;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
+	background-color: #c8d2e6;
+	color: #d7ff23;
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
+}
+:disabled {
+	box-shadow: none;
+	cursor: auto;
+	color: rgba(169, 169, 169, 0.6);
+}
+:disabled:hover {
+	background-color: #f0f0f0;
+	box-shadow: none;
+    color: rgba(169, 169, 169, 0.6);
 }
 .icon {
-    margin-left: 5px;
+	margin-left: 5px;
 }
-

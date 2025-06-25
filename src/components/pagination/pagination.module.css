@@ -8,14 +8,4 @@
 .pages {
   padding: 30px;
   font-weight: 300;
-}
-
-:disabled {
-  box-shadow: none;
-  cursor: auto;
-}
-
-:disabled:hover {
-  background-color: #f0f0f0;
-  color: rgba(0, 0, 0, 0.6);
 }/*# sourceMappingURL=pagination.module.css.map */
