@@ -1,6 +1,7 @@
 import {Routes, Route} from 'react-router-dom';
 import {Layout} from '../layout/layout';
 import Header from '../header/header';
+
 import {Footer} from '../footer/footer';
 import {useKeycloak} from '../auth/keycloak-context';
 import {
@@ -10,6 +11,7 @@ import {
 	IT,
 	Forms,
 	Phonebook,
+	Home
 } from '../pages/index';
 const AppContent = () => {
 	const {authenticated, userInfo} = useKeycloak();
@@ -19,7 +21,8 @@ const AppContent = () => {
 			<Header userInfo={userInfo} isAuthenticated={authenticated} />
 			<Layout isAuthenticated={authenticated} userInfo={userInfo}>
 				<Routes>
-					<Route path="/" element={<Main userInfo={userInfo}/>} />
+					<Route path="/" element={<Home userInfo={userInfo}/>} />
+					<Route path="/main" element={<Main userInfo={userInfo}/>} />
 					<Route path="/hr" element={<HR userInfo={userInfo}/>} />
 					<Route path="/marketing" element={<Marketing userInfo={userInfo}/>} />
 					<Route path="/it" element={<IT userInfo={userInfo}/>} />

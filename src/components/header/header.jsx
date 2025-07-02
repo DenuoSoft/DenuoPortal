@@ -29,7 +29,7 @@ const Header = ({userInfo}) => {
 					<HeaderNav>
 						<img src={headerImage} alt="logo" />
 						<HeaderList>
-							<HeaderLink to="/">Main</HeaderLink>
+							<HeaderLink to="/main">Main</HeaderLink>
 							<HeaderLink to="/hr">HR</HeaderLink>
 							<HeaderLink to="/marketing">Marketing</HeaderLink>
 							<HeaderLink to="/it">IT</HeaderLink>

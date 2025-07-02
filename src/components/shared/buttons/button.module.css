@@ -9,6 +9,7 @@
   color: var(--button-color);
   border: none;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .button:hover {
