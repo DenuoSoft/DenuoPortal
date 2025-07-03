@@ -21,6 +21,10 @@ export const IconProfile = ({
 			xmlns="http://www.w3.org/2000/svg"
 			onMouseEnter={() => setIsHovered(true)}
 			onMouseLeave={() => setIsHovered(false)}
+			style={{
+				outline: 'none',
+				cursor: 'pointer',
+			}}
 			{...ariaAttributes}
 		>
 			<g clipPath="url(#clip0_13031_109)">

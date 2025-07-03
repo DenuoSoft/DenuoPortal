@@ -10,6 +10,7 @@ import ContentLayout from '../../contentLayout/ContentLayout';
 import IsAdmin from '../../../utils/isAdmin';
 import Pagination from '../../pagination/pagination';
 import CutDescription from '../../cutDescription/cutDescription';
+import Loader from '../../loader/loader';
 
 export const Main = ({userInfo}) => {
 	const {
@@ -67,15 +68,8 @@ export const Main = ({userInfo}) => {
 		if (eventCurrentPage > 1) setEventCurrentPage((prev) => prev - 1);
 	};
 
-	if (isLoading) {
-		return <div className={css.loading}>Loading...</div>;
-	}
-
-	if (isError) {
-		return <div className={css.loading}>Error loading</div>;
-	}
 	let newsContent = (
-		<div>
+		<div className={css.content}>
 			<ContentLayout>
 				{newsPaginatedContent.length === 0 ? (
 					<div className={css.items}>No any news</div>
@@ -90,23 +84,23 @@ export const Main = ({userInfo}) => {
 									<span>{item.publishDate}</span>
 									<h2 className={css.title}>{item.name}</h2>
 								</div>
-							
+
 								<CutDescription description={item.description} />
 							</div>
 						</ContentItems>
 					))
 				)}
+				<Pagination
+					currentPage={newsCurrentPage}
+					totalPages={newsTotalPages}
+					onNext={handleNewsNextClick}
+					onPrev={handleNewsPrevClick}
+				/>
 			</ContentLayout>
-			<Pagination
-				currentPage={newsCurrentPage}
-				totalPages={newsTotalPages}
-				onNext={handleNewsNextClick}
-				onPrev={handleNewsPrevClick}
-			/>
 		</div>
 	);
 	let eventContent = (
-		<div>
+		<div className={css.content}>
 			<ContentLayout>
 				{eventPaginatedContent.length === 0 ? (
 					<div className={css.items}>No any events</div>
@@ -138,13 +132,13 @@ export const Main = ({userInfo}) => {
 						</ContentItems>
 					))
 				)}
+				<Pagination
+					currentPage={eventCurrentPage}
+					totalPages={eventTotalPages}
+					onNext={handleEventNextClick}
+					onPrev={handleEventPrevClick}
+				/>
 			</ContentLayout>
-			<Pagination
-				currentPage={eventCurrentPage}
-				totalPages={eventTotalPages}
-				onNext={handleEventNextClick}
-				onPrev={handleEventPrevClick}
-			/>
 		</div>
 	);
 
@@ -162,7 +156,11 @@ export const Main = ({userInfo}) => {
 		Admin: adminContent,
 	};
 
-	return <Tabs tabs={tabs} content={content} />;
+	return (
+		<Loader isLoading={isLoading} isError={isError}>
+			<Tabs tabs={tabs} content={content} />;
+		</Loader>
+	);
 };
 
 Main.propTypes = {

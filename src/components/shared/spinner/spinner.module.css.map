@@ -1,0 +1,1 @@
+{"version":3,"sources":["spinner.module.scss","spinner.module.css"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,aAAA;ACCJ;;ADEA;EACI,yBAAA;EACA,wCAAA;EACA,kBAAA;EACA,YAAA;EACA,aAAA;EACA,kCAAA;ACCJ;;ADEA;EACI;IAAK,uBAAA;ECEP;EDDE;IAAO,yBAAA;ECIT;AACF","file":"spinner.module.css"}

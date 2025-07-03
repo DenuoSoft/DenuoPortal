@@ -2,8 +2,7 @@ import {useContext} from 'react';
 import {Outlet} from 'react-router-dom';
 import Profile from './profile/profile';
 import PropTypes from 'prop-types';
-import logolight from '../../assets/img/logo.png';
-import logodark from '../../assets/img/logo-dark.png';
+import { Logo } from '../../assets/img/logo';
 import {
 	HeaderBlock,
 	HeaderContainer,
@@ -14,22 +13,23 @@ import {
 	ThemeBlock,
 	LightLabel,
 	DarkLabel,
+	
 } from './header.styled';
 import {ThemeContext} from '../themes/ThemeContext';
 import Switch from '@mui/material/Switch';
 
 const Header = ({userInfo}) => {
 	const {theme, toggleTheme} = useContext(ThemeContext);
-	const headerImage = theme === 'light' ? logolight : logodark;
-
+	
 	return (
 		<>
 			<HeaderBlock>
 				<HeaderContainer>
 					<HeaderNav>
-						<img src={headerImage} alt="logo" />
+						<Logo theme={theme} />
 						<HeaderList>
-							<HeaderLink to="/main">Main</HeaderLink>
+							<HeaderLink to="/">Home</HeaderLink>
+							<HeaderLink to="/main">News</HeaderLink>
 							<HeaderLink to="/hr">HR</HeaderLink>
 							<HeaderLink to="/marketing">Marketing</HeaderLink>
 							<HeaderLink to="/it">IT</HeaderLink>

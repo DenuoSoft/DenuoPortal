@@ -12,7 +12,6 @@ export const HeaderBlock = styled.header`
 	z-index: 999;
 	width: 100%;
 	transition: background-color 0.3s ease, color 0.3s ease;
-	
 `;
 export const HeaderContainer = styled.div`
 	width: 1440px;
@@ -23,11 +22,12 @@ export const HeaderContainer = styled.div`
 export const HeaderNav = styled.nav`
 	display: flex;
 	align-items: center;
-	img {
-		width: 150px;
-		overflow: hidden;
-	}
+	
 `;
+/* export const Logo = styled.img`
+	width: 150px;
+	overflow: hidden;
+`; */
 export const HeaderList = styled.ul`
 	display: flex;
 	flex-direction: row;
@@ -39,9 +39,8 @@ export const HeaderList = styled.ul`
 
 export const HeaderLink = styled(NavLink)`
 	text-decoration: none;
-
 	font-weight: 400;
-	font-size: 1.4rem;
+	font-size: 1.2rem;
 	line-height: 1.7rem;
 
 	color: var(--text-color);

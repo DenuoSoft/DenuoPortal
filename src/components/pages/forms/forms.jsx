@@ -1,10 +1,12 @@
 import { Tabs } from '../../tabs/tabs';
 import { ConflictForm } from './conflict/conflictForm'
+import Loader from '../../loader/loader';
 import css from './forms.module.css'
 
 export const Forms = () => {
-	
-	let conflictFormContent
+	let isLoading;
+	let isError;
+	let conflictFormContent;
 	
 	conflictFormContent = (
 		<div className={css.forms}>
@@ -21,5 +23,9 @@ export const Forms = () => {
 
 	const tabs = [{name: 'Conflict'}, {name: 'Form 2'}, {name: 'Form 3'}];
 
-	return <Tabs tabs={tabs} content={content} />;
+	return (
+			<Loader isLoading={isLoading} isError={isError}>
+				<Tabs tabs={tabs} content={content} />;
+			</Loader>
+		);
 };
