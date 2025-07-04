@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import './Search.css'; // Создайте этот файл для стилей
+import './search.css';
 import {Input} from '../form';
 import ContentItems from '../contentItems/ContentItems';
 
@@ -23,6 +23,13 @@ const Search = () => {
 		window.open(searchUrl, '_blank');
 	};
 
+	const handleKeyDown = (e) => {
+		e.stopPropagation();
+		if (e.key === 'Enter') {
+			handleSearch(e);
+		}
+	};
+
 	return (
 		<div className="search-container">
 			<ContentItems>
@@ -34,6 +41,7 @@ const Search = () => {
 								type="text"
 								value={query}
 								onChange={(e) => setQuery(e.target.value)}
+								onKeyDown={handleKeyDown}
 								placeholder="Enter your query..."
 								className="search-input"
 							/>

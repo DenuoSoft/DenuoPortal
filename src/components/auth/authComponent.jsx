@@ -5,9 +5,9 @@ import PropTypes from 'prop-types';
 import {KeycloakContext} from './keycloak-context';
 
 const initOptions = {
-  url: 'https://sso.denuo.ru:8443',
+  url: 'https://sso.denuo.ru:8443', 
   realm: 'denuo',
-  clientId: 'portal', // Используйте простое имя клиента, а не URL
+  clientId: 'portal', 
 };
 
 let kc;
@@ -42,7 +42,6 @@ const AuthComponent = ({children}) => {
         setKeycloakInstance(kc);
 
         try {
-          // Проверяем доступ к хранилищу перед инициализацией Keycloak
           const storageAccessGranted = await handleStorageAccess();
           if (!storageAccessGranted) {
             console.warn('Storage access not granted - authentication may fail');
@@ -52,7 +51,7 @@ const AuthComponent = ({children}) => {
             onLoad: 'login-required',
             checkLoginIframe: true,
             pkceMethod: 'S256',
-            enableLogging: true, // Включите логирование для отладки
+            enableLogging: true, 
           });
 
           if (!auth) {
@@ -60,23 +59,23 @@ const AuthComponent = ({children}) => {
             return;
           }
 
-          console.info('Authenticated');
+          //console.info('Authenticated');
           setAuthenticated(true);
 
           try {
             httpClient.defaults.headers.common['Authorization'] = `Bearer ${kc.token}`;
-            console.debug('Authorization header set successfully.');
+           // console.debug('Authorization header set successfully.');
           } catch (error) {
             console.error('Failed to set authorization header:', error);
             setInfoMessage('Failed to set authorization header');
           }
 
           kc.onTokenExpired = () => {
-            console.log('Token expired, attempting refresh...');
-            kc.updateToken(30) // Обновляем токен если осталось меньше 30 секунд
+           // console.log('Token expired, attempting refresh...');
+            kc.updateToken(30)
               .then(refreshed => {
                 if (refreshed) {
-                  console.log('Token refreshed');
+             //     console.log('Token refreshed');
                   httpClient.defaults.headers.common['Authorization'] = `Bearer ${kc.token}`;
                 }
               })
@@ -95,16 +94,13 @@ const AuthComponent = ({children}) => {
 
         } catch (error) {
           console.error('Authentication Failed:', error);
-          // Попробуйте очистить состояние и перезапустить аутентификацию
           kc = null;
           setAuthenticated(false);
           setKeycloakInstance(null);
         }
       }
     };
-
-    // Проверяем, работает ли код в безопасном контексте
-    if (window.isSecureContext) {
+if (window.isSecureContext) {
       initializeKeycloak();
     } else {
       console.error('Authentication requires secure context (HTTPS)');
