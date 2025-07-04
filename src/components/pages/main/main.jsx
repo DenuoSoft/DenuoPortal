@@ -158,7 +158,7 @@ export const Main = ({userInfo}) => {
 
 	return (
 		<Loader isLoading={isLoading} isError={isError}>
-			<Tabs tabs={tabs} content={content} />;
+			<Tabs tabs={tabs} content={content} />
 		</Loader>
 	);
 };

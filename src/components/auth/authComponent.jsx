@@ -1,90 +1,131 @@
-/* eslint-disable no-unused-vars */
 import {useState, useEffect} from 'react';
 import Keycloak from 'keycloak-js';
 import {httpClient} from '../../HttpClient';
 import PropTypes from 'prop-types';
 import {KeycloakContext} from './keycloak-context';
+
 const initOptions = {
-	url: 'https://sso.denuo.ru:8443',
-	realm: 'denuo',
-	clientId: 'portal',
+  url: 'https://sso.denuo.ru:8443',
+  realm: 'denuo',
+  clientId: 'portal', // Используйте простое имя клиента, а не URL
 };
 
 let kc;
 
 const AuthComponent = ({children}) => {
-	const [infoMessage, setInfoMessage] = useState('');
-	const [authenticated, setAuthenticated] = useState(false);
-	const [userInfo, setUserInfo] = useState({name: '', email: '', id: ''});
-	const [keycloakInstance, setKeycloakInstance] = useState(null);
+  // eslint-disable-next-line no-unused-vars
+  const [infoMessage, setInfoMessage] = useState('');
+  const [authenticated, setAuthenticated] = useState(false);
+  const [userInfo, setUserInfo] = useState({name: '', email: '', id: ''});
+  const [keycloakInstance, setKeycloakInstance] = useState(null);
 
-	useEffect(() => {
-		if (!kc) {
-			kc = new Keycloak(initOptions);
-			setKeycloakInstance(kc);
+  const handleStorageAccess = async () => {
+    if (document.hasStorageAccess && document.requestStorageAccess) {
+      try {
+        const hasAccess = await document.hasStorageAccess();
+        if (!hasAccess) {
+          await document.requestStorageAccess();
+        }
+        return true;
+      } catch (error) {
+        console.warn('Storage access denied:', error);
+        return false;
+      }
+    }
+    return true;
+  };
 
-			kc.init({
-				onLoad: 'login-required',
-				checkLoginIframe: true,
-				pkceMethod: 'S256',
-			})
-				.then((auth) => {
-					if (!auth) {
-						window.location.reload();
-					} else {
-						/* console.info('Authenticated');
-						console.log('auth', auth);
-						console.log('Keycloak', kc);
-						console.log('Access Token', kc.token); */
+  useEffect(() => {
+    const initializeKeycloak = async () => {
+      if (!kc) {
+        kc = new Keycloak(initOptions);
+        setKeycloakInstance(kc);
 
-						try {
-							httpClient.defaults.headers.common[
-								'Authorization'
-							] = `Bearer ${kc.token}`;
-							console.debug('Authorization header set successfully.');
-						} catch (error) {
-							console.error('Failed to set authorization header:', error);
-							setInfoMessage('Failed to set authorization header');
-						}
+        try {
+          // Проверяем доступ к хранилищу перед инициализацией Keycloak
+          const storageAccessGranted = await handleStorageAccess();
+          if (!storageAccessGranted) {
+            console.warn('Storage access not granted - authentication may fail');
+          }
 
-						kc.onTokenExpired = () => {
-							console.log('token expired');
-						};
+          const auth = await kc.init({
+            onLoad: 'login-required',
+            checkLoginIframe: true,
+            pkceMethod: 'S256',
+            enableLogging: true, // Включите логирование для отладки
+          });
 
-						kc.loadUserInfo()
-							.then((data) => {
-								setUserInfo({
-									name: data.name,
-									email: data.email,
-									shortname: data.preferred_username,
-								});
-							})
-							.catch((error) => {
-								console.error('Failed to load user info', error);
-							});
-					}
-				})
-				.catch(() => {
-					console.error('Authentication Failed');
-				});
-		}
-	}, []);
+          if (!auth) {
+            window.location.reload();
+            return;
+          }
 
-	const authContextValue = {
-		authenticated,
-		userInfo,
-		keycloak: keycloakInstance,
-	};
+          console.info('Authenticated');
+          setAuthenticated(true);
 
-	return (
-		<KeycloakContext.Provider value={authContextValue}>
-			{children}
-		</KeycloakContext.Provider>
-	);
+          try {
+            httpClient.defaults.headers.common['Authorization'] = `Bearer ${kc.token}`;
+            console.debug('Authorization header set successfully.');
+          } catch (error) {
+            console.error('Failed to set authorization header:', error);
+            setInfoMessage('Failed to set authorization header');
+          }
+
+          kc.onTokenExpired = () => {
+            console.log('Token expired, attempting refresh...');
+            kc.updateToken(30) // Обновляем токен если осталось меньше 30 секунд
+              .then(refreshed => {
+                if (refreshed) {
+                  console.log('Token refreshed');
+                  httpClient.defaults.headers.common['Authorization'] = `Bearer ${kc.token}`;
+                }
+              })
+              .catch(err => {
+                console.error('Failed to refresh token:', err);
+                kc.logout();
+              });
+          };
+
+          const userData = await kc.loadUserInfo();
+          setUserInfo({
+            name: userData.name,
+            email: userData.email,
+            shortname: userData.preferred_username,
+          });
+
+        } catch (error) {
+          console.error('Authentication Failed:', error);
+          // Попробуйте очистить состояние и перезапустить аутентификацию
+          kc = null;
+          setAuthenticated(false);
+          setKeycloakInstance(null);
+        }
+      }
+    };
+
+    // Проверяем, работает ли код в безопасном контексте
+    if (window.isSecureContext) {
+      initializeKeycloak();
+    } else {
+      console.error('Authentication requires secure context (HTTPS)');
+      }
+  }, []);
+
+  const authContextValue = {
+    authenticated,
+    userInfo,
+    keycloak: keycloakInstance,
+  };
+
+  return (
+    <KeycloakContext.Provider value={authContextValue}>
+      {children}
+    </KeycloakContext.Provider>
+  );
 };
 
 AuthComponent.propTypes = {
-	children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 export default AuthComponent;
