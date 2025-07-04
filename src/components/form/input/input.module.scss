@@ -16,7 +16,6 @@
 		border-top: var(--input-border);
 		border-right: var(--input-border);
 		border-bottom: var( --input-border-bottom);
-		
 		font-family: 'Graphik', Arial, Helvetica, sans-serif;
 		font-size: 16px;
 		color: var(--input-color);
@@ -25,7 +24,10 @@
 		border-bottom:var(--input-border-focus);
 		box-shadow: var(--input-shadow);
 	}
-	
+	.input:not(:focus) {
+		border-bottom: none;
+		box-shadow: none;
+	}
 }
 .clearButton {
     position: absolute;

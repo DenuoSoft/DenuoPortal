@@ -1,0 +1,30 @@
+.layout {
+    margin-top: 10px;
+	display: flex;
+	flex: 2 1;
+	gap: 15px;
+    height: 84vh;
+}
+
+.newsbox {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 15px;
+	width: 100%;
+	padding: 20px;
+	border-right: 1px solid var(--light-color);
+}
+.eventbox {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 15px;
+	padding: 200px;
+	
+}
+.itemsbox {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}

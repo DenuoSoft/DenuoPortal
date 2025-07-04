@@ -24,6 +24,10 @@
   border-bottom: var(--input-border-focus);
   box-shadow: var(--input-shadow);
 }
+.inputbox .input:not(:focus) {
+  border-bottom: none;
+  box-shadow: none;
+}
 
 .clearButton {
   position: absolute;

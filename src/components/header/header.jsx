@@ -29,7 +29,7 @@ const Header = ({userInfo}) => {
 						<Logo theme={theme} />
 						<HeaderList>
 							<HeaderLink to="/">Home</HeaderLink>
-							<HeaderLink to="/main">News</HeaderLink>
+							<HeaderLink to="/news">News</HeaderLink>
 							<HeaderLink to="/hr">HR</HeaderLink>
 							<HeaderLink to="/marketing">Marketing</HeaderLink>
 							<HeaderLink to="/it">IT</HeaderLink>

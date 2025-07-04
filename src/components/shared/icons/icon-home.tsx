@@ -15,7 +15,7 @@ export const IconHome = ({
 
   useEffect(() => {
     const handleBlur = () => {
-      // Сбрасываем активное состояние при потере фокуса страницей
+ 
       setIsActive(false);
     };
 

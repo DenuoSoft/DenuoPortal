@@ -5,7 +5,7 @@ import Header from '../header/header';
 import {Footer} from '../footer/footer';
 import {useKeycloak} from '../auth/keycloak-context';
 import {
-	Main,
+	News,
 	HR,
 	Marketing,
 	IT,
@@ -22,7 +22,7 @@ const AppContent = () => {
 			<Layout isAuthenticated={authenticated} userInfo={userInfo}>
 				<Routes>
 					<Route path="/" element={<Home userInfo={userInfo}/>} />
-					<Route path="/main" element={<Main userInfo={userInfo}/>} />
+					<Route path="/news" element={<News userInfo={userInfo}/>} />
 					<Route path="/hr" element={<HR userInfo={userInfo}/>} />
 					<Route path="/marketing" element={<Marketing userInfo={userInfo}/>} />
 					<Route path="/it" element={<IT userInfo={userInfo}/>} />

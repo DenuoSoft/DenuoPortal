@@ -1,11 +1,9 @@
 /* eslint-disable react/prop-types */
-//import React from 'react';
+import {forwardRef} from 'react';
 import css from './input.module.scss';
-//import { useState } from 'react';
 
-const Input = ({placeholder, onChange, onClick, value, onKeyDown, name}) => {
-	//const [searchTerm, setSearchTerm] = useState('');
-
+const Input = forwardRef(({placeholder, onChange, onClick, value, onKeyDown, name}, ref) => {
+	
 	const clearInput = () => {
 		onChange({target: {value: '', name: name}});
 	};
@@ -13,6 +11,7 @@ const Input = ({placeholder, onChange, onClick, value, onKeyDown, name}) => {
 	return (
 		<div className={css.inputbox}>
 			<input
+				ref={ref}
 				type="text"
 				className={css.input}
 				value={value}
@@ -29,5 +28,6 @@ const Input = ({placeholder, onChange, onClick, value, onKeyDown, name}) => {
 			)}
 		</div>
 	);
-};
+})
+Input.displayName = 'Input'; 
 export default Input;

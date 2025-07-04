@@ -1,6 +1,7 @@
 .itemsBox {
 	display: flex;
 	flex-direction: row;
+	justify-content: center;
 	padding: 15px 0 15px 15px;
 	border-bottom: solid 1px var(--light-color);
 	flex-grow: 1;
