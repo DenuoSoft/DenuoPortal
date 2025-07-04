@@ -3,7 +3,7 @@ import {useGetNewsQuery, useGetEventQuery} from '../../../api/apiSlice';
 import PropTypes from 'prop-types';
 import css from './main.module.scss';
 import {Tabs} from '../../tabs/tabs';
-import Admin from '../../admin/admin';
+//import Admin from '../../admin/admin';
 import {parseDate} from '../../../utils/parseDate';
 import ContentItems from '../../contentItems/ContentItems';
 import ContentLayout from '../../contentLayout/ContentLayout';
@@ -142,7 +142,9 @@ export const Main = ({userInfo}) => {
 		</div>
 	);
 
-	let adminContent = <Admin />;
+	let adminContent = (
+		<div>Admin content</div>
+	);
 	const isAdmin = IsAdmin({userInfo, groupType: 'main'});
 
 	let tabs = isAdmin
