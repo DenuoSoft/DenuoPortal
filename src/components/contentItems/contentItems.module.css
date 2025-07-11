@@ -2,7 +2,7 @@
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
-	padding: 15px 0 15px 15px;
+	padding: 15px 0; 
 	border-bottom: solid 1px var(--light-color);
 	flex-grow: 1;
 	color: var(--text-color);
@@ -10,7 +10,9 @@
 .itemsBox:hover {
 	box-shadow: rgba(98, 121, 167, 0.25) 0px 19px 38px,
 		rgba(98, 121, 167, 0.22) 0px 15px 12px;
-	transition: box-shadow 0.5s ease;
+	transition: box-shadow 0.5s ease, padding 0.7s ease;
+	padding: 15px;
 	border-bottom: none;
 	border-left: none;
+	
 }

@@ -16,6 +16,7 @@
 .title {
 	font-weight: 300;
 	margin: 0;
+	font-size: 1.3rem;
 }
 form {
 	display: flex;

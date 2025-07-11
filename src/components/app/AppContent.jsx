@@ -11,7 +11,8 @@ import {
 	IT,
 	Forms,
 	Phonebook,
-	Home
+	Home,
+	Main
 } from '../pages/index';
 const AppContent = () => {
 	const {authenticated, userInfo} = useKeycloak();
@@ -22,7 +23,8 @@ const AppContent = () => {
 			<Layout isAuthenticated={authenticated} userInfo={userInfo}>
 				<Routes>
 					<Route path="/" element={<Home userInfo={userInfo}/>} />
-					<Route path="/news" element={<News userInfo={userInfo}/>} />
+					<Route path="/news" element={<News userInfo={userInfo} />} />
+					<Route path="/main" element={<Main userInfo={userInfo}/>} />
 					<Route path="/hr" element={<HR userInfo={userInfo}/>} />
 					<Route path="/marketing" element={<Marketing userInfo={userInfo}/>} />
 					<Route path="/it" element={<IT userInfo={userInfo}/>} />

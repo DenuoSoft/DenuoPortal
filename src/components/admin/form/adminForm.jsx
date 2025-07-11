@@ -61,7 +61,7 @@ const AdminForm = ({
 	};
 	return (
 		<div className={css.box}>
-			<h1 className={css.title}>Admin form</h1>
+			<div className={css.title}>Admin form</div>
 			<RadioButtons
 				options={radioOptions}
 				onChange={handleRadioChange}

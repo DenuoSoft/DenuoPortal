@@ -21,10 +21,11 @@ const CutDescription = ({description}) => {
 			onMouseEnter={() => needsTruncation && setShowFullDescription(true)}
 			onMouseLeave={() => needsTruncation && setShowFullDescription(false)}
 		>
-			
-      {displayedDescription}
-      {needsTruncation && !showFullDescription && (
-				<div className={css.hoverMessage}>Hover over the text to see more</div>
+			{displayedDescription}
+			{needsTruncation && !showFullDescription && (
+				<div className={css.hoverMessage}>
+					<div className={css.msg}>Hover over the text to see more</div>
+				</div>
 			)}
 		</span>
 	);

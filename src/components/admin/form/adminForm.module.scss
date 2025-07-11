@@ -13,8 +13,9 @@
 	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 .title {
-	margin: 0;
 	font-weight: 300;
+	margin: 0;
+	font-size: 1.3rem;
 }
 form {
 	display: flex;
@@ -62,10 +63,7 @@ form {
 .selected{
 	color: #999;
 }
-.title {
-	margin: 0;
-	font-weight: bold;
-}
+
 .images {
 	display: flex;
 	flex-direction: column;

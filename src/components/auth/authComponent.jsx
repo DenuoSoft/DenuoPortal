@@ -7,7 +7,7 @@ import {KeycloakContext} from './keycloak-context';
 const initOptions = {
   url: 'https://sso.denuo.ru:8443', 
   realm: 'denuo',
-  clientId: 'portaldev', 
+  clientId: 'portal', 
 };
 
 let kc;

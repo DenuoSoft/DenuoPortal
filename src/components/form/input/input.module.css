@@ -17,7 +17,7 @@
   border-right: var(--input-border);
   border-bottom: var(--input-border-bottom);
   font-family: "Graphik", Arial, Helvetica, sans-serif;
-  font-size: 16px;
+  font-size: 0.9rem;
   color: var(--input-color);
 }
 .inputbox .input:focus {

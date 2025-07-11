@@ -1,8 +1,9 @@
 .hoverMessage {
-    margin: 0;
+    display: flex;
+	justify-content: flex-end;
+	margin: 0;
     padding: 0;
 	font-size: 0.8em;
 	color: #888;
-	margin-left: 5px;
-	transform: translate(500px, -100px);
+	
 }

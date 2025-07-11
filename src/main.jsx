@@ -9,10 +9,10 @@ import store from './store';
 createRoot(document.getElementById('root')).render(
 	<StrictMode>
 		<Provider store={store}>
-			<BrowserRouter>
+			<BrowserRouter basename="/">
 				<App />
 			</BrowserRouter>
 		</Provider>
 	</StrictMode>
 );
-//basename="/denuo-ip" for build insert to <BrowserRouter>
+//basename="/" for build insert to <BrowserRouter>

@@ -112,7 +112,7 @@ export const Main = ({userInfo}) => {
 									<h4>Event date:</h4> {item.date}
 								</div>
 								<div className={css.evnttitle}>
-									<h2>{item.name}</h2>
+									<h3>{item.name}</h3>
 								</div>
 								<div className={css.evntdescr}>
 									<span>

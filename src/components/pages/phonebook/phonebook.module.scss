@@ -18,6 +18,7 @@
 	font-weight: bold;
 	color: var(--text-color);
 	border-bottom: 2px solid var(--border-bottom-phb);
+	font-size: 0.9rem;
 }
 .header {
 	flex: 1;
@@ -27,11 +28,13 @@
 .columnElem {
 	display: flex;
 	border-bottom: var(--input-border-bottom);
+	font-size: 0.8rem;
 }
 .columnCell {
 	flex: 1;
 	padding: 10px;
 	color: var(--text-color);
+	font-size: 0.8rem;
 }
 .columnCellNM {
 	flex: 1;

@@ -15,8 +15,9 @@
 }
 
 .title {
-  margin: 0;
   font-weight: 300;
+  margin: 0;
+  font-size: 1.3rem;
 }
 
 form {
@@ -70,11 +71,6 @@ form {
 
 .selected {
   color: #999;
-}
-
-.title {
-  margin: 0;
-  font-weight: bold;
 }
 
 .images {

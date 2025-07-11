@@ -42,12 +42,10 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
-body::-webkit-scrollbar {
+/* body::-webkit-scrollbar {
 	display: none;
-}
-/* * {
-  box-sizing: border-box;
 } */
+
 body.dark {
 	--background-color: #4c5262;
 	--text-color: #c8d2e6;

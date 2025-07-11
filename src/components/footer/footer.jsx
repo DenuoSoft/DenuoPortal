@@ -4,9 +4,9 @@ export const Footer = () => {
    
     return (
         <footer className={css.footer}>
-            <span >&#169;</span>
-              <span >2022 - 2025</span>
-              <span >Denuo</span> 
+            <span className={css.text}>&#169;</span>
+              <span className={css.text}>2022 - 2025</span>
+              <span className={css.text}>Denuo</span> 
         </footer>
     )
 }

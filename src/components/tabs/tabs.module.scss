@@ -1,15 +1,17 @@
 .tabs {
 	display: flex;
 	justify-content: center;
-	border-bottom: var(--tab-border)
+	border-bottom: var(--tab-border);
+	width: 1200px;
+	margin-top: 10px;
 }
 .tabsItem {
 	display: flex;
 	justify-content: center;
 	width: 150px;
-	padding: 10px;
+
 	font-family: 'Graphik', Arial, Helvetica, sans-serif;
-	font-size: 14px;
+	font-size: 0.8rem;
 	cursor: pointer;
 	color: var(--tab-color);
 	text-transform: uppercase;

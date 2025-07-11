@@ -17,10 +17,14 @@
 	text-align: right;
 	color: var(--text-color);
 	font-weight: 300;
+	
 }
 .user:hover {
 	color: #d7ff23;
 	text-shadow: var(--text-shadow);
+}
+span {
+font-size: 1rem;
 }
 .title {
 	margin: 0;

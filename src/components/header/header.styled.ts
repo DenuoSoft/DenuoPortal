@@ -14,7 +14,7 @@ export const HeaderBlock = styled.header`
 	transition: background-color 0.3s ease, color 0.3s ease;
 `;
 export const HeaderContainer = styled.div`
-	width: 1440px;
+	width: 1200px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -33,15 +33,15 @@ export const HeaderList = styled.ul`
 	flex-direction: row;
 	list-style: none;
 	li {
-		padding-left: 15px;
+		padding-left: 10px;
 	}
 `;
 
 export const HeaderLink = styled(NavLink)`
 	text-decoration: none;
 	font-weight: 400;
-	font-size: 1.2rem;
-	line-height: 1.7rem;
+	font-size: 1rem;
+	line-height: 1rem;
 
 	color: var(--text-color);
 	padding-left: 25px;
@@ -70,7 +70,11 @@ export const ThemeBlock = styled.div`
 `;
 export const DarkLabel = styled.span`
 	color: var(--dark-color);
+	font-size: 0.9rem;
+	line-height: 0.9rem;
 `;
 export const LightLabel = styled.span`
 	color: var(--light-color);
+	font-size: 0.9rem;
+	line-height: 0.9rem;
 `;
