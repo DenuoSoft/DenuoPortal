@@ -42,9 +42,7 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
-/* body::-webkit-scrollbar {
-	display: none;
-} */
+
 
 body.dark {
 	--background-color: #4c5262;
