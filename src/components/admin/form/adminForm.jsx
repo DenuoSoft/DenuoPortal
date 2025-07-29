@@ -1,13 +1,15 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import {useState, useCallback} from 'react';
+import {useState} from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import {RadioButtons, Input, TextArea} from '../../form/index';
 import {Modal} from '../../modal/modal';
-import Button from '../../shared/buttons/button.jsx';
 import css from './adminForm.module.css';
 import {images} from '../../../data/imagesdb.jsx';
+import TextArea from '../../form/textarea/textarea.jsx';
+import RadioButtons from '../../form/radiobuttons/radiobuttons';
+import Input from '../../form/input/input';
+import Button from '../../../components/shared/buttons/button.jsx';
 
 const AdminForm = ({
 	title,
@@ -25,12 +27,10 @@ const AdminForm = ({
 	eventDate,
 	setEventDate,
 	selectedType,
-	setSelectedType,
 	radioOptions,
 	handleRadioChange,
 	onSubmit,
 }) => {
-	//const [modalData, setModalData] = useState(null);
 	const [isModalOpen, setIsModalOpen] = useState(false);
 	const [previewImage, setPreviewImage] = useState('');
 
@@ -62,11 +62,13 @@ const AdminForm = ({
 	return (
 		<div className={css.box}>
 			<div className={css.title}>Admin form</div>
+
 			<RadioButtons
 				options={radioOptions}
 				onChange={handleRadioChange}
 				value={selectedType}
 			/>
+
 			<form onSubmit={onSubmitHandler}>
 				<Input
 					placeholder="Title"
@@ -86,6 +88,7 @@ const AdminForm = ({
 							id="image"
 							onClick={openModal}
 						/>
+
 						{previewImage && (
 							<div className={css.previewBox}>
 								<span className={css.selected}>Selected image:</span>
@@ -96,6 +99,7 @@ const AdminForm = ({
 								/>
 							</div>
 						)}
+
 						<TextArea
 							placeholder="Add info here"
 							name="description"
@@ -132,6 +136,7 @@ const AdminForm = ({
 							value={participants}
 							onChange={(e) => setParticipants(e.target.value)}
 						/>
+
 						<div>
 							<label htmlFor="eventDate" className={css.label}>
 								Event Date:
@@ -152,6 +157,7 @@ const AdminForm = ({
 					/>
 				</div>
 			</form>
+
 			<Modal isOpen={isModalOpen} onClose={closeModal}>
 				<div className={css.images}>
 					<h4 className={css.title}>Select image:</h4>

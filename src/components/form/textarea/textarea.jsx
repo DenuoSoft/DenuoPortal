@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import css from './textarea.module.scss';
 
-export const TextArea = ({ placeholder, onChange, name, value }) => {
+const TextArea = ({ placeholder, onChange, name, value }) => {
 	return (
 		<textarea
 			className={css.textarea}
@@ -13,3 +13,4 @@ export const TextArea = ({ placeholder, onChange, name, value }) => {
 		/>
 	);
 };
+export default TextArea;

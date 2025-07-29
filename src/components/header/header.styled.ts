@@ -40,8 +40,7 @@ export const HeaderList = styled.ul`
 export const HeaderLink = styled(NavLink)`
 	text-decoration: none;
 	font-weight: 400;
-	font-size: 1rem;
-	line-height: 1rem;
+	
 
 	color: var(--text-color);
 	padding-left: 25px;
@@ -66,15 +65,13 @@ export const ThemeBlock = styled.div`
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-	gap: 5px;
+	
 `;
 export const DarkLabel = styled.span`
 	color: var(--dark-color);
-	font-size: 0.9rem;
-	line-height: 0.9rem;
+	
 `;
 export const LightLabel = styled.span`
 	color: var(--light-color);
-	font-size: 0.9rem;
-	line-height: 0.9rem;
+	
 `;

@@ -12,22 +12,22 @@
 		padding: 10px;
 		min-width: 0;
 		background-color: var(--input-bgcolor);
-		border-left: var(--input-border);
+		/* border-left: var(--input-border);
 		border-top: var(--input-border);
-		border-right: var(--input-border);
-		border-bottom: var( --input-border-bottom);
-		font-family: 'Graphik', Arial, Helvetica, sans-serif;
+		border-right: var(--input-border); */
+		// border-bottom: var( --input-border-bottom);
+		//font-family: 'Graphik', Arial, Helvetica, sans-serif;
 		font-size: 0.9rem;
 		color: var(--input-color);
 	}
-	.input:focus {
+	/* .input:focus {
 		border-bottom:var(--input-border-focus);
-		box-shadow: var(--input-shadow);
-	}
-	.input:not(:focus) {
+		
+	} */
+	/* .input:not(:focus) {
 		border-bottom: none;
 		box-shadow: none;
-	}
+	} */
 }
 .clearButton {
     position: absolute;

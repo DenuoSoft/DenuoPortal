@@ -2,7 +2,6 @@
   margin-top: 10px;
   display: flex;
   flex: 2 1;
-  height: 84vh;
   width: 1200px;
 }
 
@@ -28,7 +27,8 @@
 
 .eventdescr {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
   font-size: 1rem;
 }
 
@@ -72,7 +72,26 @@ span {
 
 .date {
   display: flex;
+  align-items: center;
   gap: 10px;
+}
+.date h5 {
+  margin: 0;
+}
+
+.evntDate {
+  font-size: 0.8rem;
+}
+
+.eventdescrItem {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: space-between;
+}
+.eventdescrItem h5 {
+  margin: 0;
 }
 
 .text {

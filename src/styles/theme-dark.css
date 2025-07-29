@@ -1,0 +1,30 @@
+body.dark {
+	--background-color: #4c5262;
+	--text-color: #c8d2e6;
+	--main-color: #555a69;
+	--accent-color: #aaff00;
+	--light-color: #c8d2e6;
+	--dark-color: #555a69;
+	--tabs-color: #444;
+	--items-shadow: 2px 2px 5px rgba(181, 188, 201, 0.2);
+	--button-bgcolor: #6b6b6b;
+	--button-color: rgba(255, 255, 255, 0.6);
+	--items-shadow-hover: 2px 2px 5px rgba(0, 0, 0, 0.1);
+	--tab-color: #8fa1c6;
+	--tab-active: #c8d2e6;
+	--tab-hover: #c8d2e6;
+	--tab-border-bottom: 2px solid #c8d2e6;
+	--tab-item: #6279a7;
+	--input-bgcolor: #c6c6c6;
+	--input-color: #a9a9a9;
+	--input-border-bottom: 1px solid #ababab;
+	--input-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
+	--input-border: #f0f0f0;
+	
+	--radio-button-label-color: #8fa1c6;
+	--radio-title-color: #bebebe;
+	--form-text-color: #bebebe;
+	--table-header-color: #c6c6c6;
+	--border-bottom-phb:  #c8d2e6;
+	
+}

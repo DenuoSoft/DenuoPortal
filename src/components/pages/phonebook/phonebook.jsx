@@ -1,21 +1,36 @@
-/* eslint-disable no-unused-vars */
 import css from './phonebook.module.scss';
-import {useState} from 'react';
-import {userData} from '../../../data/userData.jsx';
+import {useState, lazy, Suspense, useEffect} from 'react';
+const loadUserData = async () => {
+	const {userData} = await import('../../../data/userData');
+	return userData;
+};
 import {Modal} from '../../modal/modal.jsx';
 import Pagination from '../../pagination/pagination.jsx';
-import Input from '../../form/input/input.jsx';
+const Input = lazy(() => import('../../form/input/input.jsx'));
 import Loader from '../../loader/loader.jsx';
 
 export const Phonebook = () => {
-	let isLoading;
-	let isError;
+	const [isLoading, setIsLoading] = useState(false);
+	const [isError, setIsError] = useState(false);
+	const [userData, setUserData] = useState([]);
+
 	const [searchTerm, setSearchTerm] = useState('');
 	const [contacts, setContacts] = useState(userData || []);
 	const [modalData, setModalData] = useState(null);
 	const [isModalOpen, setIsModalOpen] = useState(false);
 	const [currentPage, setCurrentPage] = useState(1);
 	const contactsPerPage = 12;
+
+	useEffect(() => {
+		setIsLoading(true);
+		loadUserData()
+			.then((data) => {
+				setUserData(data);
+				setContacts(data);
+			})
+			.catch(() => setIsError(true))
+			.finally(() => setIsLoading(false));
+	}, []);
 
 	const handleSearchChange = (e) => {
 		setSearchTerm(e.target.value);
@@ -58,7 +73,7 @@ export const Phonebook = () => {
 		indexOfFirstContact,
 		indexOfLastContact
 	);
-	
+
 	const handlePageChange = (direction) => {
 		if (direction === 'next' && currentPage < totalPages) {
 			setCurrentPage(currentPage + 1);
@@ -73,13 +88,15 @@ export const Phonebook = () => {
 			<main>
 				<div className={css.layout}>
 					<div className={css.searchBlock}>
-						<Input
-							type="text"
-							placeholder="Search..."
-							value={searchTerm}
-							onChange={handleSearchChange}
-							readOnly={true}
-						/>
+						<Suspense fallback={<Loader />}>
+							<Input
+								type="text"
+								placeholder="Search..."
+								value={searchTerm}
+								onChange={handleSearchChange}
+								readOnly={true}
+							/>
+						</Suspense>
 					</div>
 				</div>
 				<div className={css.columns}>

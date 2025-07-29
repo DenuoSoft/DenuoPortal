@@ -9,16 +9,16 @@
 	display: flex;
 	justify-content: center;
 	width: 150px;
-
 	font-family: 'Graphik', Arial, Helvetica, sans-serif;
 	font-size: 0.8rem;
 	cursor: pointer;
 	color: var(--tab-color);
 	text-transform: uppercase;
+	padding-bottom: 2px;
 }
 .tabsItem:hover {
 	color: var(--tab-hover);
-	border-bottom: var(--tab-border-active);
+	border-bottom: var(--tab-border-bottom);
 	
 }
 .tabContent {
@@ -28,7 +28,7 @@
 	
 }
 .activeTab {
-	border-bottom: var(--tab-border-active);
+	border-bottom: var(--tab-border-bottom);
 	color: var(--tab-active);
 	
 }

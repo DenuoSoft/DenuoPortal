@@ -1,5 +1,5 @@
 import {useState, useEffect, useRef} from 'react';
-import './search.css';
+import './search.scss';
 import {Input} from '../form';
 import ContentItems from '../contentItems/ContentItems';
 import {HistoryIcon} from '../shared/icons/icon-history';

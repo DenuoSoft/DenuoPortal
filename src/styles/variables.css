@@ -1,0 +1,44 @@
+:root {
+  /* Layout */
+  --header-height: 60px;
+  --footer-height: 60px;
+
+  /* Colors */
+  --background-color: #fff;
+  --text-color: #555A69;
+  --main-color: #c8d2e6;
+  --light-color: #c8d2e6;
+  --dark-color: #555A69;
+  --accent-color: #d7ff23;
+
+  /* Shapes & Shadows */
+  --border-radius: 35px;
+  --text-shadow: rgba(0, 0, 0, 0.1) 2px 2px;
+  --items-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  --items-shadow-hover: 2px 2px 5px rgba(0, 0, 0, 0.1);
+
+  /* Buttons */
+  --button-bgcolor: #f0f0f0;
+  --button-color: rgba(0, 0, 0, 0.6);
+
+  /* Tabs */
+  --tab-color: #c8d2e6;
+  --tab-active: #6279a7;
+  --tab-hover: #6279a7;
+  --tab-border: 1px solid #c8d2e6;
+  --tab-border-bottom: 2px solid #c8d2e6;
+  --tab-item: #c8d2e6;
+
+  /* Form Elements */
+  --input-bgcolor: #f0f0f0;
+  --input-color: #999;
+  --input-border-bottom: 1px solid #c8d2e6;
+  --input-border-focus: 1px solid #c8d2e6;
+  --radio-button-label-color: #6279a7;
+  --radio-title-color: #838383;
+  --form-text-color: #767676;
+
+  /* Tables */
+  --table-header-color: #f0f0f0;
+  --border-bottom-phb: #c8d2e6;
+}
