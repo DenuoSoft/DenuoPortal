@@ -1,0 +1,30 @@
+.text {
+	margin-top: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	color: var(--text-color);
+}
+.titleBox {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 20px;
+	border-bottom: 1px solid var(--light-color);
+	padding-bottom: 10px;
+	color: var(--text-color);
+}
+.titleImage {
+	width: 100px;
+	height: 120px;
+	border: 1px solid var(--light-color);
+}
+.title {
+	margin: 0;
+	
+}
+.textItem {
+	display: flex;
+	justify-content: space-between;
+	gap: 15px;
+}

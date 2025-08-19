@@ -1,10 +1,10 @@
 import {IconProfile} from '../../shared/icons/icon-profile';
-import css from './profile.module.scss';
+import css from './HeaderProfile.module.scss';
 import {useState} from 'react';
 import PropTypes from 'prop-types';
 import {Modal} from '../../modal/modal';
 
-const Profile = ({userInfo}) => {
+const HeaderProfile = ({userInfo}) => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	const openModal = () => {
@@ -29,7 +29,12 @@ const Profile = ({userInfo}) => {
 				<IconProfile />
 			</div>
 			<Modal isOpen={isOpen} onClose={closeModal}>
-				<h2 className={css.title}>Profile Information</h2>
+				<div className={css.titleBox}>
+					<div className={css.titleImage}>
+						<img src="" alt="" />
+					</div>
+					<h2 className={css.title}>{userInfo.name}</h2>
+				</div>
 
 				<div className={css.userInfo}>
 					<strong>User name:</strong> {userInfo.name}
@@ -44,7 +49,7 @@ const Profile = ({userInfo}) => {
 		</div>
 	);
 };
-Profile.propTypes = {
+HeaderProfile.propTypes = {
 	userInfo: PropTypes.shape({
 		name: PropTypes.string,
 		shortname: PropTypes.string,
@@ -52,4 +57,4 @@ Profile.propTypes = {
 		id: PropTypes.string,
 	}),
 };
-export default Profile;
+export default HeaderProfile;

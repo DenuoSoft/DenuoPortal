@@ -1,6 +1,6 @@
 import {useContext} from 'react';
 import {Outlet} from 'react-router-dom';
-import Profile from './profile/profile';
+import HeaderProfile from './HeaderProfile/HeaderProfile';
 import PropTypes from 'prop-types';
 import { Logo } from '../../assets/img/logo';
 import {
@@ -9,7 +9,7 @@ import {
 	HeaderLink,
 	HeaderList,
 	HeaderNav,
-	HeaderProfile,
+	HeaderProfileBlock,
 	ThemeBlock,
 	LightLabel,
 	DarkLabel,
@@ -38,14 +38,14 @@ const Header = ({userInfo}) => {
 							<HeaderLink to="/phonebook">Phone Book</HeaderLink>
 						</HeaderList>
 					</HeaderNav>
-					<HeaderProfile>
-						<Profile userInfo={userInfo} />
+					<HeaderProfileBlock>
+						<HeaderProfile userInfo={userInfo} />
 						<ThemeBlock>
 							<LightLabel>Light</LightLabel>
 							<Switch checked={theme === 'dark'} onClick={toggleTheme} />
 							<DarkLabel>Dark</DarkLabel>
 						</ThemeBlock>
-					</HeaderProfile>
+					</HeaderProfileBlock>
 				</HeaderContainer>
 			</HeaderBlock>
 			<Outlet />

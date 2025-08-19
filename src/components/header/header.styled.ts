@@ -54,7 +54,7 @@ export const HeaderLink = styled(NavLink)`
 		text-shadow: var(--text-shadow);
 	}
 `;
-export const HeaderProfile = styled.div`
+export const HeaderProfileBlock = styled.div`
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -63,7 +63,7 @@ export const HeaderProfile = styled.div`
 export const ThemeBlock = styled.div`
 	display: flex;
 	flex-direction: row;
-	justify-content: center;
+	justify-content: flex-end;
 	align-items: center;
 	
 `;

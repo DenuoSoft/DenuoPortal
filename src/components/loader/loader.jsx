@@ -5,8 +5,8 @@ import { Spinner } from '../shared/spinner/spinner';
 const Loader = ({
 	isLoading,
 	isError,
-	minDelay = 300,
-	maxDelay = 500,
+	minDelay = 500,
+	maxDelay = 900,
 	children,
 }) => {
 	const [isDelay, setIsDelay] = useState(true);

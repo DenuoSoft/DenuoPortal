@@ -23,13 +23,23 @@
 	color: #d7ff23;
 	text-shadow: var(--text-shadow);
 }
-
-.title {
-	margin: 0;
+.titleBox {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 	margin-bottom: 20px;
 	border-bottom: 1px solid var(--light-color);
 	padding-bottom: 10px;
 	color: var(--text-color);
+}
+.titleImage {
+	width: 100px;
+	height: 120px;
+	border: 1px solid var(--light-color);
+}
+.title {
+	margin: 0;
+	
 }
 .userInfo {
 	color: var(--text-color);

@@ -4,7 +4,8 @@ const loadUserData = async () => {
 	const {userData} = await import('../../../data/userData');
 	return userData;
 };
-import {Modal} from '../../modal/modal.jsx';
+import { Modal } from '../../modal/modal.jsx';
+import { Profile } from '../../profile/profile.jsx'
 import Pagination from '../../pagination/pagination.jsx';
 const Input = lazy(() => import('../../form/input/input.jsx'));
 import Loader from '../../loader/loader.jsx';
@@ -136,33 +137,7 @@ export const Phonebook = () => {
 				/>
 
 				<Modal isOpen={isModalOpen} onClose={closeModal}>
-					{modalData && (
-						<div>
-							<h2 className={css.title}>{modalData.name}</h2>
-							<div className={css.text}>
-								<div className={css.textItem}>
-									<strong>Job Position:</strong>
-									{modalData.position}
-								</div>
-								<div className={css.textItem}>
-									<strong>Extension:</strong>
-									{modalData.phone}
-								</div>
-								<div className={css.textItem}>
-									<strong>Mobile Phone:</strong> {modalData.mobile}
-								</div>
-								<div className={css.textItem}>
-									<strong>Office:</strong> {modalData.location}
-								</div>
-								<div className={css.textItem}>
-									<strong>Assistant:</strong> {modalData.assistant}
-								</div>
-								<div className={css.textItem}>
-									<strong>Assistant extension:</strong> {modalData.assistantExt}
-								</div>
-							</div>
-						</div>
-					)}
+					{modalData && <Profile modalData={modalData}/>}
 				</Modal>
 			</main>
 		</Loader>

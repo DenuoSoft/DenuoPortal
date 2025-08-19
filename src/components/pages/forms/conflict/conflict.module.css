@@ -38,11 +38,11 @@
 }
 
 .title {
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .questions {
-  font-size: 16px;
+  font-size: 14px;
   color: var(--form-text-color);
   line-height: 1.3;
 }
