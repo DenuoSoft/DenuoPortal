@@ -2,20 +2,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 25vh;
+  height: 20vh;
   margin: 0;
   padding: 0;
 }
 
 .title {
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin-bottom: 15px;
   color: var(--text-color);
 }
 
 .search-box {
   text-align: center;
-  padding: 20px;
+  padding: 10px;
   max-width: 610px;
 }
 
@@ -39,8 +39,8 @@
   border-bottom: none;
   cursor: pointer;
   transition: all 0.3s;
-  padding: 16px 15px;
-  font-size: 1rem;
+  padding: 17px 17px;
+  font-size: 0.9rem;
 }
 
 .search-button:hover {
@@ -121,7 +121,6 @@
   display: flex;
   align-items: center;
   gap: 20px;
-  margin-top: 15px;
 }
 .engine-selector label {
   display: flex;
