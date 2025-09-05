@@ -2,7 +2,7 @@ import {useContext} from 'react';
 import {Outlet} from 'react-router-dom';
 import HeaderProfile from './HeaderProfile/HeaderProfile';
 import PropTypes from 'prop-types';
-import { Logo } from '../../assets/img/logo';
+import {Logo} from '../../assets/img/logo';
 import {
 	HeaderBlock,
 	HeaderContainer,
@@ -13,20 +13,23 @@ import {
 	ThemeBlock,
 	LightLabel,
 	DarkLabel,
-	
+	LogoLink
 } from './header.styled';
 import {ThemeContext} from '../themes/ThemeContext';
 import Switch from '@mui/material/Switch';
 
 const Header = ({userInfo}) => {
 	const {theme, toggleTheme} = useContext(ThemeContext);
-	
+
 	return (
 		<>
 			<HeaderBlock>
 				<HeaderContainer>
 					<HeaderNav>
-						<Logo theme={theme} />
+						<LogoLink href="https://denuo.legal" target="_blank">
+							<Logo theme={theme} />
+						</LogoLink>
+
 						<HeaderList>
 							<HeaderLink to="/">Home</HeaderLink>
 							<HeaderLink to="/news">News</HeaderLink>

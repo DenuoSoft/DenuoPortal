@@ -7,7 +7,8 @@ export const userData = [
 		mobile: '+79211234567',
 		location: 'St. Petersburg',
 		assistant: 'Anna Bulash',
-		assistantExt: 7268
+		assistantExt: 7268,
+		
 	},
 	{
 		id: 2,

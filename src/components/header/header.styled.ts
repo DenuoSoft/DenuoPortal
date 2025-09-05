@@ -75,3 +75,6 @@ export const LightLabel = styled.span`
 	color: var(--light-color);
 	
 `;
+export const LogoLink = styled.a`
+    cursor: pointer;
+`

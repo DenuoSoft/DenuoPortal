@@ -1,7 +1,14 @@
 import Search from '../../search/Search';
+import Slider from '../../slider/slider.jsx';
 
 const Home = () => {
-	return <Search />;
+	
+	return (
+		<>
+			<Slider />
+			<Search />
+		</>
+	);
 };
 
 export default Home;

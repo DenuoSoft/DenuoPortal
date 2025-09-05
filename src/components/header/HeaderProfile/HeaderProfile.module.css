@@ -36,10 +36,10 @@
   color: var(--text-color);
 }
 
-.titleImage {
-  width: 100px;
-  height: 120px;
-  border: 1px solid var(--light-color);
+.titleImage img {
+  width: 120px;
+  height: 130px;
+  overflow: hidden;
 }
 
 .title {
@@ -55,7 +55,13 @@
   padding-bottom: 10px;
 }
 
+.userPhoto img {
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+}
+
 .alert {
   color: red;
   font-weight: 500;
-}/*# sourceMappingURL=profile.module.css.map */
+}/*# sourceMappingURL=HeaderProfile.module.css.map */
