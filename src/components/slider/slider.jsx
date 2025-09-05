@@ -1,4 +1,5 @@
 import {useState, useEffect, useRef} from 'react';
+import {Link} from 'react-router-dom';
 import styles from './slider.module.scss';
 import {slides} from '../../data/imagesdb';
 import Button from '../shared/buttons/button';
@@ -34,10 +35,6 @@ const Slider = () => {
 		setCurrentIndex((idx) => (idx === slides.length - 1 ? 0 : idx + 1));
 	};
 
-	const handleSlideClick = (link) => {
-		window.location.href = link;
-	};
-
 	return (
 		<div className={styles.container}>
 			<div
@@ -56,10 +53,11 @@ const Slider = () => {
 						<div className={styles.content}>
 							<h2>{slide.title}</h2>
 							<div className={styles.buttonBox}>
-								<Button
-									onClick={() => handleSlideClick(slide.link)}
-									label={slide.buttonText}
-								/>
+								{index === currentIndex && (
+									<Link to={slide.link} style={{textDecoration: 'none'}}>
+										<Button label={slide.buttonText} />
+									</Link>
+								)}
 							</div>
 						</div>
 					</div>
