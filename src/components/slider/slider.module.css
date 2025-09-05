@@ -78,6 +78,7 @@
   font-size: 1.2rem;
   line-height: 1;
   transition: background 0.3s;
+  z-index: 3;
 }
 .navButton.prev {
   left: 12px;
