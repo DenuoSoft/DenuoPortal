@@ -6,7 +6,7 @@ import AdminForm from './form/adminForm';
 import css from './admin.module.css';
 import {
 	useCreateNewsMutation,
-	useCreateEventMutation,
+	useCreateAnnounceMutation,
 } from '../../api/apiSlice';
 import 'react-datepicker/dist/react-datepicker.css';
 import {formatDate} from '../../utils/formatDate';
@@ -30,7 +30,7 @@ const Admin = () => {
 
 	// eslint-disable-next-line no-unused-vars
 	const [createNews, {isLoading}] = useCreateNewsMutation();
-	const [createEvent] = useCreateEventMutation();
+	const [createEvent] = useCreateAnnounceMutation();
 
 	const handleRadioChange = (value) => {
 		setSelectedType(value);

@@ -5,8 +5,8 @@ import css from './adminItemsList.module.scss';
 import {
 	useGetNewsQuery,
 	useDeleteNewsMutation,
-	useGetEventQuery,
-	useDeleteEventMutation,
+	useGetAnnounceQuery,
+	useDeleteAnnounceMutation,
 } from '../../../api/apiSlice';
 
 const AdminItemsList = () => {
@@ -19,10 +19,10 @@ const AdminItemsList = () => {
 		data: events = [],
 		isLoading: isEventsLoading,
 		isError: isEventsError,
-	} = useGetEventQuery();
+	} = useGetAnnounceQuery();
 
 	const [deleteNews] = useDeleteNewsMutation();
-	const [deleteEvent] = useDeleteEventMutation();
+	const [deleteEvent] = useDeleteAnnounceMutation();
 
 	const isLoading = isNewsLoading || isEventsLoading;
 	const isError = isNewsError || isEventsError;

@@ -16,7 +16,7 @@ const Button = ({ label, sendIcon, arrowUpIcon, onClick, type = "button", disabl
 	);
 };
 Button.propTypes = {
-    label: PropTypes.string.isRequired,
+    label: PropTypes.string,
     sendIcon: PropTypes.node,         
     arrowUpIcon: PropTypes.node,      
     onClick: PropTypes.func,

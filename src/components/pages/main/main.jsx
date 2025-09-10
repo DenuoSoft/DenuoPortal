@@ -1,5 +1,5 @@
 import {useState, useMemo} from 'react';
-import {useGetNewsQuery, useGetEventQuery} from '../../../api/apiSlice';
+import {useGetNewsQuery, useGetAnnounceQuery} from '../../../api/apiSlice';
 import PropTypes from 'prop-types';
 import css from './main.module.scss';
 import {Tabs} from '../../tabs/tabs';
@@ -20,10 +20,10 @@ export const Main = ({userInfo}) => {
 	} = useGetNewsQuery();
 
 	const {
-		data: event = [],
+		data: announce = [],
 		isLoading: isEventsLoading,
 		isError: isEventsError,
-	} = useGetEventQuery();
+	} = useGetAnnounceQuery();
 
 	const isLoading = isNewsLoading || isEventsLoading;
 	const isError = isNewsError || isEventsError;
@@ -39,18 +39,18 @@ export const Main = ({userInfo}) => {
 
 	const itemsPerPage = 3;
 	const [newsCurrentPage, setNewsCurrentPage] = useState(1);
-	const [eventCurrentPage, setEventCurrentPage] = useState(1);
+	const [announceCurrentPage, setAnnounceCurrentPage] = useState(1);
 
 	const newsTotalPages = Math.ceil(sortedNews.length / itemsPerPage);
-	const eventTotalPages = Math.ceil(event.length / itemsPerPage);
+	const announceTotalPages = Math.ceil(announce.length / itemsPerPage);
 
 	const newsPaginatedContent = sortedNews.slice(
 		(newsCurrentPage - 1) * itemsPerPage,
 		newsCurrentPage * itemsPerPage
 	);
-	const eventPaginatedContent = event.slice(
-		(eventCurrentPage - 1) * itemsPerPage,
-		eventCurrentPage * itemsPerPage
+	const announcePaginatedContent = announce.slice(
+		(announceCurrentPage - 1) * itemsPerPage,
+		announceCurrentPage * itemsPerPage
 	);
 
 	const handleNewsNextClick = () => {
@@ -61,11 +61,11 @@ export const Main = ({userInfo}) => {
 		if (newsCurrentPage > 1) setNewsCurrentPage((prev) => prev - 1);
 	};
 	const handleEventNextClick = () => {
-		if (eventCurrentPage < eventTotalPages)
-			setEventCurrentPage((prev) => prev + 1);
+		if (announceCurrentPage < announceTotalPages)
+			setAnnounceCurrentPage((prev) => prev + 1);
 	};
 	const handleEventPrevClick = () => {
-		if (eventCurrentPage > 1) setEventCurrentPage((prev) => prev - 1);
+		if (announceCurrentPage > 1) setAnnounceCurrentPage((prev) => prev - 1);
 	};
 
 	let newsContent = (
@@ -99,20 +99,20 @@ export const Main = ({userInfo}) => {
 			</ContentLayout>
 		</div>
 	);
-	let eventContent = (
+	let announceContent = (
 		<div className={css.content}>
 			<ContentLayout>
-				{eventPaginatedContent.length === 0 ? (
+				{announcePaginatedContent.length === 0 ? (
 					<div className={css.items}>No any events</div>
 				) : (
-					eventPaginatedContent.map((item) => (
+					announcePaginatedContent.map((item) => (
 						<ContentItems key={item.id}>
 							<div className={css.evntbox}>
 								<div className={css.date}>
 									<h4>Event date:</h4> {item.date}
 								</div>
 								<div className={css.evnttitle}>
-									<h3>{item.name}</h3>
+									<h3>{item.title}</h3>
 								</div>
 								<div className={css.evntdescr}>
 									<span>
@@ -133,8 +133,8 @@ export const Main = ({userInfo}) => {
 					))
 				)}
 				<Pagination
-					currentPage={eventCurrentPage}
-					totalPages={eventTotalPages}
+					currentPage={announceCurrentPage}
+					totalPages={announceTotalPages}
 					onNext={handleEventNextClick}
 					onPrev={handleEventPrevClick}
 				/>
@@ -151,7 +151,7 @@ export const Main = ({userInfo}) => {
 
 	const content = {
 		News: newsContent,
-		Events: eventContent,
+		Announcements: announceContent,
 		Other: <div className={css.other}>Docs Content</div>,
 		Admin: adminContent,
 	};

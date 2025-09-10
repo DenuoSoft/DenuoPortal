@@ -4,7 +4,6 @@
 	justify-content: center;
 	padding: 15px 0; 
 	border-bottom: solid 1px var(--light-color);
-	flex-grow: 1;
 	color: var(--text-color);
 }
 /* .itemsBox:hover {

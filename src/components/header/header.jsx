@@ -33,7 +33,7 @@ const Header = ({userInfo}) => {
 						<HeaderList>
 							<HeaderLink to="/">Home</HeaderLink>
 							<HeaderLink to="/news">News</HeaderLink>
-							<HeaderLink to="/main">Main</HeaderLink>
+							{/* <HeaderLink to="/main">Main</HeaderLink> */}
 							<HeaderLink to="/hr">HR</HeaderLink>
 							<HeaderLink to="/marketing">Marketing</HeaderLink>
 							<HeaderLink to="/it">IT</HeaderLink>

@@ -18,7 +18,8 @@
 .modalContent {
 	background-color: var(--background-color);
 	padding: 20px;
-	border-radius: 5px;
+	border-radius: 25px;
+	corner-shape: squircle;
 	width: auto;
 	height: auto;
 	opacity: 0;
@@ -43,7 +44,7 @@
 	font-size: 36px;
 	cursor: pointer;
 	color: var(--button-color);
-	transform: translate(15px, -25px);
+	transform: translate(10px, -20px);
 }
 .closeButton:hover {
 	color: var(--accent-color);

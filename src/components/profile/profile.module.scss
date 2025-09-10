@@ -18,10 +18,13 @@
 	width: 100px;
 	height: 120px;
 	border: 1px solid var(--light-color);
+	img {
+		width: 100px;
+		height: 120px;
+	}
 }
 .title {
 	margin: 0;
-	
 }
 .textItem {
 	display: flex;

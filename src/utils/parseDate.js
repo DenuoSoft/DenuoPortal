@@ -1,6 +1,6 @@
 export const parseDate = (dateString) => {
     if (!dateString) return null;
-    const parts = dateString.split('.');
+    const parts = dateString.split('-');
     if (parts.length === 3) {
         const day = parseInt(parts[0], 10);
         const month = parseInt(parts[1], 10) - 1; 

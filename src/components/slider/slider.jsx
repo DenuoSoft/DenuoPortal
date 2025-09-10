@@ -3,11 +3,22 @@ import {Link} from 'react-router-dom';
 import styles from './slider.module.scss';
 import {slides} from '../../data/imagesdb';
 import Button from '../shared/buttons/button';
+import {useGetAnnounceQuery} from '../../api/apiSlice';
+//import {Spinner} from '../shared/spinner/spinner';
 
 const Slider = () => {
+	const {data: response = {}} = useGetAnnounceQuery();
+
+	const results = response.results || [];
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const [isPaused, setIsPaused] = useState(false);
 	const timeoutRef = useRef(null);
+
+	const getCurrentResult = (index) => {
+		if (results.length === 0) return {};
+
+		return results[index % results.length];
+	};
 
 	const resetTimeout = () => {
 		if (timeoutRef.current) {
@@ -35,6 +46,8 @@ const Slider = () => {
 		setCurrentIndex((idx) => (idx === slides.length - 1 ? 0 : idx + 1));
 	};
 
+	const currentResult = getCurrentResult(currentIndex);
+
 	return (
 		<div className={styles.container}>
 			<div
@@ -50,16 +63,28 @@ const Slider = () => {
 						}`}
 						style={{backgroundImage: `url(${slide.image})`}}
 					>
-						<div className={styles.content}>
-							<h2>{slide.title}</h2>
-							<div className={styles.buttonBox}>
-								{index === currentIndex && (
-									<Link to={slide.link} style={{textDecoration: 'none'}}>
-										<Button label={slide.buttonText} />
+						{index === currentIndex && (
+							<div
+								className={styles.content}
+								style={{backgroundImage: `url(${currentResult.image})`}}
+							>
+								<div>
+									<h2>{currentResult.title}</h2>
+									{currentResult.description && (
+										<p>{currentResult.description}</p>
+									)}
+								</div>
+
+								<div className={styles.buttonBox}>
+									<Link
+										to={currentResult.action_link}
+										style={{textDecoration: 'none'}}
+									>
+										<Button label={currentResult.action} />
 									</Link>
-								)}
+								</div>
 							</div>
-						</div>
+						)}
 					</div>
 				))}
 

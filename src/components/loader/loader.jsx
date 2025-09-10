@@ -30,16 +30,13 @@ const Loader = ({
 	return children;
 };
 Loader.propTypes = {
-	isLoading: PropTypes.bool.isRequired,
-	isError: PropTypes.bool.isRequired,
+	isLoading: PropTypes.bool,
+	isError: PropTypes.bool,
 	minDelay: PropTypes.number,
 	maxDelay: PropTypes.number,
-	children: PropTypes.node.isRequired,
+	children: PropTypes.node,
 };
 
-Loader.defaultProps = {
-	minDelay: 300,
-	maxDelay: 600,
-};
+
 
 export default Loader;

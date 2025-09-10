@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .container {
   display: flex;
   flex-direction: column;
@@ -12,7 +13,9 @@
   position: relative;
   width: 100%;
   height: 300px;
-  border-radius: 10px;
+  margin-top: 10px;
+  border-radius: 50px;
+  corner-shape: squircle;
   overflow: hidden;
   transition: opacity 0.9s ease;
 }
@@ -40,7 +43,9 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  position: absolute;
+  position: relative;
+  background-size: cover;
+  background-position: center;
   width: 1000px;
   height: 250px;
   top: 50%;
@@ -48,15 +53,35 @@
   transform: translate(-50%, -50%);
   color: #fff;
   text-align: center;
-  background: rgba(98, 121, 167, 0.1);
+  background: rgba(98, 121, 167, 0.2);
   padding: 12px 24px;
-  border-radius: 10px;
+  border-radius: 50px;
+  overflow: hidden;
+  corner-shape: squircle;
   z-index: 2;
+  opacity: 0.6;
 }
 .content h2 {
   font-size: 16px;
   font-weight: 400;
-  margin: 0 0 20px;
+  margin-top: 50px;
+}
+.content p {
+  color: #fff;
+}
+
+.content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: inherit;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5; /* Прозрачность только для фона */
+  z-index: -1;
 }
 
 .buttonBox {
