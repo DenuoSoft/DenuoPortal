@@ -4,7 +4,7 @@ export const isTokenExpired = (token) => {
 	try {
 		const payload = JSON.parse(atob(token.split('.')[1]));
 		const exp = payload.exp * 1000;
-		return Date.now() >= exp - (60 * 1000); // добавляем запас 60 секунд
+		return Date.now() >= exp - (60 * 1000);
 	} catch (error) {
 		console.error('Error parsing token:', error);
 		return true;
