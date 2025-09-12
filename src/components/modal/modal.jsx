@@ -1,61 +1,85 @@
 /* eslint-disable react/prop-types */
 import css from './modal.module.scss';
-import {useEffect, useRef, useState} from 'react';
+import {useEffect, useRef, useState, useCallback} from 'react';
 
 export const Modal = ({isOpen, onClose, children}) => {
 	const modalRef = useRef(null);
 	const [isVisible, setIsVisible] = useState(false);
 	const [shouldRender, setShouldRender] = useState(isOpen);
+	const timeoutRef = useRef(null);
+
+	const handleClickOutside = useCallback((event) => {
+		if (modalRef.current && !modalRef.current.contains(event.target)) {
+			onClose();
+		}
+	}, [onClose]);
+
+	const handleEscapeKey = useCallback((event) => {
+		if (event.key === 'Escape') {
+			onClose();
+		}
+	}, [onClose]);
+
+	const cleanup = useCallback(() => {
+		if (timeoutRef.current) {
+			clearTimeout(timeoutRef.current);
+		}
+		document.removeEventListener('mousedown', handleClickOutside);
+		document.removeEventListener('keydown', handleEscapeKey);
+		document.body.style.overflow = 'unset';
+	}, [handleClickOutside, handleEscapeKey]);
 
 	useEffect(() => {
-		const handleClickOutside = (event) => {
-			if (modalRef.current && !modalRef.current.contains(event.target)) {
-				onClose();
-			}
-		};
 		if (isOpen) {
 			setShouldRender(true);
-			const timeoutId = setTimeout(() => {
+			timeoutRef.current = setTimeout(() => {
 				setIsVisible(true);
-			}, 100);
+			}, 10); 
 
 			document.addEventListener('mousedown', handleClickOutside);
+			document.addEventListener('keydown', handleEscapeKey);
 			document.body.style.overflow = 'hidden';
 
-			return () => {
-				clearTimeout(timeoutId);
-				document.removeEventListener('mousedown', handleClickOutside);
-				document.body.style.overflow = 'unset';
-			};
+			return cleanup;
 		} else {
 			setIsVisible(false);
-			const transitionTimeoutId = setTimeout(() => {
+			timeoutRef.current = setTimeout(() => {
 				setShouldRender(false);
-				document.body.style.overflow = 'unset';
-			}, 300); // Match this duration to your CSS transition duration
-			document.removeEventListener('mousedown', handleClickOutside);
+			}, 300);
+			
 			return () => {
-				clearTimeout(transitionTimeoutId);
+				if (timeoutRef.current) {
+					clearTimeout(timeoutRef.current);
+				}
 			};
 		}
-	}, [isOpen, onClose]);
+	}, [isOpen, onClose, handleClickOutside, handleEscapeKey, cleanup]);
 
 	if (!shouldRender) return null;
 
 	return (
 		<div
 			className={`${css.modalOverlay} ${isVisible ? css.overlayVisible : ''}`}
+			onClick={handleClickOutside} 
 		>
 			<div
 				className={`${css.modalContent} ${isVisible ? css.visible : ''}`}
 				ref={modalRef}
+				role="dialog"
+				aria-modal="true"
 			>
-				<div className={css.mcontent}>
-					<button className={css.closeButton} onClick={onClose}>
+				<div className={css.modalHeader}>
+					<button 
+						className={css.closeButton} 
+						onClick={onClose}
+						aria-label="Close modal"
+					>
 						&times;
 					</button>
 				</div>
-				{children}
+				<div className={css.modalBody}>
+					{children}
+				</div>
 			</div>
 		</div>
 	);

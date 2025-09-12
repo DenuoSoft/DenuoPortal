@@ -1,7 +1,7 @@
 .layout {
 	margin-top: 10px;
 	display: flex;
-	width: 1200px;
+	max-width: 1200px;
 }
 
 .newsbox {
@@ -27,11 +27,6 @@
 	padding-bottom: 15px;
 	color: var(--text-color);
 }
-.content {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
 
 .image {
 	width: 100%;
@@ -44,6 +39,7 @@
 	flex-grow: 1;
 	margin-left: 25px;
 	width: 600px;
+	cursor: pointer;
 }
 .date {
 	display: flex;

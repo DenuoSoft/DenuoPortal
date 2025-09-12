@@ -61,7 +61,6 @@ const Slider = () => {
 						className={`${styles.slide} ${
 							index === currentIndex ? styles.active : ''
 						}`}
-						style={{backgroundImage: `url(${slide.image})`}}
 					>
 						{index === currentIndex && (
 							<div
@@ -69,7 +68,7 @@ const Slider = () => {
 								style={{backgroundImage: `url(${currentResult.image})`}}
 							>
 								<div>
-									<h2>{currentResult.title}</h2>
+								   <h2>{currentResult.title}</h2>
 									{currentResult.description && (
 										<p>{currentResult.description}</p>
 									)}

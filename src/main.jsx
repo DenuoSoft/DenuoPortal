@@ -14,6 +14,7 @@ createRoot(document.getElementById('root')).render(
 					v7_relativeSplatPath: true,
 					v7_startTransition: true,
 				}}
+				basename="/"
 			>
 				<App />
 			</BrowserRouter>
