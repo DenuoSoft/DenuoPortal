@@ -67,15 +67,19 @@ const News = () => {
 						<div className={css.items}>No any news</div>
 					) : (
 						sortedNews.map((item) => (
-							<div className={css.items} key={item.id}>
+							<div className={css.items} key={item.id} onClick={() => openModal(item)}>
+								
 								<div className={css.imageBox}>
 									<img className={css.image} src={item.image} alt="news" />
 								</div>
-								<div className={css.infobox} onClick={() => openModal(item)}>
+								<div className={css.infobox} >
+									
 									<div className={css.text}>
+										
 										<span>{item.formattedDate}</span>
 										<h2 className={css.title}>{item.title}</h2>
 									</div>
+									
 									<div
 										className={css.content}
 										dangerouslySetInnerHTML={{__html: item.sanitizedExcerpt}}
