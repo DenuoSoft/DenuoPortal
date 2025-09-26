@@ -35,12 +35,12 @@
 .items::after {
   content: "";
   width: 50px;
-  height: 350px;
+  height: 390px;
   position: absolute;
   top: 0;
   left: 0;
   background-color: rgba(215, 255, 35, 0.7);
-  transform: skew(-15deg, 0) translate(160px, 15px);
+  transform: skew(-15deg, 0) translateX(160px);
   z-index: -1;
   opacity: 0;
   transition: opacity 0.8s ease;
@@ -50,11 +50,11 @@
   opacity: 1;
 }
 
-/* .items:hover {
-	background-color: rgba(215, 255, 35, 0.7);
-	transform: skew(-5deg, 0) scale(95%);
-	transition: transform 0.9s ease;
-} */
+.items:hover {
+  background-color: rgba(98, 121, 167, 0.3);
+  transition: background-color 0.8s ease;
+}
+
 .image {
   width: 75%;
   height: 150px;
