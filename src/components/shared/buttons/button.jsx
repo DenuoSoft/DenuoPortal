@@ -9,7 +9,7 @@ const Button = ({ label, sendIcon, arrowUpIcon, onClick, type = "button", disabl
             onClick={onClick}
             disabled={disabled}
         >
-            <span>{label}</span>
+            {label}
 			{sendIcon && <span className={css.icon}>{sendIcon}</span>}
 			{arrowUpIcon && <span className={css.icon}>{arrowUpIcon}</span>}
 		</button>

@@ -7,7 +7,6 @@
   right: 0;
   justify-content: center;
   align-items: center;
-  color: var(--text-color);
   background-color: var(--main-color);
   flex-shrink: 0;
   padding-left: 12px;
@@ -15,6 +14,10 @@
 }
 .footer span {
   padding-right: 8px;
+}
+.footer a {
+  text-decoration: none;
+  color: var(--text-color);
 }
 
 .text {

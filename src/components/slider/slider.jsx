@@ -1,6 +1,6 @@
 import {useState, useEffect, useRef} from 'react';
 import {Link} from 'react-router-dom';
-import styles from './slider.module.scss';
+import css from './slider.module.scss';
 import {slides} from '../../data/imagesdb';
 import Button from '../shared/buttons/button';
 import {useGetAnnounceQuery} from '../../api/apiSlice';
@@ -49,38 +49,39 @@ const Slider = () => {
 	const currentResult = getCurrentResult(currentIndex);
 
 	return (
-		<div className={styles.container}>
+		<div className={css.container}>
 			<div
-				className={`${styles.sliderBox} ${isPaused ? styles.paused : ''}`}
+				className={`${css.sliderBox} ${isPaused ? css.paused : ''}`}
 				onMouseEnter={() => setIsPaused(true)}
 				onMouseLeave={() => setIsPaused(false)}
 			>
 				{slides.map((slide, index) => (
 					<div
 						key={index}
-						className={`${styles.slide} ${
-							index === currentIndex ? styles.active : ''
+						className={`${css.slide} ${
+							index === currentIndex ? css.active : ''
 						}`}
 					>
 						{index === currentIndex && (
 							<div
-								className={styles.content}
+								className={css.content}
 								style={{backgroundImage: `url(${currentResult.image})`}}
 							>
-								<div>
-								   <h2>{currentResult.title}</h2>
-									{currentResult.description && (
-										<p>{currentResult.description}</p>
-									)}
-								</div>
-
-								<div className={styles.buttonBox}>
-									<Link
-										to={currentResult.action_link}
-										style={{textDecoration: 'none'}}
-									>
-										<Button label={currentResult.action} />
-									</Link>
+								<div className={css.textBox}>
+									<div className={css.text}>
+										<h2>{currentResult.title}</h2>
+										{currentResult.description && (
+											<p>{currentResult.description}</p>
+										)}
+									</div>
+									<div className={css.buttonBox}>
+											<Link
+												to={currentResult.action_link}
+												style={{textDecoration: 'none'}}
+											>
+												<Button label={currentResult.action} />
+											</Link>
+										</div>
 								</div>
 							</div>
 						)}
@@ -88,14 +89,14 @@ const Slider = () => {
 				))}
 
 				<button
-					className={`${styles.navButton} ${styles.prev}`}
+					className={`${css.navButton} ${css.prev}`}
 					onClick={prevSlide}
 					aria-label="Previous Slide"
 				>
 					&#10094;
 				</button>
 				<button
-					className={`${styles.navButton} ${styles.next}`}
+					className={`${css.navButton} ${css.next}`}
 					onClick={nextSlide}
 					aria-label="Next Slide"
 				>
@@ -103,12 +104,12 @@ const Slider = () => {
 				</button>
 			</div>
 
-			<div className={styles.dots}>
+			<div className={css.dots}>
 				{slides.map((_, idx) => (
 					<span
 						key={idx}
-						className={`${styles.dot} ${
-							idx === currentIndex ? styles.active : ''
+						className={`${css.dot} ${
+							idx === currentIndex ? css.active : ''
 						}`}
 						onClick={() => setCurrentIndex(idx)}
 					/>

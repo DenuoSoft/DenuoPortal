@@ -7,7 +7,7 @@
 	right: 0;
 	justify-content: center;
 	align-items: center;
-	color: var(--text-color);
+	
 	background-color: var(--main-color);
 	flex-shrink: 0;
 	padding-left: 12px;
@@ -15,7 +15,10 @@
 		padding-right: 8px;
 	}
 	transition: background-color 0.3s ease, color 0.3s ease;
-	
+	a {
+		text-decoration: none;
+		color: var(--text-color);
+	}
 }
 .text {
 font-size: 0.8rem;

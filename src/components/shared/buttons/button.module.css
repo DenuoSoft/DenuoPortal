@@ -1,21 +1,24 @@
 .button {
   display: flex;
   align-items: center;
-  padding: 6px 8px;
+  padding: 10px 15px;
   text-transform: uppercase;
   font-family: "Graphik", Arial, Helvetica, sans-serif;
   font-size: 14px;
   background-color: var(--button-bgcolor);
   color: var(--button-color);
   border: none;
+  line-height: 1;
   cursor: pointer;
-  transition: background-color 0.8s;
 }
 
 .button:hover {
-  background-color: #c8d2e6;
+  background-color: var(--dark-blue-color);
   color: #d7ff23;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.8s, transform 0.8s, border-radius 0.8s;
+  transform: scale(110%);
+  border-radius: 20px;
 }
 
 :disabled {
