@@ -1,4 +1,3 @@
-@charset "UTF-8";
 .layout {
   margin-top: 10px;
   display: flex;
@@ -19,7 +18,7 @@
 }
 
 .items {
-  position: relative; /* 1. Создаём контекст позиционирования */
+  position: relative;
   z-index: 0;
   display: flex;
   flex-direction: column;
@@ -28,8 +27,9 @@
   justify-content: flex-start;
   padding: 20px;
   color: var(--text-color);
-  box-shadow: 3px 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 3px 3px 12px rgba(98, 121, 167, 0.1);
   cursor: pointer;
+  border-radius: 25px;
 }
 
 .items::after {

@@ -1,12 +1,12 @@
-import Search from '../../search/Search';
 import Slider from '../../slider/slider.jsx';
+import { News } from '../index.js'
 
 const Home = () => {
 	
 	return (
 		<>
 			<Slider />
-			<Search />
+			<News />
 		</>
 	);
 };
